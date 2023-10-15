@@ -1,4 +1,4 @@
-export enum Attribute {
+export enum AttributeIcons{
     "logo" = "logo",
     "img" = "img" ,
     "name" = "name",
@@ -12,7 +12,7 @@ class CardIcons extends HTMLElement {
     name?: string;
     
     static get observedAttributes(){
-        const attrs: Record<Attribute, null> = {
+        const attrs: Record<AttributeIcons, null> = {
             logo: null,
             img: null,
             name: null,
@@ -21,7 +21,7 @@ class CardIcons extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attribute,
+        propName: AttributeIcons,
         _: string | undefined,
         newValue: string | undefined
         ) {

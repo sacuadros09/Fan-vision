@@ -1,4 +1,4 @@
-export enum Attr {
+export enum AttributeProfile {
     "profilephoto" = "profilephoto",
     "subnames" = "subnames" ,
     "names" = "names",
@@ -11,7 +11,7 @@ class CardProfile extends HTMLElement {
     names?: string;
     
     static get observedAttributes(){
-        const attrs: Record<Attr, null> = {
+        const attrs: Record<AttributeProfile, null> = {
             profilephoto: null,
             subnames: null,
             names: null,
@@ -20,7 +20,7 @@ class CardProfile extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attr,
+        propName: AttributeProfile,
         _: string | undefined,
         newValue: string | undefined
         ) {

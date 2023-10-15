@@ -1,4 +1,4 @@
-export enum Attribut {
+export enum AttributeUploade {
     "profile" = "profile",
     "named" = "named" ,
     "subname" = "subname",
@@ -20,7 +20,7 @@ class CardUploade extends HTMLElement {
     
     
     static get observedAttributes(){
-        const attrs: Record<Attribut, null> = {
+        const attrs: Record<AttributeUploade, null> = {
             profile: null,
             named: null,
             subname: null,
@@ -32,9 +32,9 @@ class CardUploade extends HTMLElement {
         return Object.keys(attrs);
     }
     
-    attributeChangedCallback(propName:Attribut,oldValue: string | undefined,newValue: string | undefined){
+    attributeChangedCallback(propName:AttributeUploade,oldValue: string | undefined,newValue: string | undefined){
         switch(propName){
-            case Attribut.number:
+            case AttributeUploade.number:
                 
                 this.number = newValue ? Number(newValue) : undefined;
             break;
