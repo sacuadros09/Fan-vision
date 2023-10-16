@@ -2,7 +2,22 @@ import {User} from "./users"
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
-   Users: User[]
+   Users: User[],
+   screen: Screens
+}
+
+export enum Screens{
+    REGISTER = "REGISTER",
+    DASHBOARD = "DASHBOARD",
+}
+
+export enum NavigationActions{
+    "NAVIGATE" = "NAVIGATE",
+}
+
+export interface NavigationAction{
+    action: NavigationActions.NAVIGATE;
+    payload: Screens;
 }
 
 export enum AuthActions {
@@ -11,9 +26,9 @@ export enum AuthActions {
     "LOGOUT" = "LOGOUT",
 }
 
-export interface LogInAction {
+export interface LogInAction {  
     action: AuthActions.LOGIN,
-    payload: "User"
+    payload: User
 }
 
 export interface LogOutAction {
@@ -23,8 +38,8 @@ export interface LogOutAction {
 
 export interface RegisterAction {
     action: AuthActions.REGISTER,
-    payload:  "User"
+    payload:  User
     
 }
 
-export type Actions = LogInAction | LogOutAction | RegisterAction;
+export type Actions = LogInAction | LogOutAction | RegisterAction | NavigationActions;

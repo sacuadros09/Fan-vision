@@ -1,7 +1,7 @@
-import { Actions, AppState, AuthActions } from "../types/store";
+import { Actions, AppState, AuthActions,NavigationActions } from "../types/store";
 
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
-    const { action, payload } = currentAction; 
+    const {action, payload} = currentAction; 
 
     switch (action) {
         case AuthActions.REGISTER:
@@ -12,9 +12,7 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                     ...currentState.Users
                 ]
             }
-    }   
 
-    switch (action) {
         case AuthActions.LOGIN:
             return {
                 ...currentState,
@@ -30,6 +28,14 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
             
             Users:[]
             }
+    
+    case NavigationActions.NAVIGATE:
+        return {
+            ...currentState,
+            screen: payload, 
+        };
+
+            
         default:
             return currentState;
     }

@@ -1,7 +1,9 @@
 import "../components/export"
 import { AttributeRegister } from "../components/Register/Register";
 import { dispatch } from "../store/index";
-import { Register} from "../store/actions";
+import { Register,navigate } from "../store/actions";
+import { Screens } from "../types/store";
+//import styles from "./register.css"
 
 const credentials = { 
     name:"",
@@ -9,8 +11,6 @@ const credentials = {
     email: "",
     password: ""
 }
-
-//import styles from "./register.css"
 
 class DashboardRegister extends HTMLElement {
     constructor(){
@@ -30,12 +30,12 @@ class DashboardRegister extends HTMLElement {
                // css.innerHTML = styles
                 //this.shadowRoot?.appendChild(css);
 
-            const form = this.ownerDocument.createElement('section')
+            const form = this.ownerDocument.createElement('section');
 
             const userName = this.ownerDocument.createElement('my-input')
             userName.setAttribute(AttributeRegister.text, "Username")
             userName.setAttribute(AttributeRegister.type, "text")
-
+            userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
             form.appendChild(userName)
 
             const button = this.ownerDocument.createElement('my-button');

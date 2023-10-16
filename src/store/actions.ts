@@ -1,4 +1,4 @@
-import {  AuthActions,  LogInAction, LogOutAction, RegisterAction } from "../types/store"
+import {  AuthActions,  LogInAction, LogOutAction, RegisterAction,NavigationAction,NavigationActions,Screens } from "../types/store"
 
 export const Register = ({payload}: Pick<RegisterAction, "payload">): RegisterAction => {
     return {
@@ -20,3 +20,10 @@ export const logIn = ({payload}: Pick<LogInAction, "payload">): LogInAction => {
         payload
     }
 }
+
+export const navigate = (screen: Screens): NavigationAction => {
+    return {
+      action: NavigationActions.NAVIGATE,
+      payload: screen,
+    };
+  };
