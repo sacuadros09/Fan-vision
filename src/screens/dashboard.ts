@@ -9,7 +9,7 @@ import CardProfile,{AttributeProfile} from "../components/CardProfile/CardProfil
 import CardUploade, {AttributeUploade} from "../components/CardUploade/CardUploade"
 
 
-class Dashboard extends HTMLElement{
+export class Dashboard extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];

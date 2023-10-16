@@ -1,5 +1,6 @@
 import "./screens/dashboard"
-import "./components/export"
+import "./components/index"
+
 
 class AppContainer extends HTMLElement {
     constructor(){
@@ -12,8 +13,10 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        const window = this.ownerDocument.createElement('my-dashboard');
+        const window = this.ownerDocument.createElement('my-dashboardregister');
         this.shadowRoot?.appendChild(window);
+
+
     }
 }
 
