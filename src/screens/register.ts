@@ -1,6 +1,14 @@
 import "../components/export"
-import Placeholdersdata from "../mocks/placeholder";
 import { AttributeRegister } from "../components/Register/Register";
+import { dispatch } from "../store/index";
+import { Register} from "../store/actions";
+
+const credentials = { 
+    name:"",
+    username: "",
+    email: "",
+    password: ""
+}
 
 //import styles from "./register.css"
 
@@ -24,11 +32,11 @@ class DashboardRegister extends HTMLElement {
 
             const form = this.ownerDocument.createElement('section')
 
-            Placeholdersdata.forEach((text)=>{
-                const input = this.ownerDocument.createElement('my-register')
-                input.setAttribute(AttributeRegister.input_text, text.text)
-                form.appendChild(input)
-            });
+            const userName = this.ownerDocument.createElement('my-input')
+            userName.setAttribute(AttributeRegister.text, "Username")
+            userName.setAttribute(AttributeRegister.type, "text")
+
+            form.appendChild(userName)
 
             const button = this.ownerDocument.createElement('my-button');
 

@@ -1,13 +1,16 @@
 export enum AttributeRegister{
-    "input_text"="input_text"
+    "text"="text",
+    "type"="type"
 }
 
 export default class Register extends HTMLElement{
-    input_text?: string;
+    text?: string;
+    type?: string;
 
     static get observedAttributes(){
         const attrs: Record<AttributeRegister, null> = {
-            input_text: null,
+            text: null,
+            type: null,
         }
         return Object.keys(attrs)
     }
@@ -38,12 +41,14 @@ export default class Register extends HTMLElement{
         this.shadowRoot.innerHTML = '';
 
         const input = this.ownerDocument.createElement('input');
-        input.placeholder = `${this.input_text}`;
+        input.placeholder = `${this.text}`;
+        input.placeholder = `${this.type}`;
+        input.type = `${this.type}`
 
         this.shadowRoot?.appendChild(input)
         }
     }
 
-}
+}   
 
 customElements.define('my-register', Register)

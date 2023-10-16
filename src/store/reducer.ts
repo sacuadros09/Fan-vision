@@ -7,27 +7,29 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
         case AuthActions.REGISTER:
             return {
                 ...currentState,
-                user: payload.user
+                Users: [
+                    payload,
+                    ...currentState.Users
+                ]
             }
-    }
+    }   
 
     switch (action) {
         case AuthActions.LOGIN:
             return {
                 ...currentState,
-                user: payload.user
+                Users: [
+                    payload,
+                    ...currentState.Users   
+                ]
             }
 
         case AuthActions.LOGOUT:
             return {
                 ...currentState,
-                user: {
-                    userName: "",
-                    email: "",
-                    password: "",
-                }
+            
+            Users:[]
             }
-
         default:
             return currentState;
     }
