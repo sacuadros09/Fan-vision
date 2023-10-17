@@ -32,20 +32,55 @@ class DashboardRegister extends HTMLElement {
 
             const form = this.ownerDocument.createElement('section');
 
+            const Name = this.ownerDocument.createElement('my-input')
+            Name.setAttribute(AttributeRegister.text, "Your name")
+            Name.setAttribute(AttributeRegister.type, "text")
+            Name.addEventListener("change",(e:any)=>credentials.name = e.target.value)
+            form.appendChild(Name)
+
             const userName = this.ownerDocument.createElement('my-input')
-            userName.setAttribute(AttributeRegister.text, "Username")
+            userName.setAttribute(AttributeRegister.text, "User name")
             userName.setAttribute(AttributeRegister.type, "text")
             userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
             form.appendChild(userName)
 
-            const button = this.ownerDocument.createElement('my-button');
+            const email = this.ownerDocument.createElement('my-input')
+            email.setAttribute(AttributeRegister.text, "Your e-mail")
+            email.setAttribute(AttributeRegister.type, "text")
+            email.addEventListener("change",(e:any)=>credentials.email = e.target.value)
+            form.appendChild(email);
+
+            const password = this.ownerDocument.createElement('my-input');
+            password.setAttribute(AttributeRegister.text, "Password");
+            password.setAttribute(AttributeRegister.type, "password");
+            userName.addEventListener("change", (e:any)=>credentials.password = e.target.value);
+            console.log(credentials)
+            form.appendChild(password);
+
+            const button = this.ownerDocument.createElement('my-button');  
+            button.addEventListener("click",) () =>{
+                dispatch(navigate(Screens.DASHBOARD))
+            }
+
+            button.addEventListener("click",()=>{
+                dispatch(
+                    Register({
+                        payload:{
+                            Name: credentials.name,
+                            userName: credentials.username,
+                            email: credentials.email,
+                            password: credentials.password,
+                        }
+                    })
+                )
+            })
 
             const account = this.ownerDocument.createElement('h3')
             account.innerText = 'Already have an account?'
 
-            form.appendChild(button)
-            form.appendChild(account)
-            this.shadowRoot?.appendChild(form)
+            form.appendChild(button);
+            form.appendChild(account);
+            this.shadowRoot?.appendChild(form);
 
 
         }

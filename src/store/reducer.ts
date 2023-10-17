@@ -1,7 +1,7 @@
 import { Actions, AppState, AuthActions,NavigationActions } from "../types/store";
 
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
-    const {action, payload} = currentAction; 
+    const {action, payload} = currentAction
 
     switch (action) {
         case AuthActions.REGISTER:
