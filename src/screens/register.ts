@@ -1,4 +1,4 @@
-import "../components/export"
+import "../components/index"
 import { AttributeRegister } from "../components/Register/Register";
 import { dispatch } from "../store/index";
 import { Register,navigate } from "../store/actions";

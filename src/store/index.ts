@@ -1,5 +1,5 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
-import { Actions, AppState, Observer,Screens } from "../types/store";
+import {  AppState, Observer,Screens } from "../types/store";
 import { reducer } from "./reducer";
 
 const initialState: AppState = {
