@@ -29,8 +29,11 @@ class DashboardRegister extends HTMLElement {
            // const css = this.ownerDocument.createElement('style')
                // css.innerHTML = styles
                 //this.shadowRoot?.appendChild(css);
+            const container = this.ownerDocument.createElement("section")
+            container.className = "container"
 
             const form = this.ownerDocument.createElement('section');
+            form.className = "form"
 
             const Name = this.ownerDocument.createElement('my-input')
             Name.setAttribute(AttributeRegister.text, "Your name")
@@ -57,11 +60,11 @@ class DashboardRegister extends HTMLElement {
             console.log(credentials)
             form.appendChild(password);
 
-            const button = this.ownerDocument.createElement('my-button');  
-            button.addEventListener("click",) () =>{
-                dispatch(navigate(Screens.DASHBOARD))
-            }
-
+            const button = this.ownerDocument.createElement('my-button');
+            button.addEventListener("click", ()=>{
+               dispatch(navigate(Screens.DASHBOARD))
+            })
+{}  
             button.addEventListener("click",()=>{
                 dispatch(
                     Register({
@@ -75,11 +78,13 @@ class DashboardRegister extends HTMLElement {
                 )
             })
 
-            const account = this.ownerDocument.createElement('h3')
+            const account = this.ownerDocument.createElement('button')
             account.innerText = 'Already have an account?'
 
             form.appendChild(button);
             form.appendChild(account);
+
+            container.appendChild(form)
             this.shadowRoot?.appendChild(form);
 
 
