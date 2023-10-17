@@ -20,7 +20,7 @@ export default class MyButton extends HTMLElement{
         //this.shadowRoot?.appendChild(css)
 
         const button = this.ownerDocument.createElement('button');
-        button.innerText = `Register`;
+        button.innerText = `Create account`;
 
         this.shadowRoot?.appendChild(button)
         }

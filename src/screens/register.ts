@@ -35,6 +35,15 @@ class DashboardRegister extends HTMLElement {
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
 
+            const LogoRegister=document.createElement("img")
+        LogoRegister.src="/src/img/logo.png"
+        form.appendChild(LogoRegister)
+
+        const ImageRegister=document.createElement("img")
+        ImageRegister.src="/src/img/Messi.png"
+        form.appendChild(ImageRegister)
+      
+
             const Name = this.ownerDocument.createElement('my-input')
             Name.setAttribute(AttributeRegister.text, "Your name")
             Name.setAttribute(AttributeRegister.type, "text")
@@ -78,11 +87,8 @@ class DashboardRegister extends HTMLElement {
                 )
             })
 
-            const account = this.ownerDocument.createElement('button')
-            account.innerText = 'Already have an account?'
-
             form.appendChild(button);
-            form.appendChild(account);
+           
 
             container.appendChild(form)
             this.shadowRoot?.appendChild(form);
