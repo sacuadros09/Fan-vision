@@ -18,7 +18,7 @@ const notifyObservers = () => observers.forEach((o) => o.render());
 const persistStore = (state: AppState) =>
   Storage.set({ key: PersistanceKeys.STORE, value: state });
 
-export const dispatch = (action: Actions) => {
+export const dispatch = (action: any) => {
   const clone = JSON.parse(JSON.stringify(appState));
   const newState = reducer(action, clone);
   appState = newState;

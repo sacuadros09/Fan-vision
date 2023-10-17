@@ -32,7 +32,7 @@ class AppContainer extends HTMLElement {
                 break;
 
                 case Screens.PROFILE:
-                    const profile = this.ownerDocument.createElement('my-profile');
+                    const profile = this.ownerDocument.createElement("");
                     this.shadowRoot?.appendChild(profile);
                     break;
 

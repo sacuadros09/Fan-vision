@@ -1,6 +1,6 @@
 import { Actions, AppState, AuthActions,NavigationActions } from "../types/store";
 
-export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
+export const reducer = (currentAction: any, currentState: any): AppState => {
     const {action, payload} = currentAction;
 
     switch (action) {
@@ -9,7 +9,7 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                 ...currentState,
                 Users: [
                     payload,
-                    ...currentState.Users
+                    ...currentState.Users 
                 ]
             }
 

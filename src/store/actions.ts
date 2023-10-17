@@ -21,7 +21,7 @@ export const logIn = ({payload}: Pick<LogInAction, "payload">): LogInAction => {
     }
 }
 
-export const navigate = (screen: Screens): NavigationAction => {
+export const navigate = (screen: Screens) => {
     return {
       action: NavigationActions.NAVIGATE,
       payload: screen,
