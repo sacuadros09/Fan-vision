@@ -42,7 +42,6 @@ export default class Register extends HTMLElement{
 
         const input = this.ownerDocument.createElement('input');
         input.placeholder = `${this.text}`;
-        input.placeholder = `${this.type}`;
         input.type = `${this.type}`
 
         this.shadowRoot?.appendChild(input)

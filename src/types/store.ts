@@ -10,6 +10,8 @@ export enum Screens{
     REGISTER = "REGISTER",
     DASHBOARD = "DASHBOARD",
     PROFILE = "PROFILE",
+    LANDING = "LANDING",
+    MENU = "MENU",
 }
 
 export enum NavigationActions{
@@ -25,7 +27,9 @@ export enum AuthActions {
     "LOGIN" = "LOGIN",
     "REGISTER" = "REGISTER",
     "LOGOUT" = "LOGOUT",
-    "PROFILE" = "PROFILE"
+    "PROFILE" = "PROFILE",
+    "LANDING" = "LANDING",
+    "MENU" = "MENU"
 }
 
 export interface LogInAction {  

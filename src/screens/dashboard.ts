@@ -7,6 +7,10 @@ import CardIcons, {AttributeIcons} from "../components/CardIcons/CardIcons"
 import CardFriends,{AttributeFriends} from "../components/CardFriends/CardFriends"
 import CardProfile,{AttributeProfile} from "../components/CardProfile/CardProfile"
 import CardUploade, {AttributeUploade} from "../components/CardUploade/CardUploade"
+import { dispatch } from "../store/index";
+import {navigate } from "../store/actions";
+import { Screens } from "../types/store";
+
 
 
 export class Dashboard extends HTMLElement{

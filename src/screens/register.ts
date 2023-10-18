@@ -33,16 +33,21 @@ class DashboardRegister extends HTMLElement {
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 
+            const leftimage = this.ownerDocument.createElement("section")
+            leftimage.className ="leftimage"
+
+           
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
+
+            const ImageRegister=document.createElement("img")
+        ImageRegister.src="/src/img/Messi.png"
+        leftimage.appendChild(ImageRegister)
+
 
             const LogoRegister=document.createElement("img")
         LogoRegister.src="/src/img/logo.png"
         form.appendChild(LogoRegister)
-
-        const ImageRegister=document.createElement("img")
-        ImageRegister.src="/src/img/Messi.png"
-        form.appendChild(ImageRegister)
       
 
             const Name = this.ownerDocument.createElement('my-input')
@@ -101,6 +106,7 @@ class DashboardRegister extends HTMLElement {
 
             form.appendChild(button);
             form.appendChild(account)
+            container.appendChild(leftimage)
             container.appendChild(form)
             this.shadowRoot?.appendChild(container);
 

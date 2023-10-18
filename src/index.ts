@@ -27,7 +27,7 @@ class AppContainer extends HTMLElement {
                 break;
 
                 case Screens.DASHBOARD:
-                const dashboard = this.ownerDocument.createElement('my-dashboardlanding');
+                const dashboard = this.ownerDocument.createElement('my-dashboardregister');
                 this.shadowRoot?.appendChild(dashboard);
                 break;
 
@@ -35,6 +35,16 @@ class AppContainer extends HTMLElement {
                     const profile = this.ownerDocument.createElement("");
                     this.shadowRoot?.appendChild(profile);
                     break;
+                    
+                    case Screens.LANDING:
+                    const landing = this.ownerDocument.createElement("");
+                    this.shadowRoot?.appendChild(landing);
+                    break;
+
+                    case Screens.MENU:
+                        const menu = this.ownerDocument.createElement("");
+                        this.shadowRoot?.appendChild(menu);
+                        break;
 
                 default:
                     break;
