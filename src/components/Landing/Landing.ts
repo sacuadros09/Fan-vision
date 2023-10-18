@@ -1,13 +1,13 @@
 //import styles from "./button landing.css"
 
-export enum at {
+export enum attributeLanding {
     "text" = "text",
 }
- class butlanding extends HTMLElement{
+ class Landing extends HTMLElement{
     text?: string;
 
     static get observedAttributes() {
-        const attr: Record<at,null> ={
+        const attr: Record<attributeLanding,null> ={
     
             text: null,
            
@@ -22,7 +22,7 @@ export enum at {
     }
     
     attributeChangedCallback(
-        propName: at,
+        propName: attributeLanding,
         _: string | undefined,
         newValue: string | undefined
         ) {
@@ -57,5 +57,5 @@ export enum at {
 }
 
 
-customElements.define("my-butlanding",butlanding);
-export default butlanding;
+customElements.define("my-landing",Landing);
+export default Landing;

@@ -1,8 +1,9 @@
 import "../components/index"
-import { AttributeRegister } from "../components/Register/Register";
 import { dispatch } from "../store/index";
 import {navigate } from "../store/actions";
 import { Screens } from "../types/store";
+import { attributeLanding } from "../components/Landing/Landing";
+
 //import styles from "./register.css"
 
 class DashboardLanding extends HTMLElement {
@@ -38,9 +39,9 @@ class DashboardLanding extends HTMLElement {
     
       
             
-            const button = this.ownerDocument.createElement('my-button');
+            const button = this.ownerDocument.createElement('my-landing');
             button.className = "buttonlanding"
-            button.setAttribute(att.text,"Conocer más")
+            button.setAttribute(attributeLanding.text,"Conocer más")
             button.addEventListener("click", ()=>{
                dispatch(navigate(Screens.REGISTER))
             })
@@ -49,9 +50,9 @@ class DashboardLanding extends HTMLElement {
             const account = this.ownerDocument.createElement ("button")
             account.innerText = 'Already have an account?';
 
-            form.appendChild(button);
-            form.appendChild(account)
-            container.appendChild(form)
+            center.appendChild(button);
+            center.appendChild(account)
+            container.appendChild(center)
             this.shadowRoot?.appendChild(container);
 
 

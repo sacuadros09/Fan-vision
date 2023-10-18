@@ -1,6 +1,8 @@
-import "./screens/dashboard"
 import "./components/index"
+import "./screens/dashboard"
 import "./screens/register"
+import "./screens/landing"
+import "./screens/menu"
 import { addObserver, appState } from "./store/index";
 import { Screens } from "./types/store";
 
@@ -25,7 +27,7 @@ class AppContainer extends HTMLElement {
                 break;
 
                 case Screens.DASHBOARD:
-                const dashboard = this.ownerDocument.createElement('my-dashboardregister');
+                const dashboard = this.ownerDocument.createElement('my-dashboardlanding');
                 this.shadowRoot?.appendChild(dashboard);
                 break;
 
