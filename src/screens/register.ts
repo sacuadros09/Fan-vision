@@ -9,7 +9,8 @@ const credentials = {
     name:"",
     username: "",
     email: "",
-    password: ""
+    password: "",
+    confirmpassword: ""
 }
 
 class DashboardRegister extends HTMLElement {
@@ -65,15 +66,22 @@ class DashboardRegister extends HTMLElement {
             const password = this.ownerDocument.createElement('my-input');
             password.setAttribute(AttributeRegister.text, "Password");
             password.setAttribute(AttributeRegister.type, "password");
-            userName.addEventListener("change", (e:any)=>credentials.password = e.target.value);
+            password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
             console.log(credentials)
             form.appendChild(password);
+            
+            const Confirmpassword = this.ownerDocument.createElement('my-input');
+            Confirmpassword.setAttribute(AttributeRegister.text, "Confirm Password");
+            Confirmpassword.setAttribute(AttributeRegister.type, "Confirm Password");
+            Confirmpassword.addEventListener("change", (e:any)=>credentials.confirmpassword = e.target.value);
+            console.log(credentials)
+            form.appendChild(Confirmpassword);
 
             const button = this.ownerDocument.createElement('my-button');
             button.addEventListener("click", ()=>{
                dispatch(navigate(Screens.DASHBOARD))
             })
-{}  
+
             button.addEventListener("click",()=>{
                 dispatch(
                     Register({
@@ -82,16 +90,19 @@ class DashboardRegister extends HTMLElement {
                             userName: credentials.username,
                             email: credentials.email,
                             password: credentials.password,
+                            Confirmpassword: credentials.confirmpassword
                         }
                     })
                 )
             })
 
-            form.appendChild(button);
-           
+            const account = this.ownerDocument.createElement ("button")
+            account.innerText = 'Already have an account?';
 
+            form.appendChild(button);
+            form.appendChild(account)
             container.appendChild(form)
-            this.shadowRoot?.appendChild(form);
+            this.shadowRoot?.appendChild(container);
 
 
         }
