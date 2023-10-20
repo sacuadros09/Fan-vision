@@ -48,7 +48,14 @@ class DashboardRegister extends HTMLElement {
             const LogoRegister=document.createElement("img")
         LogoRegister.src="/src/img/logo.png"
         form.appendChild(LogoRegister)
-      
+
+        const SignIn = this.ownerDocument.createElement("h2")
+            SignIn.innerText = "Sign in"
+            form.appendChild(SignIn)
+
+            const SignUp = this.ownerDocument.createElement("h2")
+            SignUp.innerText = "Sign up"
+            form.appendChild(SignUp)
 
             const Name = this.ownerDocument.createElement('my-input')
             Name.setAttribute(AttributeRegister.text, "Your name")
