@@ -1,4 +1,4 @@
-//import styles from "./button landing.css"
+import styles from "./Landing.css"
 
 export enum attributeLanding {
     "text" = "text",
@@ -41,9 +41,9 @@ export enum attributeLanding {
         if(this.shadowRoot){
             this.shadowRoot.innerHTML =  "";
 
-           // const css = this.ownerDocument.createElement("style")
-           // css.innerHTML=styles
-            //this.shadowRoot?.appendChild(css)
+            const css = this.ownerDocument.createElement("style")
+            css.innerHTML=styles
+            this.shadowRoot?.appendChild(css)
 
             const button= this.ownerDocument.createElement("button");
 

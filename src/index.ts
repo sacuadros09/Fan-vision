@@ -23,7 +23,7 @@ class AppContainer extends HTMLElement {
         if (this.shadowRoot) this.shadowRoot.innerHTML = "";
         switch (appState.screen){
             case Screens.REGISTER:
-                const register = this.ownerDocument.createElement('my-dashboardprofile');
+                const register = this.ownerDocument.createElement('my-dashboardregister');
                 this.shadowRoot?.appendChild(register);
                 break;
 
