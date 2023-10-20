@@ -3,6 +3,7 @@ import "./screens/dashboard"
 import "./screens/register"
 import "./screens/landing"
 import "./screens/menu"
+import "./screens/profile"
 import { addObserver, appState } from "./store/index";
 import { Screens } from "./types/store";
 
@@ -22,7 +23,7 @@ class AppContainer extends HTMLElement {
         if (this.shadowRoot) this.shadowRoot.innerHTML = "";
         switch (appState.screen){
             case Screens.REGISTER:
-                const register = this.ownerDocument.createElement('my-dashboardmenu');
+                const register = this.ownerDocument.createElement('my-dashboardprofile');
                 this.shadowRoot?.appendChild(register);
                 break;
 
