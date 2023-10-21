@@ -4,6 +4,7 @@ import { reducer } from "./reducer";
 
 const initialState: AppState = {
   Users:[],
+  User:[],
   screen:Screens.REGISTER,
 };
 

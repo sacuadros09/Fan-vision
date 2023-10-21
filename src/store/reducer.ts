@@ -16,9 +16,9 @@ export const reducer = (currentAction: any, currentState: any): AppState => {
         case AuthActions.LOGIN:
             return {
                     ...currentState,
-                    Users: [
+                    User: [
                         payload,
-                    ...currentState.Users   
+                    ...currentState.User  
                 ]
             }
 

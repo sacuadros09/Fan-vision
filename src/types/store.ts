@@ -1,8 +1,10 @@
 import {User} from "./users"
+import { Userlogin } from "./users";
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
    Users: User[],
+   User: Userlogin[],
    screen: Screens
 }
 
@@ -12,6 +14,7 @@ export enum Screens{
     PROFILE = "PROFILE",
     LANDING = "LANDING",
     MENU = "MENU",
+    LOGIN = "LOGIN"
 }
 
 export enum NavigationActions{
@@ -34,7 +37,7 @@ export enum AuthActions {
 
 export interface LogInAction {  
     action: AuthActions.LOGIN,
-    payload: User
+    payload: Userlogin
 }
 
 export interface LogOutAction {
