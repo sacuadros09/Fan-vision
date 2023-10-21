@@ -1,10 +1,9 @@
-import "../components/index"
-import { dispatch } from "../store/index";
-import {navigate } from "../store/actions";
-import { Screens } from "../types/store";
-import { attributeLanding } from "../components/Landing/Landing";
-
-//import styles from "./register.css"
+import "../../components/index"
+import { dispatch } from "../../store/index";
+import {navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
+import { attributeLanding } from "../../components/Landing/Landing";
+import styles from "./landing.css"
 
 class DashboardLanding extends HTMLElement {
     constructor(){
@@ -20,9 +19,9 @@ class DashboardLanding extends HTMLElement {
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = ``;
 
-           // const css = this.ownerDocument.createElement('style')
-               // css.innerHTML = styles
-                //this.shadowRoot?.appendChild(css);
+           const css = this.ownerDocument.createElement('style')
+                css.innerHTML = styles
+                this.shadowRoot?.appendChild(css);
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 

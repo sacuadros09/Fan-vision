@@ -1,9 +1,9 @@
-import "../components/index"
-import { AttributeRegister } from "../components/Register/Register";
-import { dispatch } from "../store/index";
-import { Register,navigate } from "../store/actions";
-import { Screens } from "../types/store";
-//import styles from "./register.css"
+import "../../components/index"
+import { AttributeRegister } from "../../components/Register/Register";
+import { dispatch } from "../../store/index";
+import { Register,navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
+import styles from "./register.css"
 
 const credentials = { 
     name:"",
@@ -27,9 +27,9 @@ class DashboardRegister extends HTMLElement {
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = ``;
 
-           // const css = this.ownerDocument.createElement('style')
-               // css.innerHTML = styles
-                //this.shadowRoot?.appendChild(css);
+           const css = this.ownerDocument.createElement('style')
+                css.innerHTML = styles
+                this.shadowRoot?.appendChild(css);
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 

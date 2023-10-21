@@ -1,9 +1,9 @@
 import "./components/index"
-import "./screens/dashboard"
-import "./screens/register"
-import "./screens/landing"
-import "./screens/menu"
-import "./screens/profile"
+import "./screens/dashboard/dashboard"
+import "./screens/register/register"
+import "./screens/landing/landing"
+import "./screens/menu/menu"
+import "./screens/profile/profile"
 import { addObserver, appState } from "./store/index";
 import { Screens } from "./types/store";
 

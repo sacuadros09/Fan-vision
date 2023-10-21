@@ -1,21 +1,19 @@
-import "../components/index"
-import { dataIcons } from "../dataIcons/dataIcons"
-import { dataFriends } from "../dataFriends/dataFriends"
-import { dataProfile} from "../dataProfile/dataProfile"
-import { dataUploade} from "../dataUploade/dataUploade"
-import CardIcons, {AttributeIcons} from "../components/CardIcons/CardIcons"
-import CardFriends,{AttributeFriends} from "../components/CardFriends/CardFriends"
-import CardProfile,{AttributeProfile} from "../components/CardProfile/CardProfile"
-import CardUploade, {AttributeUploade} from "../components/CardUploade/CardUploade"
-import { attributeMenu } from "../components/Menu/Menu"
-import { dispatch } from "../store/index";
-import {navigate } from "../store/actions";
-import { Screens } from "../types/store";
+import "../../components/index"
+import { dataIcons } from "../../dataIcons/dataIcons"
+import { dataFriends } from "../../dataFriends/dataFriends"
+import { dataProfile} from "../../dataProfile/dataProfile"
+import { dataUploade} from "../../dataUploade/dataUploade"
+import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
+import CardFriends,{AttributeFriends} from "../../components/CardFriends/CardFriends"
+import CardProfile,{AttributeProfile} from "../../components/CardProfile/CardProfile"
+import CardUploade, {AttributeUploade} from "../../components/CardUploade/CardUploade"
+import { dispatch } from "../../store/index";
+import {navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 
 
 
-
-export class DashboardMenu extends HTMLElement{
+export class Dashboard extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];
@@ -47,7 +45,6 @@ export class DashboardMenu extends HTMLElement{
             this.carduploades.push(CardUpload);
             
         });
-
 
         dataFriends.forEach((p) => {
             const CardFriend = this.ownerDocument.createElement("my-cardfriends") as CardFriends;
@@ -87,50 +84,23 @@ export class DashboardMenu extends HTMLElement{
         const sectionicon=document.createElement("nav")
         sectionicon.className = "leftside"
 
-        const topmid = document.createElement("section")
-        topmid.className = "topmid"
-
-
         const logouploade=document.createElement("img")
         logouploade.src="/src/img/logo.png"
         sectionicon.appendChild(logouploade); 
-        
 
         this.cardicons.forEach((cardicons) => {
             sectionicon.appendChild(cardicons);
         })
         container.appendChild(sectionicon);
 
+        
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Edit profile"
+            buttonuploade.innerText="Upload Photo"
             sectionicon.appendChild(buttonuploade);
-
-            const sectionuploade=document.createElement("section")
-
-            const Profilepicture=document.createElement("img")
-        Profilepicture.src="/src/img/gonzalez.png"
-        sectionuploade.appendChild(Profilepicture)
-
-        const Username = this.ownerDocument.createElement("h2")
-            Username.innerText = "@SebasG819"
-            sectionuploade.appendChild(Username)
-
-            const Nickname = this.ownerDocument.createElement("h2")
-            Nickname.innerText = "Ciclistafutbol"
-            sectionuploade.appendChild(Nickname)
-
-            const button = this.ownerDocument.createElement('my-menu');
-            button.className = "buttonmenu"
-            button.setAttribute(attributeMenu.text,"Edit profile")
-            sectionuploade.appendChild(button)
-            button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.REGISTER))
-            })
-
            
 
-            
+            const sectionuploade=document.createElement("section")
             sectionuploade.className = "midside"
             this.carduploades.forEach((carduploade) => {
                 sectionuploade.appendChild(carduploade);
@@ -164,10 +134,9 @@ export class DashboardMenu extends HTMLElement{
             container.appendChild(sectionfriends);
             containeright.appendChild(sectionfriends)
             container.appendChild(containeright)
-            container.appendChild(topmid)
             this.shadowRoot?.appendChild(container)
         }
     }
 }
 
-customElements.define("my-dashboardmenu",DashboardMenu);    
+customElements.define("my-dashboard",Dashboard);    

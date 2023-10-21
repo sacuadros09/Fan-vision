@@ -1,11 +1,11 @@
-import "../components/index"
-import { dataIcons } from "../dataIcons/dataIcons"
-import CardIcons, {AttributeIcons} from "../components/CardIcons/CardIcons"
-import { attributeMenu } from "../components/Menu/Menu"
-import { dispatch } from "../store/index";
-import {navigate } from "../store/actions";
-import { Screens } from "../types/store";
-
+import "../../components/index"
+import { dataIcons } from "../../dataIcons/dataIcons"
+import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
+import { attributeMenu } from "../../components/Menu/Menu"
+import { dispatch } from "../../store/index";
+import {navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
+import styles from "./profile.css"
 
 
 
@@ -40,6 +40,10 @@ export class DashboardProfile extends HTMLElement{
             <link rel="stylesheet" href="/src/index.css">
             
         `;
+
+        const css = this.ownerDocument.createElement('style')
+                css.innerHTML = styles
+                this.shadowRoot?.appendChild(css);
         const container=document.createElement("section")
         container.className = "all"
 
