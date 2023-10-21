@@ -29,8 +29,8 @@ class DashboardLanding extends HTMLElement {
             center.className = "center"
 
             const img = this.ownerDocument.createElement("img")
-            img.className = "imgs"
                 img.src="/src/img/logo.png"
+                center.className= "img"
 
             const welcome = this.ownerDocument.createElement("h2")
             welcome.innerText = "Welcome"
@@ -40,17 +40,18 @@ class DashboardLanding extends HTMLElement {
             
             const button = this.ownerDocument.createElement('my-landing');
             button.className = "buttonlanding"
-            button.setAttribute(attributeLanding.text,"Conocer más")
+            button.setAttribute(attributeLanding.text,"Create account")
             button.addEventListener("click", ()=>{
                dispatch(navigate(Screens.REGISTER))
             })
 
 
             const account = this.ownerDocument.createElement ("button")
-            account.innerText = 'Already have an account?';
+            account.innerText = 'Sign in';
 
             center.appendChild(button);
             center.appendChild(account)
+            center.appendChild(img)
             container.appendChild(center)
             this.shadowRoot?.appendChild(container);
 
