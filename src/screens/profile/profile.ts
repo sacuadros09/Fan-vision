@@ -73,24 +73,35 @@ export class DashboardProfile extends HTMLElement{
 
 
             const Profilepicture=document.createElement("img")
-        Profilepicture.src="/src/img/gonzalez.png"
+        Profilepicture.src="/src/img/AñadirAmigo.png"
         topmid.appendChild(Profilepicture)
 
-        const Username = this.ownerDocument.createElement("h2")
-            Username.innerText = "@SebasG819"
-            topmid.appendChild(Username)
+        const Añadir = this.ownerDocument.createElement("h2")
+            Añadir.innerText = "@Añadir perfil"
+            topmid.appendChild(Añadir)
 
-            const Nickname = this.ownerDocument.createElement("h2")
-            Nickname.innerText = "Ciclistafutbol"
-            topmid.appendChild(Nickname)
+            const Biografy = this.ownerDocument.createElement("h3")
+            Biografy.innerText = "Hi, I'm Sebastián Gonzales, also known as @SebasG7  I'm a futbol player fan, and I don't have many friends, so I hope you can add me."
+            topmid.appendChild(Biografy)
 
             const button = this.ownerDocument.createElement('my-menu');
-            button.className = "buttonmenu"
-            button.setAttribute(attributeMenu.text,"Edit profile")
+            button.className = "buttonsave"
+            button.setAttribute(attributeMenu.text,"Save me")
             topmid.appendChild(button)
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.REGISTER))
+               dispatch(navigate(Screens.DASHBOARD))
             })
+
+            
+            const logoutbutton = this.ownerDocument.createElement('my-menu');
+            logoutbutton.className = "buttonlogout"
+            logoutbutton.setAttribute(attributeMenu.text,"Log out")
+            logoutbutton.appendChild(button)
+            logoutbutton.addEventListener("click", ()=>{
+               dispatch(navigate(Screens.DASHBOARD))
+            })
+
+          
 
            
 
@@ -100,8 +111,8 @@ export class DashboardProfile extends HTMLElement{
 
     
 
-
-           
+           topmid.appendChild(button)
+           topmid.appendChild(logoutbutton)
             container.appendChild(topmid)
             this.shadowRoot?.appendChild(container)
         }
