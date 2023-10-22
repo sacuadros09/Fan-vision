@@ -133,6 +133,11 @@ export class DashboardMenu extends HTMLElement{
                dispatch(navigate(Screens.REGISTER))
             })
 
+            const info = this.ownerDocument.createElement("h2")
+            info.innerText = "Hi, I'm Sebastián Gonzalez, also known as @SebasG819  I'm a futbol player fan, and bad women at dm."
+            sectionuploade.appendChild(info)
+
+
            
 
             
