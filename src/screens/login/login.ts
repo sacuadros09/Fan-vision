@@ -69,7 +69,7 @@ class DashboardLogin extends HTMLElement {
             
            
 
-            const button = this.ownerDocument.createElement('my-button');
+            const button = this.ownerDocument.createElement('my-infobutton');
             button.addEventListener("click", ()=>{
                dispatch(navigate(Screens.DASHBOARD))
             })
