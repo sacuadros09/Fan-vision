@@ -1,3 +1,5 @@
+import styles from './Register.css';
+
 export enum AttributeRegister{
     "text"="text",
     "type"="type"
@@ -45,6 +47,10 @@ export default class Register extends HTMLElement{
         input.type = `${this.type}`
 
         this.shadowRoot?.appendChild(input)
+
+        const css = this.ownerDocument.createElement("style");
+        css.innerHTML = styles;
+        this.shadowRoot?.appendChild(css);
         }
     }
 
