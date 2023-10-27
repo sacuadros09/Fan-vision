@@ -125,6 +125,7 @@ class DashboardRegister extends HTMLElement {
             })
 
             const account = this.ownerDocument.createElement ("button")
+            
             account.innerText = 'Already have an account?';
             
 
