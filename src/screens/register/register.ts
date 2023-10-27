@@ -40,11 +40,17 @@ class DashboardRegister extends HTMLElement {
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
 
+            const formbot = this.ownerDocument.createElement('section');
+            formbot.className = "formbot"
+
             const forminput = this.ownerDocument.createElement('section');
             forminput.className = "forminput"
 
             const botbutton = this.ownerDocument.createElement('section');
-            form.className = "botbutton"
+            botbutton.className = "botbutton"
+
+            formbot.appendChild(forminput)
+            formbot.appendChild(botbutton)
 
 
 
@@ -128,10 +134,10 @@ class DashboardRegister extends HTMLElement {
             
             account.innerText = 'Already have an account?';
             
-
             botbutton.appendChild(button);
             botbutton.appendChild(account)
             container.appendChild(leftimage)
+            container.appendChild(formbot)
             container.appendChild(form)
             container.appendChild(forminput)
             container.appendChild(botbutton)

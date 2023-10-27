@@ -8,8 +8,7 @@ background: linear-gradient(90deg, rgba(4,33,63,1) 0%, rgba(1,45,93,1) 100%);
 }
 
 .form{
-    display: flex;
-    flex-direction: column;
+    height: 20%;
 }
 
 .forminput{
@@ -82,3 +81,11 @@ button {
     transform: translateY(2px);
    }
 
+
+.botbutton{
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    margin-top: 38%;
+    align-items: center;
+}
