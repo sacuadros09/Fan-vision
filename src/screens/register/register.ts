@@ -66,10 +66,12 @@ class DashboardRegister extends HTMLElement {
         form.appendChild(LogoRegister)
 
         const SignIn = this.ownerDocument.createElement("h2")
+            SignIn.className = "SignIn"
             SignIn.innerText = "Sign in"
             form.appendChild(SignIn)
 
             const SignUp = this.ownerDocument.createElement("h2")
+            SignUp.className = "SignUp"
             SignUp.innerText = "Sign up"
             form.appendChild(SignUp)
 
@@ -111,6 +113,7 @@ class DashboardRegister extends HTMLElement {
             forminput.appendChild(Confirmpassword);
 
             const button = this.ownerDocument.createElement('my-button');
+            button.className = "createacc"
             button.addEventListener("click", ()=>{
                dispatch(navigate(Screens.DASHBOARD))
                
@@ -131,7 +134,7 @@ class DashboardRegister extends HTMLElement {
             })
 
             const account = this.ownerDocument.createElement ("button")
-            
+            account.className = "haveacc"
             account.innerText = 'Already have an account?';
             
             botbutton.appendChild(button);

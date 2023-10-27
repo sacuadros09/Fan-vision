@@ -1,6 +1,8 @@
 .container {
     display: flex;
     flex-direction: row;
+    background: rgb(4,33,63);
+background: linear-gradient(90deg, rgba(4,33,63,1) 0%, rgba(1,45,93,1) 100%);
 }
 
 .banner{

@@ -22,6 +22,8 @@ class DashboardLanding extends HTMLElement {
            const css = this.ownerDocument.createElement('style')
                 css.innerHTML = styles
                 this.shadowRoot?.appendChild(css);
+
+
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 

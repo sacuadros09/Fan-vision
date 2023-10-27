@@ -37,6 +37,12 @@ class DashboardLogin extends HTMLElement {
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
 
+            const inpuntform = this.ownerDocument.createElement('section');
+            inpuntform.className = "inputform"
+
+            const buttonform = this.ownerDocument.createElement('section');
+            buttonform.className = "buttonform"
+
             const ImageLogin=document.createElement("img")
         ImageLogin.src="/src/img/Neymar.png"
         leftimage.appendChild(ImageLogin)
@@ -58,14 +64,14 @@ class DashboardLogin extends HTMLElement {
             userName.setAttribute(AttributeLogin.text, "User name")
             userName.setAttribute(AttributeLogin.type, "text")
             userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
-            form.appendChild(userName)
+            inpuntform.appendChild(userName)
 
             const password = this.ownerDocument.createElement('my-login');
             password.setAttribute(AttributeLogin.text, "Password");
             password.setAttribute(AttributeLogin.type, "password");
             password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
             console.log(credentials)
-            form.appendChild(password);
+            inpuntform.appendChild(password);
             
            
 
@@ -90,9 +96,11 @@ class DashboardLogin extends HTMLElement {
 
           
 
-            form.appendChild(button);
+            buttonform.appendChild(button);
             container.appendChild(leftimage)
             container.appendChild(form)
+            container.appendChild(inpuntform)
+            container.appendChild(buttonform)
             this.shadowRoot?.appendChild(container);
 
 
