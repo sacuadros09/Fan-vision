@@ -130,7 +130,7 @@ export class DashboardMenu extends HTMLElement{
             button.setAttribute(attributeMenu.text,"Edit profile")
             sectionuploade.appendChild(button)
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.REGISTER))
+               dispatch(navigate(Screens.PROFILE))
             })
 
             const info = this.ownerDocument.createElement("h2")
