@@ -62,6 +62,7 @@ class DashboardRegister extends HTMLElement {
             Name.setAttribute(AttributeRegister.type, "text")
             Name.addEventListener("change",(e:any)=>credentials.name = e.target.value)
             form.appendChild(Name)
+            
 
             const userName = this.ownerDocument.createElement('my-register')
             userName.setAttribute(AttributeRegister.text, "User name")

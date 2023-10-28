@@ -11,9 +11,3 @@ export interface Userlogin {
     password: string,
 }   
 
-//export interface UserProfile {
- //  NewProfile: string,
-   // Description: string,
-   //ChangePassword: string,
-    //ChangeEmail: string,
-//}   

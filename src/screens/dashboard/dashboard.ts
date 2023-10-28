@@ -97,6 +97,9 @@ export class Dashboard extends HTMLElement{
 
             const buttonuploade=document.createElement("button")
             buttonuploade.innerText="Upload Photo"
+            buttonuploade.addEventListener("click",()=>{
+                dispatch(navigate(Screens.MENU))
+            })
             sectionicon.appendChild(buttonuploade);
            
 
