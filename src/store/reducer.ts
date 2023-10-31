@@ -1,42 +1,43 @@
-import { Actions, AppState, AuthActions,NavigationActions } from "../types/store";
+import { Actions, AppState, UserActions,NavigationActions,PostActions } from "../types/store";
 
-export const reducer = (currentAction: any, currentState: any): AppState => {
-    const {action, payload} = currentAction;
+export const reducer = (Action: Actions, State: AppState): AppState => {
+    const { action, payload } = Action; 
 
     switch (action) {
-        case AuthActions.REGISTER:
-            return {
-                ...currentState,
-                Users: [
-                    payload,
-                    ...currentState.Users 
-                ]
-            }
+        case UserActions.LOGIN:
+            State.user = payload
+            return State
 
-        case AuthActions.LOGIN:
-            return {
-                    ...currentState,
-                    User: [
-                        payload,
-                    ...currentState.User  
-                ]
-            }
+        case UserActions.REGISTER:
+            State.user = payload
+            return State 
 
-        case AuthActions.LOGOUT:
+
+        case UserActions.LOGOUT:
             return {
-                ...currentState,
-            
-            Users:[]
+                ...State , user:{
+                    id:"",
+                    Name: "",
+                    userName: "",
+                    email: "",
+                    password: "",
+                    Confirmpassword: "",
+                }
             }
-    
     case NavigationActions.NAVIGATE:
-        return {
-            ...currentState,
-            screen: payload, 
-        };
+        State.screen = payload
+            return State
+
+            case PostActions.ADD_POST:
+                State.posts = [...State.posts, payload]
+                return State
+    
+            case PostActions.GET_POSTS:
+                State.posts = payload
+                return State
 
             
         default:
-            return currentState;
+            return State;
     }
 }

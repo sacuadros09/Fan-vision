@@ -1,11 +1,13 @@
 import {User} from "./users"
 import { Userlogin } from "./users";
+import { Post } from "./post";
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
-   Users: User[],
-   User: Userlogin[],
-   screen: Screens
+    user: User,
+    userlogin:Userlogin
+    screen: Screens,
+    posts: Post[],
 }
 
 export enum Screens{
@@ -26,7 +28,7 @@ export interface NavigationAction{
     payload: Screens;
 }
 
-export enum AuthActions {
+export enum UserActions {
     "LOGIN" = "LOGIN",
     "REGISTER" = "REGISTER",
     "LOGOUT" = "LOGOUT",
@@ -36,19 +38,35 @@ export enum AuthActions {
 }
 
 export interface LogInAction {  
-    action: AuthActions.LOGIN,
-    payload: Userlogin
+    action: UserActions.LOGIN,
+    payload: User
 }
 
 export interface LogOutAction {
-    action: AuthActions.LOGOUT,
+    action: UserActions.LOGOUT,
     payload: void
 }
 
 export interface RegisterAction {
-    action: AuthActions.REGISTER,
+    action: UserActions.REGISTER,
     payload:  User
     
 }
 
-export type Actions = LogInAction | LogOutAction | RegisterAction | NavigationActions; 
+export enum PostActions {
+    "ADD_POST" = "ADD_POST",
+    "GET_POSTS" = "GET_POSTS",
+}
+
+export interface AddPostAction {
+    action: PostActions.ADD_POST,
+    payload: Post,
+}
+
+export interface GetPostsAction {
+    action: PostActions.GET_POSTS,
+    payload: Post[],
+}
+
+
+export type Actions = LogInAction | LogOutAction | RegisterAction | NavigationActions| AddPostAction | GetPostsAction;

@@ -3,9 +3,22 @@ import {  AppState, Observer,Screens } from "../types/store";
 import { reducer } from "./reducer";
 
 const initialState: AppState = {
-  Users:[],
-  User:[],
-  screen:Screens.REGISTER,
+  user: {
+    id: "",
+    Name: "",
+    userName: "",
+    email: "",
+    password: "",
+    Confirmpassword: "",
+  },
+
+  userlogin: {
+    userName: "",
+   password: "",
+    
+  },
+  screen: Screens.LANDING,
+  posts: [],
 };
 
 export let appState = Storage.get<AppState>({

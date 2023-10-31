@@ -92,7 +92,7 @@ class DashboardRegister extends HTMLElement {
 
             const button = this.ownerDocument.createElement('my-button');
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.DASHBOARD))
+               dispatch(navigate(Screens.LOGIN))
             })
 
             button.addEventListener("click",()=>{
