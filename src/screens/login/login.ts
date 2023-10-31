@@ -44,19 +44,23 @@ class DashboardLogin extends HTMLElement {
             buttonform.className = "buttonform"
 
             const ImageLogin=document.createElement("img")
-        ImageLogin.src="/src/img/Neymar.png"
-        leftimage.appendChild(ImageLogin)
+            ImageLogin.className = "banner"
+            ImageLogin.src="/src/img/Neymar.png"
+            leftimage.appendChild(ImageLogin)
 
 
             const LogoRegister=document.createElement("img")
-        LogoRegister.src="/src/img/logo.png"
-        form.appendChild(LogoRegister)
+            LogoRegister.className = "logo"
+            LogoRegister.src="/src/img/logo.png"
+            form.appendChild(LogoRegister)
 
-        const SignIn = this.ownerDocument.createElement("h2")
+            const SignIn = this.ownerDocument.createElement("h2")
+            SignIn.className = "SignIn"
             SignIn.innerText = "Sign in"
             form.appendChild(SignIn)
 
             const SignUp = this.ownerDocument.createElement("h2")
+            SignUp.className = "SignUp"
             SignUp.innerText = "Sign up"
             form.appendChild(SignUp)
 

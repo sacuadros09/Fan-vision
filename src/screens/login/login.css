@@ -6,7 +6,31 @@ background: linear-gradient(90deg, rgba(4,33,63,1) 0%, rgba(1,45,93,1) 100%);
 }
 
 .banner{
-    height: 100%;
-    width: 100%;
-    margin-left: -1%;  
+    width: 86%;
+    height: 80%;
+}
+
+.logo{
+    height: 10%;
+  width: 65%;
+  justify-content: center;
+  margin-top: 25%;
+  margin-left: 120%;
+}
+
+.SignIn{
+    color: white;
+    margin-top: 20%;
+    margin-left: 60%;
+    width: 60%;
+    border-bottom-width: 3px;
+    border-color: #FFD600;
+    border-bottom-style: solid;
+}
+
+.SignUp{
+   margin-left: 165%;
+    color: #687B8F;
+    width: 60%;
+    margin-top: -30%;
 }
