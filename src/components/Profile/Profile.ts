@@ -1,3 +1,6 @@
+import styles from "./profile.css"
+
+
 export enum AttributeProfile{
     "text"="text",
     "type"="type"
@@ -39,6 +42,10 @@ export default class Profile extends HTMLElement{
     render(){
         if(this.shadowRoot){ 
         this.shadowRoot.innerHTML = '';
+
+        const css = this.ownerDocument.createElement('style')
+        css.innerHTML = styles
+        this.shadowRoot?.appendChild(css)
 
         const input = this.ownerDocument.createElement('input');
         input.placeholder = `${this.text}`;

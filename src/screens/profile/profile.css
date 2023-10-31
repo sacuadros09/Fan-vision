@@ -1,0 +1,9 @@
+.topmid{
+    display: flex;
+    flex-direction: row;
+}
+
+.topbot{
+    display: flex;
+    flex-direction: column;
+}
