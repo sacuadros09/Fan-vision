@@ -1,6 +1,6 @@
 import { Actions, AppState, UserActions,NavigationActions,PostActions } from "../types/store";
 
-export const reducer = (Action: Actions, State: AppState): AppState => {
+export const reducer = (Action: any, State: AppState): AppState => {
     const { action, payload } = Action; 
 
     switch (action) {

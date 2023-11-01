@@ -1,11 +1,11 @@
 import {User} from "./users"
-import { Userlogin } from "./users";
+//import { Userlogin } from "./users";
 import { Post } from "./post";
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
     user: User,
-    userlogin:Userlogin
+   // userlogin:Userlogin
     screen: Screens,
     posts: Post[],
 }

@@ -1,7 +1,7 @@
 import "../../components/index"
 import { AttributeLogin } from "../../components/Login/Login";
 import { dispatch } from "../../store/index";
-import { logIn,navigate } from "../../store/actions";
+import { LogIn,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./login.css"
 
@@ -71,12 +71,12 @@ class DashboardLogin extends HTMLElement {
 
             const button = this.ownerDocument.createElement('my-infobutton');
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.DASHBOARD))
+               dispatch(Navigate(Screens.DASHBOARD))
             })
 
             button.addEventListener("click",()=>{
                 dispatch(
-                    logIn({
+                    LogIn({
                         payload:{
                            
                             userName: credentials.username,

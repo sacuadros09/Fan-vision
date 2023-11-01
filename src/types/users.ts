@@ -7,8 +7,8 @@ export interface User {
     Confirmpassword:string,
 }   
 
-export interface Userlogin {
-    userName: string,
-    password: string,
-}   
+//export interface Userlogin {
+    //userName: string,
+    //password: string,
+//}   
 

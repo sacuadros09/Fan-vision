@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot,where} from "firebase/firestore";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, onAuthStateChanged} from "firebase/auth";
 
 import { Post } from "../types/post";

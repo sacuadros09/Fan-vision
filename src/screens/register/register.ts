@@ -1,11 +1,12 @@
 import "../../components/index"
 import { AttributeRegister } from "../../components/Register/Register";
 import { dispatch } from "../../store/index";
-import { Register,navigate } from "../../store/actions";
+import { Register,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./register.css"
 
 const credentials = { 
+    id:"",
     name:"",
     username: "",
     email: "",
@@ -92,13 +93,14 @@ class DashboardRegister extends HTMLElement {
 
             const button = this.ownerDocument.createElement('my-button');
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.LOGIN))
+               dispatch(Navigate(Screens.LOGIN))
             })
 
             button.addEventListener("click",()=>{
                 dispatch(
                     Register({
                         payload:{
+                            id:credentials.id,
                             Name: credentials.name,
                             userName: credentials.username,
                             email: credentials.email,
