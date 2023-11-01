@@ -95,48 +95,51 @@ export class Dashboard extends HTMLElement{
 
         
 
-            const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Upload Photo"
-            sectionicon.appendChild(buttonuploade);
-           
-
-            const sectionuploade=document.createElement("section")
-            sectionuploade.className = "midside"
-            this.carduploades.forEach((carduploade) => {
-                sectionuploade.appendChild(carduploade);
-            })
-            container.appendChild(sectionuploade);
-
-            
-
-            const sectionprofile=document.createElement("section")
-            this.cardprofiles.forEach((cardprofile) => {
-                sectionprofile.appendChild(cardprofile);
-            })
-            container.appendChild(sectionprofile);
-            this.shadowRoot?.appendChild(container)
-            const closefriends=document.createElement("h2")
-            closefriends.innerText = "Friends"
-            sectionprofile.appendChild(closefriends);
-           
+        const buttonuploade=document.createElement("button")
+        buttonuploade.innerText="Upload Photo"
+        buttonuploade.addEventListener("click",()=>{
+            dispatch(navigate(Screens.MENU))
+        })
+        sectionicon.appendChild(buttonuploade);
 
 
-            const sectionfriends=document.createElement("section")  
-            sectionfriends.className = "sectionfriends"
-            this.cardfriends.forEach((cardfriends) => {
-                sectionfriends.appendChild(cardfriends);
-            })
+        const sectionuploade=document.createElement("section")
+        sectionuploade.className = "midside"
+        this.carduploades.forEach((carduploade) => {
+            sectionuploade.appendChild(carduploade);
+        })
+        container.appendChild(sectionuploade);
 
 
-            const containeright = document.createElement("section")
-            containeright.className = "containerRight"
-            containeright.appendChild(sectionprofile)
-            container.appendChild(sectionfriends);
-            containeright.appendChild(sectionfriends)
-            container.appendChild(containeright)
-            this.shadowRoot?.appendChild(container)
-        }
+
+        const sectionprofile=document.createElement("section")
+        this.cardprofiles.forEach((cardprofile) => {
+            sectionprofile.appendChild(cardprofile);
+        })
+        container.appendChild(sectionprofile);
+        this.shadowRoot?.appendChild(container)
+        const closefriends=document.createElement("h2")
+        closefriends.innerText = "Friends"
+        sectionprofile.appendChild(closefriends);
+
+
+
+        const sectionfriends=document.createElement("section")
+        sectionfriends.className = "sectionfriends"
+        this.cardfriends.forEach((cardfriends) => {
+            sectionfriends.appendChild(cardfriends);
+        })
+
+
+        const containeright = document.createElement("section")
+        containeright.className = "containerRight"
+        containeright.appendChild(sectionprofile)
+        container.appendChild(sectionfriends);
+        containeright.appendChild(sectionfriends)
+        container.appendChild(containeright)
+        this.shadowRoot?.appendChild(container)
     }
 }
+}
 
-customElements.define("my-dashboard",Dashboard);    
+customElements.define("my-dashboard",Dashboard);

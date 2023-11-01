@@ -9,6 +9,14 @@ import { Screens } from "../../types/store";
 import styles from "./profile.css"
 
 
+const credentials = {
+    username:"",
+    name:"",
+    email:"",
+    password:"",
+
+}
+
 
 export class DashboardProfile extends HTMLElement{
     cardicons: CardIcons[] = [];
@@ -76,14 +84,17 @@ export class DashboardProfile extends HTMLElement{
 
 
             const Profilepicture=document.createElement("img")
-        Profilepicture.src="/src/img/AñadirAmigo.png"
-        topmid.appendChild(Profilepicture)
+            Profilepicture.className = "Imgphoto"
+            Profilepicture.src="/src/img/AñadirAmigo.png"
+            topmid.appendChild(Profilepicture)
 
-        const Añadir = this.ownerDocument.createElement("h2")
+            const Añadir = this.ownerDocument.createElement("h2")
+            Añadir.className = "addfriend"
             Añadir.innerText = "@Añadir perfil"
             topmid.appendChild(Añadir)
 
-            const Biografy = this.ownerDocument.createElement("h3")
+            const Biografy = this.ownerDocument.createElement("p")
+            Biografy.className = "biografy"
             Biografy.innerText = "Hi, I'm Sebastián Gonzales, also known as @SebasG7  I'm a futbol player fan, and I don't have many friends, so I hope you can add me."
             topmid.appendChild(Biografy)
 
@@ -91,28 +102,28 @@ export class DashboardProfile extends HTMLElement{
             const NewProfile = this.ownerDocument.createElement('my-profile')
             NewProfile.setAttribute(AttributeProfile.text, "New Profile")
             NewProfile.setAttribute(AttributeProfile.type, "text")
-            //userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
+            NewProfile.addEventListener("change",(e:any)=>credentials.username = e.target.value)
             topbot.appendChild(NewProfile)
 
             const Description = this.ownerDocument.createElement('my-profile')
             Description.setAttribute(AttributeProfile.text, "Change Description")
             Description.setAttribute(AttributeProfile.type, "text")
-           // userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
+            Description.addEventListener("change",(e:any)=>credentials.name = e.target.value)
             topbot.appendChild(Description)
 
             const ChangePassword = this.ownerDocument.createElement('my-profile')
             ChangePassword.setAttribute(AttributeProfile.text, "Change Password")
             ChangePassword.setAttribute(AttributeProfile.type, "text")
-           // email.addEventListener("change",(e:any)=>credentials.email = e.target.value)
+            ChangePassword.addEventListener("change",(e:any)=>credentials.password = e.target.value)
             topbot.appendChild(ChangePassword);
 
             const ChangeEmail = this.ownerDocument.createElement('my-profile');
             ChangeEmail.setAttribute(AttributeProfile.text, "Change Email");
             ChangeEmail.setAttribute(AttributeProfile.type, "password");
-           // password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
+            ChangeEmail.addEventListener("change", (e:any)=>credentials.email = e.target.value);
           //  console.log(credentials)
             topbot.appendChild(ChangeEmail);
-
+ 
 
 
 
@@ -131,7 +142,7 @@ export class DashboardProfile extends HTMLElement{
             logoutbutton.setAttribute(attributeMenu.text,"Log out")
             topbot.appendChild(button)
             logoutbutton.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.DASHBOARD))
+               dispatch(navigate(Screens.LANDING))
             })
 
           

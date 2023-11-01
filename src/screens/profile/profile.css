@@ -6,4 +6,32 @@
 .topbot{
     display: flex;
     flex-direction: column;
+    gap: 4%;
+    margin-top: 26%;
+    height: 50%;
+    margin-left: -100%;
+
+}
+
+.Imgphoto{
+    width: 10%;
+    height: 20%;
+    margin-left: 2%;
+}
+
+.addfriend{
+    width: 70%;
+    margin-left: -12%;
+    height: 20%;
+    margin-top: 15%;
+
+}
+
+.biografy{
+    color: white;
+    margin-left: -52%;
+    margin-top: 6%;
+    width: 34%;
+    height: 20%;
+    font-size: 24px;
 }
