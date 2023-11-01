@@ -1,4 +1,4 @@
-//import styles from "./button landing.css"
+import styles from "./menu.css"
 
 export enum attributeMenu {
     "text" = "text",
@@ -41,9 +41,9 @@ export enum attributeMenu {
         if(this.shadowRoot){
             this.shadowRoot.innerHTML =  "";
 
-           // const css = this.ownerDocument.createElement("style")
-           // css.innerHTML=styles
-            //this.shadowRoot?.appendChild(css)
+            const css = this.ownerDocument.createElement("style")
+            css.innerHTML=styles
+            this.shadowRoot?.appendChild(css)
 
             const button= this.ownerDocument.createElement("button");
 
