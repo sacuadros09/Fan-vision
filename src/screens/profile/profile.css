@@ -7,31 +7,52 @@
     display: flex;
     flex-direction: column;
     gap: 4%;
-    margin-top: 26%;
+    margin-top: 21%;
     height: 50%;
-    margin-left: -100%;
+    margin-left: -99%;
+    width: 20%;
 
 }
 
 .Imgphoto{
-    width: 10%;
-    height: 20%;
+    width: 9%;
+    height: 17%;
     margin-left: 2%;
 }
 
 .addfriend{
     width: 70%;
-    margin-left: -12%;
+    margin-left: -9%;
     height: 20%;
-    margin-top: 15%;
+    margin-top: 13%;
 
 }
 
 .biografy{
-    color: white;
-    margin-left: -52%;
-    margin-top: 6%;
+    color: black;
+    margin-left: -60%;
+    margin-top: 5%;
     width: 34%;
-    height: 20%;
+    height: 13%;
     font-size: 24px;
+    background-color: white;
+    border-radius: 17px;
+    padding: 1%;
+}
+
+.buttonlogout{
+    margin-left: 50%;
+    margin-top: -17.5%;
+}
+
+.leftside{
+width: 30%;
+border-color: white;
+border-right-width: 6px;
+border-right-style: solid;
+margin-left: 1%;
+}
+
+.all{
+    width: 103%;
 }
