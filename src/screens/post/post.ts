@@ -13,7 +13,7 @@ import { Screens } from "../../types/store";
 
 
 
-export class Dashboard extends HTMLElement{
+export class Post extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];
@@ -142,4 +142,4 @@ export class Dashboard extends HTMLElement{
     }
 }
 
-customElements.define("my-dashboard",Dashboard);    
+customElements.define("my-dashboardpost",Post);    

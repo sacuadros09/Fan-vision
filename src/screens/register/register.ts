@@ -5,14 +5,14 @@ import { Register,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./register.css"
 
-const credentials = { 
-    id:"",
-    name:"",
-    username: "",
-    email: "",
-    password: "",
-    confirmpassword: ""
-}
+//const credentials = { 
+ //   id:"",
+  //  name:"",
+  //  username: "",
+  //  email: "",
+  //  password: "",
+   // confirmpassword: ""
+//}
 
 class DashboardRegister extends HTMLElement {
     constructor(){
@@ -61,34 +61,34 @@ class DashboardRegister extends HTMLElement {
             const Name = this.ownerDocument.createElement('my-register')
             Name.setAttribute(AttributeRegister.text, "Your name")
             Name.setAttribute(AttributeRegister.type, "text")
-            Name.addEventListener("change",(e:any)=>credentials.name = e.target.value)
+          //  Name.addEventListener("change",(e:any)=>credentials.name = e.target.value)
             form.appendChild(Name)
             
 
             const userName = this.ownerDocument.createElement('my-register')
             userName.setAttribute(AttributeRegister.text, "User name")
             userName.setAttribute(AttributeRegister.type, "text")
-            userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
+          //  userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
             form.appendChild(userName)
 
             const email = this.ownerDocument.createElement('my-register')
             email.setAttribute(AttributeRegister.text, "Your e-mail")
             email.setAttribute(AttributeRegister.type, "text")
-            email.addEventListener("change",(e:any)=>credentials.email = e.target.value)
+           // email.addEventListener("change",(e:any)=>credentials.email = e.target.value)
             form.appendChild(email);
 
             const password = this.ownerDocument.createElement('my-register');
             password.setAttribute(AttributeRegister.text, "Password");
             password.setAttribute(AttributeRegister.type, "password");
-            password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
-            console.log(credentials)
+           // password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
+           // console.log(credentials)
             form.appendChild(password);
             
             const Confirmpassword = this.ownerDocument.createElement('my-register');
             Confirmpassword.setAttribute(AttributeRegister.text, "Confirm Password");
             Confirmpassword.setAttribute(AttributeRegister.type, "Confirm Password");
-            Confirmpassword.addEventListener("change", (e:any)=>credentials.confirmpassword = e.target.value);
-            console.log(credentials)
+           // Confirmpassword.addEventListener("change", (e:any)=>credentials.confirmpassword = e.target.value);
+            //console.log(credentials)
             form.appendChild(Confirmpassword);
 
             const button = this.ownerDocument.createElement('my-button');
@@ -96,20 +96,20 @@ class DashboardRegister extends HTMLElement {
                dispatch(Navigate(Screens.LOGIN))
             })
 
-            button.addEventListener("click",()=>{
-                dispatch(
-                    Register({
-                        payload:{
-                            id:credentials.id,
-                            Name: credentials.name,
-                            userName: credentials.username,
-                            email: credentials.email,
-                            password: credentials.password,
-                            Confirmpassword: credentials.confirmpassword
-                        }
-                    })
-                )
-            })
+           //button.addEventListener("click",()=>{
+              //  dispatch(
+                  //  Register({
+                     //   payload:{
+                      //      id:credentials.id,
+                      //      Name: credentials.name,
+                      //      userName: credentials.username,
+                        //    email: credentials.email,
+                        //    password: credentials.password,
+                        //    Confirmpassword: credentials.confirmpassword
+                       // }
+                   // })
+              //  )
+          //  })
 
             const account = this.ownerDocument.createElement ("button")
             account.innerText = 'Already have an account?';

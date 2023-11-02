@@ -5,6 +5,7 @@ import "./screens/landing/landing"
 import "./screens/menu/menu"
 import "./screens/profile/profile"
 import "./screens/login/login"
+import "./screens/post/post"
 import { addObserver, appState } from "./store/index";
 import { Screens } from "./types/store";
 
@@ -52,6 +53,10 @@ class AppContainer extends HTMLElement {
                         const menu = this.ownerDocument.createElement("my-dashboardmenu");
                         this.shadowRoot?.appendChild(menu);
                         break;
+                        case Screens.POST:
+                            const post = this.ownerDocument.createElement("my-dashboardpost");
+                            this.shadowRoot?.appendChild(post);
+                            break;
 
                 default:
                     break;

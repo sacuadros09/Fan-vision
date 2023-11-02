@@ -1,6 +1,6 @@
 import { Post } from "../types/post"
 import {  Actions, UserActions, PostActions, NavigationActions, LogInAction, LogOutAction,NavigationAction, Screens, RegisterAction, GetPostsAction, AddPostAction } from "../types/store"
-import { User} from "../types/users"
+import { User,Userlogin} from "../types/users"
 import firebase from "../utils/firebase"
 
 export const Navigate = (screen:Screens): NavigationAction =>{
@@ -10,10 +10,10 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const LogIn = async (user:User): Promise<LogInAction> =>{
+export const LogIn = async (userlogin:Userlogin): Promise<LogInAction> =>{
     return{
         action: UserActions.LOGIN,
-        payload: user,
+        payload: userlogin,
     }
 }
 

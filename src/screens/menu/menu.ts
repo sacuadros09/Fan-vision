@@ -9,7 +9,7 @@ import CardProfile,{AttributeProfile} from "../../components/CardProfile/CardPro
 import CardUploade, {AttributeUploade} from "../../components/CardUploade/CardUploade"
 import { attributeMenu } from "../../components/Menu/Menu"
 import { dispatch } from "../../store/index";
-import {navigate } from "../../store/actions";
+import {Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./menu.css"
 
@@ -108,10 +108,14 @@ export class DashboardMenu extends HTMLElement{
 
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Edit profile"
+            buttonuploade.innerText="Subir Foto"
             sectionicon.appendChild(buttonuploade);
+            buttonuploade.addEventListener("click", ()=>{
+                dispatch(Navigate(Screens.POST))
+             })
+ 
 
-            const sectionuploade=document.createElement("section")
+            const sectionuploade=document.createElement("section" )
 
             const Profilepicture=document.createElement("img")
         Profilepicture.src="/src/img/gonzalez.png"
@@ -130,7 +134,7 @@ export class DashboardMenu extends HTMLElement{
             button.setAttribute(attributeMenu.text,"Edit profile")
             sectionuploade.appendChild(button)
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.PROFILE))
+               dispatch(Navigate(Screens.PROFILE))
             })
 
             const info = this.ownerDocument.createElement("h2")

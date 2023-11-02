@@ -1,11 +1,11 @@
 import {User} from "./users"
-//import { Userlogin } from "./users";
+import { Userlogin } from "./users";
 import { Post } from "./post";
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
     user: User,
-   // userlogin:Userlogin
+   userlogin:Userlogin
     screen: Screens,
     posts: Post[],
 }
@@ -16,7 +16,8 @@ export enum Screens{
     PROFILE = "PROFILE",
     LANDING = "LANDING",
     MENU = "MENU",
-    LOGIN = "LOGIN"
+    LOGIN = "LOGIN",
+    POST = "POST"
 }
 
 export enum NavigationActions{
@@ -34,12 +35,13 @@ export enum UserActions {
     "LOGOUT" = "LOGOUT",
     "PROFILE" = "PROFILE",
     "LANDING" = "LANDING",
-    "MENU" = "MENU"
+    "MENU" = "MENU",
+    "POST" = "POST"
 }
 
 export interface LogInAction {  
     action: UserActions.LOGIN,
-    payload: User
+    payload: Omit<Userlogin, "id" | "userName" | "img">
 }
 
 export interface LogOutAction {

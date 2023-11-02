@@ -1,6 +1,6 @@
 import "../../components/index"
 import { dispatch } from "../../store/index";
-import {navigate } from "../../store/actions";
+import {Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import { attributeLanding } from "../../components/Landing/Landing";
 import styles from "./landing.css"
@@ -42,7 +42,7 @@ class DashboardLanding extends HTMLElement {
             button.className = "buttonlanding"
             button.setAttribute(attributeLanding.text,"Create account")
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.REGISTER))
+               dispatch(Navigate(Screens.REGISTER))
             })
 
 

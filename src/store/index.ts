@@ -12,11 +12,12 @@ const initialState: AppState = {
     Confirmpassword: "",
   },
 
- // userlogin: {
-  //  userName: "",
-   //password: "",
+  userlogin: {
+    id:"",
+    userName: "",
+   password: "",
     
-  //},
+  },
   screen: Screens.LANDING,
   posts: [],
 };

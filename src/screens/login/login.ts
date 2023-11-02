@@ -5,10 +5,10 @@ import { LogIn,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./login.css"
 
-const credentials = { 
-    username: "",
-    password: "",
-}
+//const credentials = { 
+   // username: "",
+   // password: "",
+//}
 
 class DashboardLogin extends HTMLElement {
     constructor(){
@@ -57,14 +57,14 @@ class DashboardLogin extends HTMLElement {
             const userName = this.ownerDocument.createElement('my-login')
             userName.setAttribute(AttributeLogin.text, "User name")
             userName.setAttribute(AttributeLogin.type, "text")
-            userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
+           // userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
             form.appendChild(userName)
 
             const password = this.ownerDocument.createElement('my-login');
             password.setAttribute(AttributeLogin.text, "Password");
             password.setAttribute(AttributeLogin.type, "password");
-            password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
-            console.log(credentials)
+           // password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
+           // console.log(credentials)
             form.appendChild(password);
             
            
@@ -74,19 +74,19 @@ class DashboardLogin extends HTMLElement {
                dispatch(Navigate(Screens.DASHBOARD))
             })
 
-            button.addEventListener("click",()=>{
-                dispatch(
-                    LogIn({
-                        payload:{
+           // button.addEventListener("click",()=>{
+              //  dispatch(
+              //      LogIn({
+                 //       payload:{
                            
-                            userName: credentials.username,
+                    //        userName: credentials.username,
                            
-                            password: credentials.password,
+                       //     password: credentials.password,
                             
-                        }
-                    })
-                )
-            })
+                      //  }
+                    //})
+              //  )
+          //  })
 
           
 

@@ -4,7 +4,7 @@ import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
 import { attributeMenu } from "../../components/Menu/Menu"
 import { AttributeProfile } from "../../components/Profile/Profile"
 import { dispatch } from "../../store/index";
-import {logOut,navigate } from "../../store/actions";
+import {Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./profile.css"
 
@@ -127,7 +127,7 @@ export class DashboardProfile extends HTMLElement{
             button.setAttribute(attributeMenu.text,"Save me")
             topbot.appendChild(button)
             button.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.DASHBOARD))
+               dispatch(Navigate(Screens.DASHBOARD))
             })
 
             
@@ -136,7 +136,7 @@ export class DashboardProfile extends HTMLElement{
             logoutbutton.setAttribute(attributeMenu.text,"Log out")
             topbot.appendChild(button)
             logoutbutton.addEventListener("click", ()=>{
-               dispatch(navigate(Screens.LANDING))
+               dispatch(Navigate(Screens.LANDING))
             })
 
           
