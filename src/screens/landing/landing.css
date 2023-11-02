@@ -1,16 +1,34 @@
-.app-container{
-    height: 100vh;
-  
-  display: flex;
-}
-
-.my-dashboardlanding{
-    display: flex;
+.background{
   width: 100%;
+  height: 100%;
 }
-.container{
-    display: flex   ;
-    background-image: url("../../img/YWdHwTrVUE_bn_wanda\ 1.png");
-    width: 100%;
 
+.title{
+  margin-top: -40%;
+}
+
+.logo{
+  margin-left: 35%;
+  width: 11%;
+  margin-top: 0%;
+}
+
+button {
+  width: 150px;
+  height: 60px;
+  color: white;
+  border: 3px solid #ffffff;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: rgb(0, 0, 0);
+  font-size: 1.2em;
+  font-weight: 550;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
 }
