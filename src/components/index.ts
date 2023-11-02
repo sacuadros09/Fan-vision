@@ -10,5 +10,6 @@ export {default as Profile} from "./Profile/Profile"
 export {default as Register} from "./Register/Register"
 export {default as SendButton} from "./SendButton/SendButton"
 export {default as InfoButton} from "./InfoButton/InfoButton"
+export {default as Post} from "./Post/Post"
  
 

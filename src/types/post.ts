@@ -1,5 +1,6 @@
 export interface Post {
     id: string;
+    profile: string;
     named: string;
     subname: string;
     description: string;
