@@ -8,15 +8,12 @@ import {navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./profile.css"
 
-
-const credentials = {
-    username:"",
+const credentials = { 
+    username: "",
     name:"",
-    email:"",
-    password:"",
-
+    email: "",
+    password: ""
 }
-
 
 export class DashboardProfile extends HTMLElement{
     cardicons: CardIcons[] = [];
@@ -79,16 +76,16 @@ export class DashboardProfile extends HTMLElement{
 
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Edit profile"
+            buttonuploade.innerText="Home"
             sectionicon.appendChild(buttonuploade);
 
 
             const Profilepicture=document.createElement("img")
             Profilepicture.className = "Imgphoto"
-            Profilepicture.src="/src/img/AñadirAmigo.png"
-            topmid.appendChild(Profilepicture)
+        Profilepicture.src="/src/img/AñadirAmigo.png"
+        topmid.appendChild(Profilepicture)
 
-            const Añadir = this.ownerDocument.createElement("h2")
+        const Añadir = this.ownerDocument.createElement("h2")
             Añadir.className = "addfriend"
             Añadir.innerText = "@Añadir perfil"
             topmid.appendChild(Añadir)
@@ -100,7 +97,6 @@ export class DashboardProfile extends HTMLElement{
 
 
             const NewProfile = this.ownerDocument.createElement('my-profile')
-            NewProfile.className = "NewProfile"
             NewProfile.setAttribute(AttributeProfile.text, "New Profile")
             NewProfile.setAttribute(AttributeProfile.type, "text")
             NewProfile.addEventListener("change",(e:any)=>credentials.username = e.target.value)
@@ -122,9 +118,9 @@ export class DashboardProfile extends HTMLElement{
             ChangeEmail.setAttribute(AttributeProfile.text, "Change Email");
             ChangeEmail.setAttribute(AttributeProfile.type, "password");
             ChangeEmail.addEventListener("change", (e:any)=>credentials.email = e.target.value);
-          //  console.log(credentials)
+            console.log(credentials)
             topbot.appendChild(ChangeEmail);
- 
+
 
 
 
@@ -148,14 +144,7 @@ export class DashboardProfile extends HTMLElement{
 
           
 
-           
-
             
-          
-
-
-    
-
            topbot.appendChild(button)
            topbot.appendChild(logoutbutton)
             container.appendChild(topmid)
@@ -165,4 +154,4 @@ export class DashboardProfile extends HTMLElement{
     }
 }
 
-customElements.define("my-dashboardprofile",DashboardProfile);    
+customElements.define("my-dashboardprofile",DashboardProfile);

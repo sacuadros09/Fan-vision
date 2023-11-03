@@ -1,66 +1,64 @@
-.topmid {
-    display: flex;
-  flex-direction: row;
-  font-family: "Helvetica", Arial, sans-serif;
-  width: 85%;
-  height: 100%;
-}
-
-
-.topbot {
-    display: flex;
-    flex-direction: column;
-    gap: 4%;
-    margin-bottom: 35%;   
+.topmid{
+    flex-direction: row;
     font-family: "Helvetica", Arial, sans-serif;
+    width: 85%;
+    height: 100%;
 }
 
-.Imgphoto {
+.topbot{
+    display: flex;
+  flex-direction: column;
+  gap: 4%;
+  margin-bottom: 43%;
+  font-family: "Helvetica", Arial, sans-serif;
+  margin-top: 19%;
+  margin-left: -42%;
+  width: 20%;
+}
+
+.Imgphoto{
     width: 8%;
     height: 17%;
     margin-left: 40%;
 }
 
-.addfriend {
+.addfriend{
     width: 70%;
-    margin-left: -9%;
-    height: 20%;
-    margin-top: 13%;
+  margin-left: 38%;
+  height: 20%;
+  margin-top: 1%;
 }
-
-.biografy {
+.biografy{
     color: black;
-  margin-left: -52%;
-  margin-top: 4%;
-  width: 52%;
+  margin-left: 51%;
+  margin-top: -13%;
+  width: 49%;
   height: 19%;
   font-size: 24px;
   background-color: white;
   border-radius: 17px;
   padding: 1%;
-  font-family: "Helvetica", Arial, sans-serif;
+}
+.buttonlogout{
+    margin-left: 80%;
+    margin-top: -12.5%;
+    width: 50%;
+}
+.leftside{
+width: 30%;
+border-color: white;
+border-right-width: 6px;
+border-right-style: solid;
+margin-left: 1%;
+
 }
 
-.buttonlogout {
-    margin-left: 50%;
-    margin-top: -14.5%;
-}
-
-.leftside {
-    width: 30%;
-    border-color: white;
-    border-right-width: 6px;
-    border-right-style: solid;
-    margin-left: 1%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    font-family: "Helvetica", Arial, sans-serif;
-    margin-bottom: 35%; 
-}
-
-.all {
+.all{
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Agregamos esta propiedad para evitar el scroll horizontal */
+}
+
+.buttonsave{
+    margin-left: 9%;
+    margin-top: 9.5%;
 }
