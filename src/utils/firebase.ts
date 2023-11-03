@@ -16,7 +16,7 @@ export const auth = getAuth(app);
 
 export const AddPostDB = async (post: Omit<Post, "id">) => {
   try {
-    const where = collection(db, "products");
+    const where = collection(db, "posts");
     await addDoc(where, post);
     console.log("se añadió con éxito");
   } catch (error) {

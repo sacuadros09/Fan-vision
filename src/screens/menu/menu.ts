@@ -108,24 +108,26 @@ export class DashboardMenu extends HTMLElement{
 
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Subir Foto"
+            buttonuploade.innerText="Opina"
             sectionicon.appendChild(buttonuploade);
             buttonuploade.addEventListener("click", ()=>{
-                dispatch(Navigate(Screens.POST))
-             })
- 
+               dispatch(Navigate(Screens.POST))
+            })
 
-            const sectionuploade=document.createElement("section" )
+            const sectionuploade=document.createElement("section")
 
             const Profilepicture=document.createElement("img")
+            Profilepicture.className = "Profilepicture"
         Profilepicture.src="/src/img/gonzalez.png"
         sectionuploade.appendChild(Profilepicture)
 
         const Username = this.ownerDocument.createElement("h2")
+            Username.className = "username"
             Username.innerText = "@SebasG819"
             sectionuploade.appendChild(Username)
 
             const Nickname = this.ownerDocument.createElement("h2")
+            Nickname.className = "Nickname"
             Nickname.innerText = "Ciclistafutbol"
             sectionuploade.appendChild(Nickname)
 
@@ -138,6 +140,7 @@ export class DashboardMenu extends HTMLElement{
             })
 
             const info = this.ownerDocument.createElement("h2")
+            info.className = "info"
             info.innerText = "Hi, I'm Sebastián Gonzalez, also known as @SebasG819  I'm a futbol player fan, and bad women at dm."
             sectionuploade.appendChild(info)
 

@@ -5,14 +5,13 @@ import { Register,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./register.css"
 
-//const credentials = { 
- //   id:"",
-  //  name:"",
-  //  username: "",
-  //  email: "",
-  //  password: "",
-   // confirmpassword: ""
-//}
+ // const credentials = { 
+   //   name:"",
+   //   username: "",
+    //  email: "",
+     // password: "",
+    //  confirmpassword: ""
+ // }
 
 class DashboardRegister extends HTMLElement {
     constructor(){
@@ -41,83 +40,114 @@ class DashboardRegister extends HTMLElement {
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
 
+            const formbot = this.ownerDocument.createElement('section');
+            formbot.className = "formbot"
+
+            const forminput = this.ownerDocument.createElement('section');
+            forminput.className = "forminput"
+
+            const botbutton = this.ownerDocument.createElement('section');
+            botbutton.className = "botbutton"
+
+            formbot.appendChild(forminput)
+            formbot.appendChild(botbutton)
+
+
+
             const ImageRegister=document.createElement("img")
+            ImageRegister.className = "banner"
         ImageRegister.src="/src/img/Messi.png"
         leftimage.appendChild(ImageRegister)
 
 
             const LogoRegister=document.createElement("img")
+            LogoRegister.className = "logo"
         LogoRegister.src="/src/img/logo.png"
         form.appendChild(LogoRegister)
 
         const SignIn = this.ownerDocument.createElement("h2")
+            SignIn.className = "SignIn"
             SignIn.innerText = "Sign in"
             form.appendChild(SignIn)
 
             const SignUp = this.ownerDocument.createElement("h2")
+            SignUp.className = "SignUp"
             SignUp.innerText = "Sign up"
             form.appendChild(SignUp)
 
             const Name = this.ownerDocument.createElement('my-register')
+            Name.className = "input"
             Name.setAttribute(AttributeRegister.text, "Your name")
             Name.setAttribute(AttributeRegister.type, "text")
-          //  Name.addEventListener("change",(e:any)=>credentials.name = e.target.value)
-            form.appendChild(Name)
-            
+          //    Name.addEventListener("change",(e:any)=>credentials.name = e.target.value)
+            forminput.appendChild(Name)
 
             const userName = this.ownerDocument.createElement('my-register')
+            userName.className = "input"
             userName.setAttribute(AttributeRegister.text, "User name")
             userName.setAttribute(AttributeRegister.type, "text")
-          //  userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
-            form.appendChild(userName)
+          //    userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
+            forminput.appendChild(userName)
 
             const email = this.ownerDocument.createElement('my-register')
+            email.className = "input"
             email.setAttribute(AttributeRegister.text, "Your e-mail")
             email.setAttribute(AttributeRegister.type, "text")
-           // email.addEventListener("change",(e:any)=>credentials.email = e.target.value)
-            form.appendChild(email);
+            //  email.addEventListener("change",(e:any)=>credentials.email = e.target.value)
+            forminput.appendChild(email);
 
             const password = this.ownerDocument.createElement('my-register');
+            password.className = "input"
             password.setAttribute(AttributeRegister.text, "Password");
             password.setAttribute(AttributeRegister.type, "password");
-           // password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
-           // console.log(credentials)
-            form.appendChild(password);
+           //   password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
+           //   console.log(credentials)
+            forminput.appendChild(password);
             
             const Confirmpassword = this.ownerDocument.createElement('my-register');
+            Confirmpassword.className = "input"
             Confirmpassword.setAttribute(AttributeRegister.text, "Confirm Password");
-            Confirmpassword.setAttribute(AttributeRegister.type, "Confirm Password");
-           // Confirmpassword.addEventListener("change", (e:any)=>credentials.confirmpassword = e.target.value);
-            //console.log(credentials)
-            form.appendChild(Confirmpassword);
+            Confirmpassword.setAttribute(AttributeRegister.text, "Confirm Password");
+            //  Confirmpassword.addEventListener("change", (e:any)=>credentials.confirmpassword = e.target.value);
+            //  console.log(credentials)
+            forminput.appendChild(Confirmpassword);
 
             const button = this.ownerDocument.createElement('my-button');
+            button.className = "createacc"
             button.addEventListener("click", ()=>{
-               dispatch(Navigate(Screens.LOGIN))
+               dispatch(Navigate(Screens.DASHBOARD))
+               
             })
 
-           //button.addEventListener("click",()=>{
-              //  dispatch(
-                  //  Register({
-                     //   payload:{
-                      //      id:credentials.id,
-                      //      Name: credentials.name,
-                      //      userName: credentials.username,
-                        //    email: credentials.email,
-                        //    password: credentials.password,
-                        //    Confirmpassword: credentials.confirmpassword
-                       // }
-                   // })
-              //  )
-          //  })
+           // button.addEventListener("click",()=>{
+                //  dispatch(
+                 //     Register({
+                     //     payload:{
+                      //        Name: credentials.name,
+                        //      userName: credentials.username,
+                       //       email: credentials.email,
+                       //       password: credentials.password,
+                        //      Confirmpassword: credentials.confirmpassword
+                 //         }
+                 //     })
+              //    )
+           //   })
 
             const account = this.ownerDocument.createElement ("button")
+            account.className = "haveacc"
             account.innerText = 'Already have an account?';
-
-            form.appendChild(button);
-            form.appendChild(account)
+            account.addEventListener("click", ()=>{
+                dispatch(Navigate(Screens.LOGIN))
+                
+             })
+            
+            botbutton.appendChild(button);
+            botbutton.appendChild(account)
             container.appendChild(leftimage)
+            container.appendChild(formbot)
             container.appendChild(form)
+            container.appendChild(forminput)
+            container.appendChild(botbutton)
             this.shadowRoot?.appendChild(container);
 
 

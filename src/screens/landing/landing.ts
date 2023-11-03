@@ -22,19 +22,27 @@ class DashboardLanding extends HTMLElement {
            const css = this.ownerDocument.createElement('style')
                 css.innerHTML = styles
                 this.shadowRoot?.appendChild(css);
+
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 
-            const center = this.ownerDocument.createElement('section');
-            center.className = "center"
+            const bottom = this.ownerDocument.createElement("section")
+            bottom.className = "bottom"
 
-            const img = this.ownerDocument.createElement("img")
-                img.src="/src/img/logo.png"
-                center.className= "img"
+            const background = this.ownerDocument.createElement("img")
+            background.src="/src/img/YWdHwTrVUE_bn_wanda 1.png"
+            background.className= "background"
+            container.appendChild(background)
 
-            const welcome = this.ownerDocument.createElement("h2")
-            welcome.innerText = "Welcome"
-            center.appendChild(welcome)
+            //const img = this.ownerDocument.createElement("img")
+                //img.src="/src/img/logo.png"
+                //center.className= "img"
+
+                const welcome = this.ownerDocument.createElement("h2")
+                welcome.innerText = "Welcome"
+                welcome.className = "title"
+                container.appendChild(welcome)
+        
     
       
             
@@ -47,12 +55,16 @@ class DashboardLanding extends HTMLElement {
 
 
             const account = this.ownerDocument.createElement ("button")
+            account.className = "account"
             account.innerText = 'Sign in';
+            account.addEventListener("click", ()=>{
+                dispatch(Navigate(Screens.LOGIN))
+             })
 
-            center.appendChild(button);
-            center.appendChild(account)
-            center.appendChild(img)
-            container.appendChild(center)
+            bottom.appendChild(button);
+            bottom.appendChild(account)
+            //center.appendChild(img)
+            container.appendChild(bottom)
             this.shadowRoot?.appendChild(container);
 
 
