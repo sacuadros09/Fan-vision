@@ -39,7 +39,7 @@ class DashboardLanding extends HTMLElement {
                 //center.className= "img"
 
                 const welcome = this.ownerDocument.createElement("h2")
-                welcome.innerText = "Welcome"
+                welcome.innerText = "Welcome!"
                 welcome.className = "title"
                 container.appendChild(welcome)
         
