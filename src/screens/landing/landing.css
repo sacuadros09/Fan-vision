@@ -12,12 +12,6 @@
   color: white;
 }
 
-.logo{
-  margin-left: 45%;
-  width: 11%;
-  margin-top: -6%;
-}
-
 
 button {
   width: 150px;
@@ -52,3 +46,54 @@ button:hover {
   margin-left: 45%;
   margin-top: 2%;
 }
+
+@media (max-width: 400px) {
+
+  .background{
+    width: 105%;
+    height: 30pc;
+  }
+  
+  .title{
+    margin-top: -92%;
+    margin-left: 13%;
+    font-size: 325%;
+    font-family: "Helvetica", Arial, sans-serif;
+    color: white;
+  
+  }
+  
+  
+  button {
+    width: 150px;
+    height: 60px;
+    color: white;
+    border: 3px solid #ffffff;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    font-size: 1.2em;
+    font-weight: 550;
+    font-family: 'Montserrat', sans-serif;
+    
+    font-family: "Helvetica", Arial, sans-serif;
+  }
+  
+  button:hover {
+    background: #000000;
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+  }
+  
+  .buttonlanding{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 27%;
+  }
+  
+  
+
+}
+  
