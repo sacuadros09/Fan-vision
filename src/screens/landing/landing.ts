@@ -27,15 +27,18 @@ class DashboardLanding extends HTMLElement {
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 
+            const bottom = this.ownerDocument.createElement("section")
+            bottom.className = "bottom"
+
 
             const background = this.ownerDocument.createElement("img")
             background.src="/src/img/YWdHwTrVUE_bn_wanda 1.png"
             background.className= "background"
             container.appendChild(background)
 
-            const img = this.ownerDocument.createElement("img")
-            img.src="/src/img/logo.png"
-            img.className = "logo"
+            //const img = this.ownerDocument.createElement("img")
+            //img.src="/src/img/logo.png"
+            //img.className = "logo"
             
                 
 
@@ -55,12 +58,14 @@ class DashboardLanding extends HTMLElement {
 
 
             const account = this.ownerDocument.createElement ("button")
+            account.className = "account"
             account.innerText = 'Sign in';
 
             
-            container.appendChild(button);
-            container.appendChild(account)
-            container.appendChild(img)
+            bottom.appendChild(button);
+            bottom.appendChild(account)
+            //container.appendChild(img)
+            container.appendChild(bottom)
             this.shadowRoot?.appendChild(container);
 
 

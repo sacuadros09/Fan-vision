@@ -100,6 +100,7 @@ export class DashboardProfile extends HTMLElement{
 
 
             const NewProfile = this.ownerDocument.createElement('my-profile')
+            NewProfile.className = "NewProfile"
             NewProfile.setAttribute(AttributeProfile.text, "New Profile")
             NewProfile.setAttribute(AttributeProfile.type, "text")
             NewProfile.addEventListener("change",(e:any)=>credentials.username = e.target.value)
