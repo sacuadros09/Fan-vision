@@ -121,5 +121,6 @@ export default{
     GetPostsDB,
     GetPostsListener,
     AddUserDB,
+    EditUserDB,
     onAuthStateChanged,
 }

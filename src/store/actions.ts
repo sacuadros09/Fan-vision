@@ -42,7 +42,7 @@ export const LogOut =  ():LogOutAction =>{
 }
 
 export const Edit = async (user:User): Promise<EditAction> =>{
-    await firebase.loginUser(user)
+    await firebase.EditUserDB(user)
     return{
         action: UserActions.EDIT,
         payload: user,
