@@ -1,5 +1,5 @@
 import { Post } from "../types/post"
-import {  Actions, UserActions, PostActions, NavigationActions, LogInAction, LogOutAction,NavigationAction, Screens, RegisterAction, GetPostsAction, AddPostAction } from "../types/store"
+import {  Actions, UserActions, PostActions, NavigationActions, LogInAction, LogOutAction,NavigationAction, Screens, RegisterAction,EditAction, GetPostsAction, AddPostAction } from "../types/store"
 import { User,Userlogin} from "../types/users"
 import firebase from "../utils/firebase"
 
@@ -40,6 +40,15 @@ export const LogOut =  ():LogOutAction =>{
         payload: undefined,
     }
 }
+
+export const Edit = async (user:User): Promise<EditAction> =>{
+    await firebase.loginUser(user)
+    return{
+        action: UserActions.EDIT,
+        payload: user,
+    }
+}
+
 
 
 export const AddPost = async (post:Post): Promise<AddPostAction> =>{
