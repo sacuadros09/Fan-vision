@@ -1,6 +1,6 @@
 import { Post } from "../types/post"
 import {  Actions, UserActions, PostActions, NavigationActions, LogInAction, LogOutAction,NavigationAction, Screens, RegisterAction,EditAction, GetPostsAction, AddPostAction } from "../types/store"
-import { User,Userlogin} from "../types/users"
+import { User} from "../types/users"
 import firebase from "../utils/firebase"
 
 export const Navigate = (screen:Screens): NavigationAction =>{
@@ -10,13 +10,13 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const LogIn = async (Userlogin:Omit<User,"id"|"userName|img">): Promise <LogInAction> =>{
+export const LogIn = async (user:User ): Promise<LogInAction> =>{
 
-    await firebase.loginUser(Userlogin)
+    await firebase.loginUser(user)
 
     return{
         action: UserActions.LOGIN,
-        payload: Userlogin,
+        payload: user,
     }
 }
     
