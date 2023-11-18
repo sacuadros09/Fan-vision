@@ -1,10 +1,15 @@
 import { dispatch } from "../../store";
 import {LogIn,} from "../../store/actions"
-import styles from "./FormLog.css"
+import styles from "./FormLogin.css"
 
 const credentials = {
+    id: "",
+    Name: "",
+    userName: "",
     email: "",
     password: "",
+    Confirmpassword:"",
+    img: "",
 }
 
 export default class MyFormLog extends HTMLElement{
@@ -28,11 +33,11 @@ export default class MyFormLog extends HTMLElement{
 
         const container = this.ownerDocument.createElement("section")
 
-        const email = this.ownerDocument.createElement("input")
-        email.placeholder = "User name"
-        email.type = "email"
-        email.addEventListener("change", (e:any)=>{
-            credentials.email = e.target.value
+        const userName = this.ownerDocument.createElement("input")
+        userName.placeholder = "Username"
+        userName.type = "email"
+        userName.addEventListener("change", (e:any)=>{
+            credentials.userName = e.target.value
         })
 
         const password = this.ownerDocument.createElement("input")
@@ -45,10 +50,10 @@ export default class MyFormLog extends HTMLElement{
         const sendbtn = this.ownerDocument.createElement("button")
         sendbtn.innerText = "Log in"
         sendbtn.addEventListener("click", async ()=>{
-         //   dispatch(await LogIn(credentials))
+          dispatch(await LogIn(credentials))
         })
 
-        container.appendChild(email)
+        container.appendChild(userName)
         container.appendChild(password)
         container.appendChild(sendbtn)
 

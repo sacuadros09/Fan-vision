@@ -5,13 +5,13 @@ import { Register,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./register.css"
 
- // const credentials = { 
-   //   name:"",
-   //   username: "",
-    //  email: "",
-     // password: "",
-    //  confirmpassword: ""
- // }
+ const credentials = { 
+      name:"",
+      username: "",
+      email: "",
+      password: "",
+      confirmpassword: ""
+  }
 
 class DashboardRegister extends HTMLElement {
     constructor(){
@@ -119,7 +119,7 @@ class DashboardRegister extends HTMLElement {
                
             })
 
-           // button.addEventListener("click",()=>{
+           // }}button.addEventListener("click",()=>{
                 //  dispatch(
                  //     Register({
                      //     payload:{
