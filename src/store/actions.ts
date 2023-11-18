@@ -10,15 +10,22 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const LogIn = async (userlogin:Userlogin): Promise<LogInAction> =>{
+export const LogIn = async (Userlogin:Omit<User,"id"|"userName|img">): Promise <LogInAction> =>{
+
+    await firebase.loginUser(Userlogin)
+
     return{
         action: UserActions.LOGIN,
-        payload: userlogin,
+        payload: Userlogin,
     }
 }
+    
 
 
 export const Register = async (user:User): Promise<RegisterAction>  =>{
+
+    await firebase.registerUser(user)
+    await firebase.AddUserDB(user)
 
     return{
         action: UserActions.REGISTER,

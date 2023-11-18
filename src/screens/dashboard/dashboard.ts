@@ -96,7 +96,7 @@ export class Dashboard extends HTMLElement{
         
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Edit Profile"
+            buttonuploade.innerText="Menu"
             buttonuploade.addEventListener("click",()=>{
                 dispatch(Navigate(Screens.MENU))
             })

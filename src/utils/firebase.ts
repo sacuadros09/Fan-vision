@@ -3,11 +3,52 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot,where,setDoc} from "firebase/firestore";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, onAuthStateChanged} from "firebase/auth";
 import { Post } from "../types/post";
-
+import { User } from "../types/users";
+import { appState } from "../store";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 export const auth = getAuth(app); 
+
+const registerUser = async ({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}): Promise<boolean> => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log(userCredential.user);
+    return true;
+  } catch (error: any) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage);
+    return false;
+  }
+};
+const loginUser = async ({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}) => {
+  setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    return signInWithEmailAndPassword(auth, email, password);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage);
+  });
+}; 
 
 
 
@@ -46,12 +87,27 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
     });
   };
 
+  const AddUserDB = async (user: User) =>{
+    try {
+    const where = collection(db, "users")
+      await addDoc(where,{...user, createdAt: new Date()});
+      return true
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      return false
+    }
+  }
+  
+
 
   
 
 export default{
+    registerUser,
+    loginUser,
     AddPostDB,
     GetPostsDB,
     GetPostsListener,
+    AddUserDB,
     onAuthStateChanged,
 }
