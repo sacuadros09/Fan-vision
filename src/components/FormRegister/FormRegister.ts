@@ -4,11 +4,11 @@ import styles from "./FormRegister.css"
 
 const credentials = {
     id: "",
-    name: "",
+    Name: "",
     userName: "",
     email: "",
     password: "",
-    confirmpassword:"",
+    Confirmpassword:"",
     img: "",
 }
 
@@ -33,10 +33,10 @@ export default class MyFormRegister extends HTMLElement{
         const container = this.ownerDocument.createElement("section")
 
         const name = this.ownerDocument.createElement("input")
-        name.placeholder = "Username"
+        name.placeholder = "Name"
         name.type = "text"
         name.addEventListener("change", (e:any)=>{
-            credentials.userName = e.target.value
+            credentials.Name = e.target.value
         })
 
 
@@ -61,6 +61,14 @@ export default class MyFormRegister extends HTMLElement{
             credentials.password = e.target.value
         })
 
+        const confirmpassword= this.ownerDocument.createElement("input")
+        confirmpassword.placeholder = "Confirmpassword"
+        confirmpassword.type = "password"
+        confirmpassword.addEventListener("change", (e:any)=>{
+            credentials.Confirmpassword = e.target.value
+        })
+
+
         const sendbtn = this.ownerDocument.createElement("button")
         sendbtn.innerText = "Log in"
         sendbtn.addEventListener("click", async ()=>{
@@ -79,4 +87,4 @@ export default class MyFormRegister extends HTMLElement{
 
 }
 
-customElements.define('form-register', MyFormReg)
+customElements.define('form-register', MyFormRegister)
