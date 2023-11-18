@@ -23,6 +23,11 @@ export const reducer = (Action: any, State: AppState): AppState => {
                     Confirmpassword: "",
                 }
             }
+
+            case UserActions.EDIT:
+                State.user = payload
+                return State 
+    
     case NavigationActions.NAVIGATE:
         State.screen = payload
             return State

@@ -33,10 +33,8 @@ export enum UserActions {
     "LOGIN" = "LOGIN",
     "REGISTER" = "REGISTER",
     "LOGOUT" = "LOGOUT",
-    "PROFILE" = "PROFILE",
-    "LANDING" = "LANDING",
-    "MENU" = "MENU",
-    "POST" = "POST"
+    "EDIT" = "EDIT",
+    "SET_USER"="SET_USER"
 }
 
 export interface LogInAction {  
@@ -55,6 +53,16 @@ export interface RegisterAction {
     
 }
 
+export interface EditAction {
+    action: UserActions.EDIT,
+    payload: User
+}
+
+export interface SetUserAction {
+    action: UserActions.SET_USER,
+    payload: string
+}
+
 export enum PostActions {
     "ADD_POST" = "ADD_POST",
     "GET_POSTS" = "GET_POSTS",
@@ -71,4 +79,4 @@ export interface GetPostsAction {
 }
 
 
-export type Actions = LogInAction | LogOutAction | RegisterAction | NavigationActions| AddPostAction | GetPostsAction;
+export type Actions = LogInAction | LogOutAction | RegisterAction |EditAction|SetUserAction| NavigationActions| AddPostAction | GetPostsAction;
