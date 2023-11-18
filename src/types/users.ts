@@ -12,5 +12,3 @@ export interface User {
   //  userName: string,
    // password: string,
 //}   
-
-export type UserCredentials = Omit<User, "id" | "userName" | "img">
