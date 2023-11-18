@@ -1,17 +1,11 @@
 import "../../components/index"
 import { AttributeRegister } from "../../components/Register/Register";
 import { dispatch } from "../../store/index";
-import { Register,Navigate } from "../../store/actions";
+import { Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./register.css"
 
- const credentials = { 
-      name:"",
-      username: "",
-      email: "",
-      password: "",
-      confirmpassword: ""
-  }
+ 
 
 class DashboardRegister extends HTMLElement {
     constructor(){
@@ -39,6 +33,8 @@ class DashboardRegister extends HTMLElement {
            
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
+            
+            const campsForm = this.ownerDocument.createElement("form-register")
 
             const formbot = this.ownerDocument.createElement('section');
             formbot.className = "formbot"
@@ -75,63 +71,6 @@ class DashboardRegister extends HTMLElement {
             SignUp.innerText = "Sign up"
             form.appendChild(SignUp)
 
-            const Name = this.ownerDocument.createElement('my-register')
-            Name.className = "input"
-            Name.setAttribute(AttributeRegister.text, "Your name")
-            Name.setAttribute(AttributeRegister.type, "text")
-          //    Name.addEventListener("change",(e:any)=>credentials.name = e.target.value)
-            forminput.appendChild(Name)
-
-            const userName = this.ownerDocument.createElement('my-register')
-            userName.className = "input"
-            userName.setAttribute(AttributeRegister.text, "User name")
-            userName.setAttribute(AttributeRegister.type, "text")
-          //    userName.addEventListener("change",(e:any)=>credentials.username = e.target.value)
-            forminput.appendChild(userName)
-
-            const email = this.ownerDocument.createElement('my-register')
-            email.className = "input"
-            email.setAttribute(AttributeRegister.text, "Your e-mail")
-            email.setAttribute(AttributeRegister.type, "text")
-            //  email.addEventListener("change",(e:any)=>credentials.email = e.target.value)
-            forminput.appendChild(email);
-
-            const password = this.ownerDocument.createElement('my-register');
-            password.className = "input"
-            password.setAttribute(AttributeRegister.text, "Password");
-            password.setAttribute(AttributeRegister.type, "password");
-           //   password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
-           //   console.log(credentials)
-            forminput.appendChild(password);
-            
-            const Confirmpassword = this.ownerDocument.createElement('my-register');
-            Confirmpassword.className = "input"
-            Confirmpassword.setAttribute(AttributeRegister.text, "Confirm Password");
-            Confirmpassword.setAttribute(AttributeRegister.text, "Confirm Password");
-            //  Confirmpassword.addEventListener("change", (e:any)=>credentials.confirmpassword = e.target.value);
-            //  console.log(credentials)
-            forminput.appendChild(Confirmpassword);
-
-            const button = this.ownerDocument.createElement('my-button');
-            button.className = "createacc"
-            button.addEventListener("click", ()=>{
-               dispatch(Navigate(Screens.DASHBOARD))
-               
-            })
-
-           // }}button.addEventListener("click",()=>{
-                //  dispatch(
-                 //     Register({
-                     //     payload:{
-                      //        Name: credentials.name,
-                        //      userName: credentials.username,
-                       //       email: credentials.email,
-                       //       password: credentials.password,
-                        //      Confirmpassword: credentials.confirmpassword
-                 //         }
-                 //     })
-              //    )
-           //   })
 
             const account = this.ownerDocument.createElement ("button")
             account.className = "haveacc"
@@ -141,7 +80,7 @@ class DashboardRegister extends HTMLElement {
                 
              })
             
-            botbutton.appendChild(button);
+            form.appendChild(campsForm)
             botbutton.appendChild(account)
             container.appendChild(leftimage)
             container.appendChild(formbot)

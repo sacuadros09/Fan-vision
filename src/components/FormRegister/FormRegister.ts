@@ -1,5 +1,6 @@
 import { dispatch } from "../../store";
-import { Register } from "../../store/actions";
+import { Register,Navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 import styles from "./FormRegister.css"
 
 const credentials = {
@@ -30,7 +31,7 @@ export default class MyFormRegister extends HTMLElement{
         css.innerHTML = styles
         this.shadowRoot?.appendChild(css)
 
-        const container = this.ownerDocument.createElement("section")
+        
 
         const name = this.ownerDocument.createElement("input")
         name.placeholder = "Name"
@@ -59,6 +60,7 @@ export default class MyFormRegister extends HTMLElement{
         password.type = "password"
         password.addEventListener("change", (e:any)=>{
             credentials.password = e.target.value
+            dispatch(Navigate(Screens.LOGIN))
         })
 
         const confirmpassword= this.ownerDocument.createElement("input")
@@ -75,12 +77,12 @@ export default class MyFormRegister extends HTMLElement{
             dispatch(await Register(credentials))
         })
 
-        container.appendChild(userName)
-        container.appendChild(email)
-        container.appendChild(password)
-        container.appendChild(sendbtn)
-
-        this.shadowRoot?.appendChild(container)
+        
+        this.shadowRoot?.appendChild(name)
+        this.shadowRoot?.appendChild(userName)
+        this.shadowRoot?.appendChild(password)
+        this.shadowRoot?.appendChild(confirmpassword)
+        this.shadowRoot?.appendChild(sendbtn)
 
         }
     }
