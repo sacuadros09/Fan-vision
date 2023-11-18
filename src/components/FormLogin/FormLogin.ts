@@ -1,10 +1,10 @@
-import { dispatch } from "../../store";
+import { appState, dispatch } from "../../store";
 import {LogIn,} from "../../store/actions"
 import styles from "./FormLogin.css"
 
 const credentials = {
-    id: "",
-    Name: "",
+    id: appState.user.id,
+    Name: appState.user.userName,
     userName: "",
     email: "",
     password: "",
