@@ -1,11 +1,11 @@
 import {User} from "./users"
-import { Userlogin } from "./users";
+//import { Userlogin } from "./users";
 import { Post } from "./post";
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
     user: User,
-   userlogin:Userlogin
+  // userlogin:Userlogin
     screen: Screens,
     posts: Post[],
 }
@@ -39,7 +39,7 @@ export enum UserActions {
 
 export interface LogInAction {  
     action: UserActions.LOGIN,
-    payload: Omit<Userlogin, "id" | "userName" | "img">
+    payload: Omit<User, "id" | "userName" | "img">
 }
 
 export interface LogOutAction {

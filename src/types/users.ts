@@ -7,10 +7,10 @@ export interface User {
     Confirmpassword:string,
 }   
 
-export interface Userlogin {
-    id:string,
-    userName: string,
-    password: string,
-}   
+//export interface Userlogin {
+   // id:string,
+  //  userName: string,
+   // password: string,
+//}   
 
 export type UserCredentials = Omit<User, "id" | "userName" | "img">

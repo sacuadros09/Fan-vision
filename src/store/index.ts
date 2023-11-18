@@ -1,9 +1,18 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
 import {  Actions,AppState, Observer,Screens } from "../types/store";
 import { reducer } from "./reducer";
-import { Auth } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { LogIn,Navigate } from "./actions";
+import { auth } from "../utils/firebase";
+
+onAuthStateChanged(auth, async(user) => {
+  console.log('Entra');
+  console.log('user',user)
+  if (user) {appState.user !== null ? dispatch(await LogIn (appState.user)) : '';
+  dispatch(Navigate(Screens.DASHBOARD));
+} else {dispatch(Navigate(Screens.LOGIN));
+}
+});
 
 const initialState: AppState = {
   user: {
@@ -15,12 +24,12 @@ const initialState: AppState = {
     Confirmpassword: "",
   },
 
-  userlogin: {
-    id:"",
-    userName: "",
-   password: "",
+  //userlogin: {
+   // id:"",
+   // userName: "",
+  // password: "",
     
-  },
+ // },
   screen: Screens.LANDING,
   posts: [],
 };
