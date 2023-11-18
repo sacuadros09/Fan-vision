@@ -97,6 +97,18 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
       return false
     }
   }
+
+  const EditUserDB = async (user: User) =>{
+    try {
+    const where = collection(db, "users", appState.user.id)
+      await setDoc
+      return true
+    } catch (e) {
+      console.error("Error editing document: ", e);
+      return false
+    }
+  }
+  
   
 
 
