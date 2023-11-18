@@ -1,6 +1,9 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
-import {  AppState, Observer,Screens } from "../types/store";
+import {  Actions,AppState, Observer,Screens } from "../types/store";
 import { reducer } from "./reducer";
+import { Auth } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
+import { LogIn,Navigate } from "./actions";
 
 const initialState: AppState = {
   user: {

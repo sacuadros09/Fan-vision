@@ -1,5 +1,4 @@
 import "../../components/index"
-import { AttributeRegister } from "../../components/Register/Register";
 import { dispatch } from "../../store/index";
 import { Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
