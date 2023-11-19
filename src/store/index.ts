@@ -10,7 +10,7 @@ onAuthStateChanged(auth, async(user) => {
   console.log('user',user)
   if (user) {appState.user !== null ? dispatch(await LogIn (appState.user)) : '';
   dispatch(Navigate(Screens.DASHBOARD));
-} else {dispatch(Navigate(Screens.LOGIN));
+} else {dispatch(Navigate(Screens.REGISTER));
 }
 });
 
@@ -30,7 +30,7 @@ const initialState: AppState = {
   // password: "",
     
  // },
-  screen: Screens.LANDING,
+  screen: Screens.REGISTER,
   posts: [],
 };
 

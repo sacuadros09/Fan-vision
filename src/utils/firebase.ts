@@ -1,6 +1,6 @@
 import {firebaseConfig} from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot,where,setDoc} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot,where,setDoc, doc} from "firebase/firestore";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, onAuthStateChanged} from "firebase/auth";
 import { Post } from "../types/post";
 import { User } from "../types/users";
@@ -23,7 +23,7 @@ const registerUser = async ({
       email,
       password
     );
-    console.log(userCredential.user);
+
     return true;
   } catch (error: any) {
     const errorCode = error.code;
@@ -87,10 +87,9 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
     });
   };
 
-  const AddUserDB = async (user: User) =>{
+  const AddUserDB = async (user: any) =>{
     try {
-    const where = collection(db, "users")
-      await addDoc(where,{...user, createdAt: new Date()});
+      await setDoc(doc(db, "users", user.uid), user)
       return true
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -98,10 +97,9 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
     }
   }
 
-  const EditUserDB = async (user: User) =>{
+  const EditUserDB = async (user: any) =>{
     try {
-    const where = collection(db, "users", appState.user.id)
-      await setDoc
+      await setDoc (doc(db, "users", user.uid), user)
       return true
     } catch (e) {
       console.error("Error editing document: ", e);
