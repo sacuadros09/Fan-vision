@@ -10,7 +10,7 @@ import styles from "./login.css"
    // password: "",
 //}
 
-class DashboardLogin extends HTMLElement {
+export default class DashboardLogin extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})

@@ -13,7 +13,7 @@ import { Screens } from "../../types/store";
 
 
 
-export class Dashboard extends HTMLElement{
+export default class Dashboard extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];

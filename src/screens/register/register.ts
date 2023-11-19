@@ -6,7 +6,7 @@ import styles from "./register.css"
 
  
 
-class DashboardRegister extends HTMLElement {
+export default class DashboardRegister extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
