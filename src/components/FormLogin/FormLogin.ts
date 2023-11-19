@@ -1,10 +1,10 @@
 import { appState, dispatch } from "../../store";
-//import {LogIn,} from "../../store/actions"
+import {LogIn,} from "../../store/actions"
 import styles from "./FormLogin.css"
 
 const credentials = {
-    id: appState.user.id,
-    Name: appState.user.userName,
+    id: "",
+    Name: "",
     userName: "",
     email: "",
     password: "",
@@ -49,9 +49,9 @@ export default class MyFormLog extends HTMLElement{
 
         const sendbtn = this.ownerDocument.createElement("button")
         sendbtn.innerText = "Log in"
-       // sendbtn.addEventListener("click", async ()=>{
-         // dispatch(await LogIn(credentials))
-       // })
+        sendbtn.addEventListener("click", async ()=>{
+          dispatch(await LogIn(credentials))
+        })
 
         container.appendChild(userName)
         container.appendChild(password)

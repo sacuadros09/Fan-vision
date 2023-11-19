@@ -23,7 +23,7 @@ import { FirebaseError } from "firebase/app";
         number: 0,
     };
 
-   export default class DashboardPosts extends HTMLElement{
+    export default class DashboardPosts extends HTMLElement{
 
        // cardicons: CardIcons[] = [];
     //cardfriends: CardFriends[] = [];
