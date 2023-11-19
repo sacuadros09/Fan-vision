@@ -5,7 +5,7 @@ import { Screens } from "../../types/store";
 import { attributeLanding } from "../../components/Landing/Landing";
 import styles from "./landing.css"
 
-class DashboardLanding extends HTMLElement {
+export default class DashboardLanding extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})

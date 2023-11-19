@@ -16,7 +16,7 @@ import styles from "./menu.css"
 
 
 
-export class DashboardMenu extends HTMLElement{
+export default class DashboardMenu extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];

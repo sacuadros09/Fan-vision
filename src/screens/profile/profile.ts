@@ -15,7 +15,7 @@ import styles from "./profile.css"
   //  password: ""
 //}
 
-export class DashboardProfile extends HTMLElement{
+export default class DashboardProfile extends HTMLElement{
     cardicons: CardIcons[] = [];
    
 
