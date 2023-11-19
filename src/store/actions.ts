@@ -1,5 +1,6 @@
+import { appState, dispatch } from "."
 import { Post } from "../types/post"
-import {  Actions, UserActions, PostActions, NavigationActions, LogInAction, LogOutAction,NavigationAction, Screens, RegisterAction,EditAction, GetPostsAction, AddPostAction } from "../types/store"
+import {  Actions, UserActions, PostActions, NavigationActions, LogInAction, LogOutAction,NavigationAction, Screens, RegisterAction,EditAction, GetPostsAction, AddPostAction,SetUserAction} from "../types/store"
 import { User} from "../types/users"
 import firebase from "../utils/firebase"
 
@@ -24,8 +25,9 @@ export const LogIn = async (user:User ): Promise<LogInAction> =>{
 
 export const Register = async (user:User): Promise<RegisterAction>  =>{
 
-    await firebase.registerUser(user)
-    await firebase.AddUserDB(user)
+    const data = await firebase.registerUser(user);
+    if(data){
+        await firebase.AddUserDB(data)} 
 
     return{
         action: UserActions.REGISTER,
@@ -34,6 +36,15 @@ export const Register = async (user:User): Promise<RegisterAction>  =>{
 }
 
 export const LogOut =  ():LogOutAction =>{
+
+    if(appState.userCredentials !==null || ''){
+        dispatch(SetUserCredentials(''))    
+        sessionStorage.clear()
+        dispatch(Navigate(Screens.LOGIN))
+        location.reload()
+    }
+    
+
 
     return{
         action: UserActions.LOGOUT,
@@ -45,6 +56,14 @@ export const Edit = async (user:User): Promise<EditAction> =>{
     await firebase.EditUserDB(user)
     return{
         action: UserActions.EDIT,
+        payload: user,
+    }
+}
+
+export const SetUserCredentials =  (user:string): SetUserAction=>{
+
+    return{
+        action: UserActions.SET_USER,
         payload: user,
     }
 }

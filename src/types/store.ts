@@ -4,10 +4,11 @@ import { Post } from "./post";
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
-    user: User,
+    userCredentials: string,
   // userlogin:Userlogin
     screen: Screens,
     posts: Post[],
+    userData: User,
 }
 
 export enum Screens{

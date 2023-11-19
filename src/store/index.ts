@@ -1,22 +1,25 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
 import {  Actions,AppState, Observer,Screens } from "../types/store";
 import { reducer } from "./reducer";
+import firebase,{ auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { LogIn,Navigate } from "./actions";
-import { auth } from "../utils/firebase";
+import { LogIn,Navigate,Register,SetUserCredentials} from "./actions";
+
 
 onAuthStateChanged(auth, async(user) => {
-  console.log('Entra');
-  console.log('user',user)
-  if (user) {appState.user !== null ? dispatch(await LogIn (appState.user)) : '';
+  console.log(user)
+  if (user) {
+  appState.userCredentials !==null? dispatch(SetUserCredentials(String(user))):"";
+  appState.userData.uid = user.uid
+  appState.userData.email=String(user?.email)
   dispatch(Navigate(Screens.DASHBOARD));
 } else {dispatch(Navigate(Screens.REGISTER));
 }
 });
 
 const initialState: AppState = {
-  user: {
-    id: "",
+  userData: {
+    uid: "",
     Name: "",
     userName: "",
     email: "",
@@ -32,6 +35,7 @@ const initialState: AppState = {
  // },
   screen: Screens.REGISTER,
   posts: [],
+  userCredentials:""
 };
 
 export let appState = Storage.get<AppState>({

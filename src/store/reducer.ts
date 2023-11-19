@@ -5,29 +5,27 @@ export const reducer = (Action: any, State: AppState): AppState => {
 
     switch (action) {
         case UserActions.LOGIN:
-            State.user = payload
+            State.userData = payload
             return State
 
         case UserActions.REGISTER:
-            State.user = payload
+            State.userData = payload
             return State 
 
 
         case UserActions.LOGOUT:
             return {
-                ...State , user:{
-                    id:"",
-                    Name: "",
-                    userName: "",
-                    email: "",
-                    password: "",
-                    Confirmpassword: "",
-                }
+             
+                ...State , userCredentials:""
             }
 
             case UserActions.EDIT:
-                State.user = payload
-                return State 
+                State.userData = payload
+                return State
+    
+            case UserActions.SET_USER:
+                State.userCredentials = payload
+                return State
     
     case NavigationActions.NAVIGATE:
         State.screen = payload
