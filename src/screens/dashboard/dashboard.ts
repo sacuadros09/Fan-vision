@@ -90,12 +90,8 @@ export default class Dashboard extends HTMLElement{
             sectionicon.appendChild(buttonuploade);
            
 
-            const sectionuploade=document.createElement("section")
-            sectionuploade.className = "midside"
-            this.carduploades.forEach((carduploade) => {
-                sectionuploade.appendChild(carduploade);
-            })
-            container.appendChild(sectionuploade);
+            const sectionuploade= this.ownerDocument.createElement("my-carduploade")
+            sectionuploade.className = "uploades"
 
             
 
@@ -121,6 +117,7 @@ export default class Dashboard extends HTMLElement{
             const containeright = document.createElement("section")
             containeright.className = "containerRight"
             containeright.appendChild(sectionprofile)
+            container.appendChild(sectionuploade)
             container.appendChild(sectionfriends);
             containeright.appendChild(sectionfriends)
             container.appendChild(containeright)
