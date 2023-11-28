@@ -27,13 +27,7 @@ const initialState: AppState = {
     Confirmpassword: "",
   },
 
-  //userlogin: {
-   // id:"",
-   // userName: "",
-  // password: "",
-    
- // },
-  screen: Screens.PROFILE,
+  screen: Screens.REGISTER,
   posts: [],
   userCredentials:""
 };

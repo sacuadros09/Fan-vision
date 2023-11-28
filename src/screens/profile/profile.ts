@@ -9,10 +9,11 @@ import { Screens } from "../../types/store";
 import styles from "./profile.css"
 
 const credentials = { 
-   newprofile: "",
-    newdescription:"",  
+    userName: "",
+    description: "",
     email: "",
     password: "",
+    img: "",
 }
 
 export default class DashboardProfile extends HTMLElement{
@@ -100,29 +101,35 @@ export default class DashboardProfile extends HTMLElement{
             Biografy.innerText = "Hi, I'm Sebastián Gonzales, also known as @SebasG7  I'm a futbol player fan, and I don't have many friends, so I hope you can add me."
             topmid.appendChild(Biografy)
 
+            const editProfile = this.ownerDocument.createElement("section");
+            editProfile.className = "editProfile";
+            container.appendChild(editProfile);
 
             const NewProfile = this.ownerDocument.createElement('input')
             NewProfile.setAttribute(AttributeProfile.text, "New Profile")
             NewProfile.setAttribute(AttributeProfile.type, "text")
-             NewProfile.addEventListener("change",(e:any)=>credentials.newprofile = e.target.value)
+            NewProfile.placeholder = appState.userData.userName 
+             NewProfile.addEventListener("change",(e:any)=>credentials.userName = e.target.value)
             topbot.appendChild(NewProfile)
 
             const Description = this.ownerDocument.createElement('my-profile')
             Description.setAttribute(AttributeProfile.text, "Change Description")
             Description.setAttribute(AttributeProfile.type, "text")
-           // Description.addEventListener("change",(e:any)=>credentials.name = e.target.value)
+            //Description.placeholder = appState.userData.userName
+            Description.addEventListener("change",(e:any)=>credentials.description = e.target.value)
             topbot.appendChild(Description)
 
             const ChangePassword = this.ownerDocument.createElement('my-profile')
             ChangePassword.setAttribute(AttributeProfile.text, "Change Password")
             ChangePassword.setAttribute(AttributeProfile.type, "text")
-           // ChangePassword.addEventListener("change",(e:any)=>credentials.password = e.target.value)
+            ChangePassword.addEventListener("change",(e:any)=>credentials.password = e.target.value)
             topbot.appendChild(ChangePassword);
 
             const ChangeEmail = this.ownerDocument.createElement('my-profile');
             ChangeEmail.setAttribute(AttributeProfile.text, "Change Email");
             ChangeEmail.setAttribute(AttributeProfile.type, "password");
-            //ChangeEmail.addEventListener("change", (e:any)=>credentials.email = e.target.value);
+          //  ChangeEmail.placeholder = appState.userData.email
+            ChangeEmail.addEventListener("change", (e:any)=>credentials.email = e.target.value);
            // console.log(credentials)
             topbot.appendChild(ChangeEmail);
 
@@ -130,22 +137,23 @@ export default class DashboardProfile extends HTMLElement{
 
 
 
-            const button = this.ownerDocument.createElement('my-menu');
+            const button = this.ownerDocument.createElement('button');
+            button.innerText = "Save"
             button.className = "buttonsave"
-            button.setAttribute(attributeMenu.text,"Save me")
+           // button.addEventListener("click", async ()=>{
+            //   dispatch(await Edit(credentials))
+           // })
             topbot.appendChild(button)
-            button.addEventListener("click", ()=>{
-               dispatch(Navigate(Screens.DASHBOARD))
-            })
 
             
-            const logoutbutton = this.ownerDocument.createElement('my-menu');
+            const logoutbutton = this.ownerDocument.createElement('button');
+            logoutbutton.innerText = "Log Out"
             logoutbutton.className = "buttonlogout"
-            logoutbutton.setAttribute(attributeMenu.text,"Log out")
-            topbot.appendChild(button)
             logoutbutton.addEventListener("click", ()=>{
-               dispatch(Navigate(Screens.LANDING))
+               dispatch(LogOut())
             })
+
+            topbot.appendChild(button)
 
           
 
