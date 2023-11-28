@@ -74,7 +74,12 @@ export default class MyFormRegister extends HTMLElement{
         const sendbtn = this.ownerDocument.createElement("button")
         sendbtn.innerText = "Register"
         sendbtn.addEventListener("click", async ()=>{
-            
+          const user = await firebase.registerUser(credentials)
+          console.log(user)
+          if(user){
+            dispatch(Navigate(Screens.LOGIN))
+            sessionStorage.clear()
+          }  
         })
 
         
