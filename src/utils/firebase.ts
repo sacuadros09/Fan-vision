@@ -55,26 +55,28 @@ const loginUser = async ({
 
 
 
-export const AddPostDB = async (post: Omit<Post, "id">) => {
+const AddPostDB = async (post: Post) =>{
   try {
-    const where = collection(db, "posts");
-    await addDoc(where, post);
-    console.log("se añadió con éxito");
-  } catch (error) {
-    console.error(error);
+  const where = collection(db, "posts")
+    await addDoc(where,{...post, createdAt: new Date()});
+    return true
+  } catch (e) {
+    console.error("Error adding document: ", e);
+    return false
   }
-};
-const GetPostsDB = async () => {
-  const querySnapshot = await getDocs(collection(db, "post"));
-  const transformed: Array<Post> = [];
-
+}
+const GetPostsDB = async(): Promise<Post[]> =>{
+  const resp: Post[] = [];
+  const q=query(collection(db,"posts"), orderBy("createdAt"))
+  const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    const data: Omit<Post, "id"> = doc.data() as any;
-    transformed.push({ id: doc.id, ...data });
+    console.log(`${doc.id} => ${doc.data()}`);
+    resp.push({ 
+      ...doc.data()
+    }as Post)
   });
-
-  return transformed;
-};
+  return resp
+}
 
 const GetPostsListener = (cb: (docs: Post[]) => void) => {
     const q = query(collection(db, "posts"), orderBy("createdAt")); 
