@@ -6,8 +6,8 @@ import { dataUploade} from "../../dataUploade/dataUploade"
 import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
 import CardFriends,{AttributeFriends} from "../../components/CardFriends/CardFriends"
 import CardProfile,{AttributeProfile} from "../../components/CardProfile/CardProfile"
-import CardUploade, {AttributeUploade} from "../../components/CardUploade/CardUploade"
-import { dispatch } from "../../store/index";
+import { dispatch } from "../../store"
+import { GetPosts } from "../../store/actions"
 import {Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 
@@ -17,7 +17,7 @@ export default class Dashboard extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];
-    carduploades: CardUploade[]=[];
+
    
 
     constructor(){
@@ -32,20 +32,6 @@ export default class Dashboard extends HTMLElement{
             this.cardicons.push(CardIcon);
             
         });
-
-        dataUploade.forEach((c) => {
-            const CardUpload = this.ownerDocument.createElement("my-carduploade") as CardUploade;
-            CardUpload.setAttribute(AttributeUploade.profile,c.profile);
-            CardUpload.setAttribute(AttributeUploade.named,c.named);
-            CardUpload.setAttribute(AttributeUploade.subname,c.subname);
-            CardUpload.setAttribute(AttributeUploade.description,c.description);
-            CardUpload.setAttribute(AttributeUploade.images,c.images);
-            CardUpload.setAttribute(AttributeUploade.likes,c.likes);
-            CardUpload.setAttribute(AttributeUploade.number,c.number);
-            this.carduploades.push(CardUpload);
-            
-        });
-
         dataFriends.forEach((p) => {
             const CardFriend = this.ownerDocument.createElement("my-cardfriends") as CardFriends;
             CardFriend.setAttribute(AttributeFriends .profilefoto,p.profilefoto);
@@ -66,7 +52,8 @@ export default class Dashboard extends HTMLElement{
     }
     
 
-    connectedCallback(){
+    async connectedCallback(){
+        dispatch(await GetPosts)
         this.render();
     }
 

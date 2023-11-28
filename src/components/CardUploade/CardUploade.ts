@@ -62,14 +62,16 @@ class CardUploade extends HTMLElement{
 
                 container.appendChild(all)
 
+            })
+
                 const css = this.ownerDocument.createElement('style')
             css.innerHTML = styles
             this.shadowRoot?.appendChild(css)
-            })
+          
+            this.shadowRoot?.appendChild(container)
 
 
 
-                })
             }
         }
     }
