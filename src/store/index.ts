@@ -3,10 +3,10 @@ import {  Actions,AppState, Observer,Screens } from "../types/store";
 import { reducer } from "./reducer";
 import firebase,{ auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { LogIn,Navigate,Register,SetUserCredentials} from "./actions";
+import { Navigate,SetUserCredentials} from "./actions";
 
 
-onAuthStateChanged(auth, async(user:any) => {
+onAuthStateChanged(auth, async(user:any) => { 
   console.log(user)
   if (user) {
   appState.userCredentials !== null ? dispatch(SetUserCredentials(user)): '';
