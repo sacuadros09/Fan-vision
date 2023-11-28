@@ -1,5 +1,6 @@
 import { appState, dispatch } from "../../store";
-//import {LogIn,} from "../../store/actions"
+import {LogIn,} from "../../store/actions"
+import firebase from "../../utils/firebase";
 import styles from "./FormLogin.css"
 
 const credentials = {
