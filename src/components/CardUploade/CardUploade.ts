@@ -1,5 +1,18 @@
-import { addObserver,appState } from "../../store";
+import { addObserver,appState,dispatch} from "../../store";
+import { Post } from "../../types/post";
 import styles from "./CardUploade.css"
+
+
+const datapost: Post = {
+    id:"",
+       profile:"",
+       named:"",
+       subname:"",
+       description:"",
+       images:"",
+       likes: "",
+       number: 0,
+   };
 
 class CardUploade extends HTMLElement{
     constructor(){
