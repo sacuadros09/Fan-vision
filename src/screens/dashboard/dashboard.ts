@@ -2,14 +2,18 @@ import "../../components/index"
 import { dataIcons } from "../../dataIcons/dataIcons"
 import { dataFriends } from "../../dataFriends/dataFriends"
 import { dataProfile} from "../../dataProfile/dataProfile"
-import { dataUploade} from "../../dataUploade/dataUploade"
 import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
 import CardFriends,{AttributeFriends} from "../../components/CardFriends/CardFriends"
 import CardProfile,{AttributeProfile} from "../../components/CardProfile/CardProfile"
-import { dispatch } from "../../store"
+import { appState,dispatch } from "../../store"
 import { GetPosts } from "../../store/actions"
+import firebase from "../../utils/firebase"
 import {Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
+
+const credentials ={
+    
+}
 
 
 

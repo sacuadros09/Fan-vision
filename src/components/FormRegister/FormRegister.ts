@@ -6,7 +6,7 @@ import firebase from "../../utils/firebase";
 import styles from "./FormRegister.css"
 
 const credentials = {
-    uid: appState.userData.uid,
+    uid: "",
     Name: "",
     userName: "",
     email: "",
@@ -77,6 +77,7 @@ export default class MyFormRegister extends HTMLElement{
         sendbtn.innerText = "Register"
         sendbtn.addEventListener("click", async ()=>{
           const user = await firebase.registerUser(credentials)
+          dispatch(AddUser(credentials))
           console.log(user)
           if(user){
             dispatch(Navigate(Screens.LOGIN))
