@@ -1,9 +1,20 @@
-export enum AttributePost{
-    "text"="text",
-    "type"="type"
-}
+import { appState, dispatch } from "../../store";
+import { AddPost } from "../../store/actions";
+import { Post } from "../../types/post";
+import styles from "./profile.css"
 
-export default class Post extends HTMLElement{
+const post: Post = {
+ id:"",
+    profile:"",
+    named: "",
+    subname: "",
+    description:"",
+    images: "",
+    likes: "",
+    number: 0,
+};
+
+export default class PostADD extends HTMLElement{
     text?: string;
     type?: string;
 
@@ -50,4 +61,4 @@ export default class Post extends HTMLElement{
 
 }   
 
-customElements.define('my-post', Post)
+customElements.define('my-post', PostADD)
