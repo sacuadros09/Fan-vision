@@ -63,7 +63,8 @@ export default class Dashboard extends HTMLElement{
     
 
     async connectedCallback(){
-        dispatch(await GetPosts)
+       // dispatch(await GetPosts)
+       await firebase.AddUserDB(credentials)
         this.render();
     }
 
