@@ -1,7 +1,7 @@
 import { appState, dispatch } from "../../store";
 import { AddPost } from "../../store/actions";
 import { Post } from "../../types/post";
-import styles from "./profile.css"
+import styles from "./Post.css"
 
 const post: Post = {
  id:"",

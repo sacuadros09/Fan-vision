@@ -101,10 +101,10 @@ export default class DashboardProfile extends HTMLElement{
             topmid.appendChild(Biografy)
 
 
-            const NewProfile = this.ownerDocument.createElement('my-profile')
+            const NewProfile = this.ownerDocument.createElement('input')
             NewProfile.setAttribute(AttributeProfile.text, "New Profile")
             NewProfile.setAttribute(AttributeProfile.type, "text")
-         //   NewProfile.addEventListener("change",(e:any)=>credentials.username = e.target.value)
+             NewProfile.addEventListener("change",(e:any)=>credentials.newprofile = e.target.value)
             topbot.appendChild(NewProfile)
 
             const Description = this.ownerDocument.createElement('my-profile')

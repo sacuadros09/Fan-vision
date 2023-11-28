@@ -33,7 +33,7 @@ const initialState: AppState = {
   // password: "",
     
  // },
-  screen: Screens.REGISTER,
+  screen: Screens.PROFILE,
   posts: [],
   userCredentials:""
 };
