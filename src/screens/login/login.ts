@@ -61,12 +61,8 @@ export default class DashboardLogin extends HTMLElement {
             SignUp.className = "SignUp"
             SignUp.innerText = "Sign up"
             form.appendChild(SignUp)
-
-            
-        
-          
-
-           
+       
+            form.appendChild(account)
             container.appendChild(leftimage)
             container.appendChild(form)
             container.appendChild(inpuntform)
