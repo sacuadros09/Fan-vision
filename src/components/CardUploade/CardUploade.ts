@@ -34,7 +34,9 @@ class CardUploade extends HTMLElement{
                     UserName.textContent = appState.userData.userName
                     profile.appendChild(UserName)
 
-                    
+                    const description = this.ownerDocument.createElement("p")
+                    description.textContent = p.description
+                    all.appendChild(description)
 
 
 
