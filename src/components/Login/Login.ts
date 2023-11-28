@@ -1,7 +1,5 @@
-import "../../components/index"
-import { dispatch } from "../../store/index";
-import { Navigate } from "../../store/actions";
-import { Screens } from "../../types/store";
+
+
 import styles from "./Inputlog.css"
 
 export enum AttributeLogin{
