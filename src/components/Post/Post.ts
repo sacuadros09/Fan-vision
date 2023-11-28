@@ -4,12 +4,12 @@ import { Post } from "../../types/post";
 import styles from "./Post.css"
 
 const post: Post = {
- id:"",
+ id:appState.userData.uid,
     profile:"",
-    named: "",
-    subname: "",
+    named:appState.userData.Name,
+    subname:appState.userData.userName,
     description:"",
-    images: "",
+    images:appState.userData.img,
     likes: "",
     number: 0,
 };
