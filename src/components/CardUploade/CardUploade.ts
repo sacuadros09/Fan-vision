@@ -4,7 +4,7 @@ import { Post } from "../../types/post";
 import styles from "./CardUploade.css"
 
 
-const datapost: Post = {
+const dataPost: Post = {
     id:"",
        profile:"",
        named:"",
@@ -13,6 +13,7 @@ const datapost: Post = {
        images:"",
        likes: "",
        number: 0,
+       createdAt:""
    };
 
 class CardUploade extends HTMLElement{
@@ -48,6 +49,9 @@ class CardUploade extends HTMLElement{
                     const Name = this.ownerDocument.createElement("h3")
                     Name.textContent = appState.userData.Name
                     profile.appendChild(Name)
+                    dataPost.named = p.named
+                    dataPost.id = p.id
+                    dataPost.createdAt = p.createdAt
 
                     const UserName = this.ownerDocument.createElement("h3")
                     UserName.textContent = appState.userData.userName

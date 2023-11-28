@@ -7,4 +7,5 @@ export interface Post {
     images: string;
     likes: string;
     number: number;
+    createdAt:string;
 }
