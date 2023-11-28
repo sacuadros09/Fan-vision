@@ -4,19 +4,14 @@ import firebase from "../../utils/firebase";
 import styles from "./FormLogin.css"
 
 const credentials = {
-    id: "",
-    Name: "",
-    userName: "",
     email: "",
     password: "",
-    Confirmpassword:"",
-    img: "",
 }
 
 export default class MyFormLog extends HTMLElement{
 
     constructor(){
-        super();
+        super();    
         this.attachShadow({mode:"open"});
     }
 
@@ -34,11 +29,11 @@ export default class MyFormLog extends HTMLElement{
 
         const container = this.ownerDocument.createElement("section")
 
-        const userName = this.ownerDocument.createElement("input")
-        userName.placeholder = "Username"
-        userName.type = "email"
-        userName.addEventListener("change", (e:any)=>{
-            credentials.userName = e.target.value
+        const email = this.ownerDocument.createElement("input")
+        email.placeholder = "Email"
+        email.type = "email"
+        email.addEventListener("change", (e:any)=>{
+            credentials.email = e.target.value
         })
 
         const password = this.ownerDocument.createElement("input")
