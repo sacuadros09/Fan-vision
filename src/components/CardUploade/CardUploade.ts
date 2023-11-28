@@ -1,4 +1,5 @@
 import { addObserver,appState,dispatch} from "../../store";
+import { GetPosts } from "../../store/actions";
 import { Post } from "../../types/post";
 import styles from "./CardUploade.css"
 
@@ -19,8 +20,13 @@ class CardUploade extends HTMLElement{
         super();
         this.attachShadow({mode: "open"});
     }   
-        connectedCallback(){
-            this.render();
+      async connectedCallback(){
+           if(appState.posts.length === 0){
+            dispatch(await GetPosts())
+            this.render()
+           }else{
+            this.render()
+           }
         }
         
         render(){
