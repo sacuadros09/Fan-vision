@@ -38,8 +38,8 @@ export enum UserActions {
     "SET_USER"="SET_USER"
 }
 
-export interface LogInAction {  
-    action: UserActions.LOGIN,
+export interface AddUserAction {  
+    action: UserActions.ADD_USER,
     payload: User
 }
 
@@ -48,11 +48,7 @@ export interface LogOutAction {
     payload: void
 }
 
-export interface RegisterAction {
-    action: UserActions.REGISTER,
-    payload:  User
-    
-}
+
 
 export interface EditAction {
     action: UserActions.EDIT,
@@ -80,4 +76,4 @@ export interface GetPostsAction {
 }
 
 
-export type Actions = LogInAction | LogOutAction | RegisterAction |EditAction|SetUserAction| NavigationActions| AddPostAction | GetPostsAction;
+export type Actions = AddUserAction | LogOutAction |EditAction|SetUserAction| NavigationActions| AddPostAction | GetPostsAction;
