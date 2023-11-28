@@ -1,4 +1,5 @@
-
+import { addObserver,appState } from "../../store";
+import styles form "./CardUploade.css"
 
 export enum AttributeUploade {
     "profile" = "profile",
