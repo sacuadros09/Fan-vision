@@ -1,41 +1,13 @@
 import { addObserver,appState } from "../../store";
-import styles form "./CardUploade.css"
+import styles from "./CardUploade.css"
 
-export enum AttributeUploade {
-    "profile" = "profile",
-    "named" = "named" ,
-    "subname" = "subname",
-    "description" = "description",
-    "images" = "images" ,
-    "likes" = "likes",
-    "number" = "number",
-}
-
-class CardUploade extends HTMLElement {
-    
-    profile?: string;
-    named?: string;
-    subname?: string;
-    description?: string;
-    images?: string;
-    likes?: string;
-    number?: number;
-    
-    
-    static get observedAttributes(){
-        const attrs: Record<AttributeUploade, null> = {
-            profile: null,
-            named: null,
-            subname: null,
-            description: null,
-            images: null,
-            likes: null,
-           number: null,
-        }
-        return Object.keys(attrs);
+class CardUploade extends HTMLElement{
+    constructor(){
+        super();
+        this.attachShadow({mode: "open"});
     }
     
-    attributeChangedCallback(propName:AttributeUploade,oldValue: string | undefined,newValue: string | undefined){
+    uteChangedCallback(propName:AttributeUploade,oldValue: string | undefined,newValue: string | undefined){
         switch(propName){
             case AttributeUploade.number:
                 
@@ -50,10 +22,7 @@ class CardUploade extends HTMLElement {
         this.render();
     }
         
-        constructor(){
-            super();
-            this.attachShadow({mode: "open"});
-        }
+    
         
         connectedCallback(){
             this.render();
