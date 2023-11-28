@@ -13,7 +13,7 @@ onAuthStateChanged(auth, async(user:any) => {
   appState.userData.uid = user.uid
   appState.userData.email=String(user?.email)
   dispatch(Navigate(Screens.DASHBOARD));
-} else {dispatch(Navigate(Screens.REGISTER));
+} else {dispatch(Navigate(Screens.LOGIN));
 }
 });
 
