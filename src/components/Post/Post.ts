@@ -15,28 +15,6 @@ const post: Post = {
 };
 
 export default class PostADD extends HTMLElement{
-    text?: string;
-    type?: string;
-
-    static get observedAttributes(){
-        const attrs: Record<AttributePost, null> = {
-            text: null,
-            type: null,
-        }
-        return Object.keys(attrs)
-    }
-
-    attributeChangedCallback(
-        propName:AttributePost,
-        _:unknown,
-        newValue:string,
-    ){
-        switch (propName) {
-            default:
-                this[propName] = newValue
-                break;
-        }
-    }
 
     constructor(){
         super();
