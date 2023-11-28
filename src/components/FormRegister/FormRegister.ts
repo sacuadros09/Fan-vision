@@ -5,7 +5,6 @@ import firebase from "../../utils/firebase";
 import styles from "./FormRegister.css"
 
 const credentials = {
-    uid: "",
     Name: "",
     userName: "",
     email: "",
@@ -73,9 +72,9 @@ export default class MyFormRegister extends HTMLElement{
 
 
         const sendbtn = this.ownerDocument.createElement("button")
-        sendbtn.innerText = "Log in"
+        sendbtn.innerText = "Register"
         sendbtn.addEventListener("click", async ()=>{
-            dispatch(await Register(credentials))
+            
         })
 
         
