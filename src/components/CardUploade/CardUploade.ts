@@ -42,7 +42,13 @@ class CardUploade extends HTMLElement{
                     img.src=p.images
                     all.appendChild(img)
 
-                    
+                    const likeAppart = this.ownerDocument.createElement("section")
+                    likeAppart.className = "likeAppart"
+                    all.appendChild(likeAppart)
+
+                        
+
+
 
 
                 })
