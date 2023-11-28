@@ -1,6 +1,7 @@
 import { dispatch } from "../../store";
 import { Register,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
+import firebase from "../../utils/firebase";
 import styles from "./FormRegister.css"
 
 const credentials = {
