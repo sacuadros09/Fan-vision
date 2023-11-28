@@ -26,8 +26,15 @@ class CardUploade extends HTMLElement{
                     imgProfile.src = appState.userData.img
                     profile.appendChild(imgProfile)
 
-                    const userName = 
+                    const Name = this.ownerDocument.createElement("h3")
+                    Name.textContent = appState.userData.Name
+                    profile.appendChild(Name)
 
+                    const UserName = this.ownerDocument.createElement("h3")
+                    UserName.textContent = appState.userData.userName
+                    profile.appendChild(UserName)
+
+                    
 
 
 
