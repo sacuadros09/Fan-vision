@@ -29,6 +29,10 @@ export default class PostADD extends HTMLElement{
         if(this.shadowRoot){ 
         this.shadowRoot.innerHTML = '';
 
+        const css = this.ownerDocument.createElement('style')
+        css.innerHTML = styles
+        this.shadowRoot?.appendChild(css)
+        
         const input = this.ownerDocument.createElement('input');
         input.placeholder = `${this.text}`;
         input.type = `${this.type}`
