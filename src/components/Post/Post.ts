@@ -45,6 +45,20 @@ export default class PostADD extends HTMLElement{
             post.description = e.target.value
         })
 
+        const imagePost = this.ownerDocument.createElement('input');
+       imagePost.placeholder = "Put the image URL here"
+        descriptionPost.type = "text"
+        descriptionPost.addEventListener("change",(e:any)=>{
+            post.images = e.target.value
+        })
+
+        const sendbtn = this.ownerDocument.createElement("button")
+        sendbtn.addEventListener("click",async()=>{
+            dispatch(await AddPost(post))
+        })
+
+
+
         this.shadowRoot?.appendChild(input)
         }
     }
