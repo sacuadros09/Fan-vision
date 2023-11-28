@@ -38,7 +38,11 @@ class CardUploade extends HTMLElement{
                     description.textContent = p.description
                     all.appendChild(description)
 
+                    const img = this.ownerDocument.createElement("img")
+                    img.src=p.images
+                    all.appendChild(img)
 
+                    
 
 
                 })
