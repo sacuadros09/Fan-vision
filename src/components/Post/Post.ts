@@ -14,7 +14,7 @@ const post: Post = {
     number: 0,
 };
 
-export default class PostADD extends HTMLElement{
+ class UploadePost extends HTMLElement{
 
     constructor(){
         super();
@@ -57,12 +57,14 @@ export default class PostADD extends HTMLElement{
             dispatch(await AddPost(post))
         })
 
-
-
-        this.shadowRoot?.appendChild(input)
+        container.appendChild(imgprofile)
+        container.appendChild(descriptionPost)
+        container.appendChild(imagePost)
+        container.appendChild(sendbtn)
         }
     }
 
 }   
 
-customElements.define('my-post', PostADD)
+customElements.define('my-post', UploadePost)
+export default UploadePost
