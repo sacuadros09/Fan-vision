@@ -25,6 +25,7 @@ const initialState: AppState = {
     email: "",
     password: "",
     Confirmpassword: "",
+    img: "",
   },
 
   screen: Screens.REGISTER,

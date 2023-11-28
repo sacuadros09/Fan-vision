@@ -5,6 +5,7 @@ export interface User {
     email: string,
     password: string,
     Confirmpassword:string,
+    img:string
 }   
 
 //export interface Userlogin {
