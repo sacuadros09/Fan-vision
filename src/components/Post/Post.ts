@@ -35,11 +35,15 @@ export default class PostADD extends HTMLElement{
 
         const container = this.ownerDocument.createElement("section")
 
-        
+        const imgprofile = this.ownerDocument.createElement("img")
+        //imgprofile.src = appState.user.img
 
-        const input = this.ownerDocument.createElement('input');
-        input.placeholder = `${this.text}`;
-        input.type = `${this.type}`
+        const descriptionPost = this.ownerDocument.createElement('input');
+        descriptionPost.placeholder = "Write what you want to post here..."
+        descriptionPost.type = "text"
+        descriptionPost.addEventListener("change",(e:any)=>{
+            post.description = e.target.value
+        })
 
         this.shadowRoot?.appendChild(input)
         }
