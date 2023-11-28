@@ -45,11 +45,11 @@ export default class MyFormLog extends HTMLElement{
 
         const sendbtn = this.ownerDocument.createElement("button")
         sendbtn.innerText = "Log in"
-      //  sendbtn.addEventListener("click", async ()=>{
-        //  dispatch(await LogIn(credentials))
-       // })
+      sendbtn.addEventListener("click", async ()=>{
+          await firebase.loginUser(credentials)
+        })
 
-        container.appendChild(userName)
+        container.appendChild(email)
         container.appendChild(password)
         container.appendChild(sendbtn)
 
