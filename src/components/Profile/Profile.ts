@@ -1,8 +1,4 @@
-import { appState, dispatch } from "../../store";
-import { AddPost } from "../../store/actions";
-import { Post } from "../../types/post";
 import styles from "./profile.css"
-
 export enum AttributeProfile{
     "text"="text",
     "type"="type"
