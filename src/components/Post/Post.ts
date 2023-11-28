@@ -36,7 +36,7 @@ const post: Post = {
         const container = this.ownerDocument.createElement("section")
 
         const imgprofile = this.ownerDocument.createElement("img")
-        //imgprofile.src = appState.user.img
+        imgprofile.src = appState.userData.img
 
         const descriptionPost = this.ownerDocument.createElement('input');
         descriptionPost.placeholder = "Write what you want to post here..."
