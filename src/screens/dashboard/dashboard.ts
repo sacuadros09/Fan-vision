@@ -12,7 +12,13 @@ import {Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 
 const credentials ={
-    
+    uid: appState.userData.uid,
+    Name:appState.userData.Name,
+    userName:appState.userData.userName,
+    email: appState.userData.email,
+    password: appState.userData.password,
+    img: appState.userData.img
+
 }
 
 
