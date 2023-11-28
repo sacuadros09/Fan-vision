@@ -3,17 +3,17 @@ import { dataIcons } from "../../dataIcons/dataIcons"
 import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
 import { attributeMenu } from "../../components/Menu/Menu"
 import { AttributeProfile } from "../../components/Profile/Profile"
-import { dispatch } from "../../store/index";
-import {Navigate } from "../../store/actions";
+import { appState, dispatch } from "../../store/index";
+import {Edit,LogOut,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import styles from "./profile.css"
 
-//const credentials = { 
-   // username: "",
-  //  name:"",
-   // email: "",
-  //  password: ""
-//}
+const credentials = { 
+   newprofile: "",
+    newdescription:"",  
+    email: "",
+    password: "",
+}
 
 export default class DashboardProfile extends HTMLElement{
     cardicons: CardIcons[] = [];
@@ -87,6 +87,7 @@ export default class DashboardProfile extends HTMLElement{
             const Profilepicture=document.createElement("img")
             Profilepicture.className = "Imgphoto"
         Profilepicture.src="/src/img/AñadirAmigo.png"
+       // Profilepicture.src= appState.userData.img
         topmid.appendChild(Profilepicture)
 
         const Añadir = this.ownerDocument.createElement("h2")

@@ -4,7 +4,7 @@ import { Screens } from "../../types/store";
 import styles from "./FormRegister.css"
 
 const credentials = {
-    id: "",
+    uid: "",
     Name: "",
     userName: "",
     email: "",

@@ -69,7 +69,7 @@ import { FirebaseError } from "firebase/app";
 
         submitForm(){
         console.log(formPost);
-            Firebase.AddPostDB(formPost);
+       //     Firebase.AddPostDB(formPost);
         }
 
         changeProfile(e: any){
