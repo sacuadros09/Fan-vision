@@ -31,11 +31,11 @@ export interface NavigationAction{
 }
 
 export enum UserActions {
-    "LOGIN" = "LOGIN",
-    "REGISTER" = "REGISTER",
+    "ADD_USER"="ADD_USER",
     "LOGOUT" = "LOGOUT",
     "EDIT" = "EDIT",
-    "SET_USER"="SET_USER"
+    "SET_USER"="SET_USER",
+    
 }
 
 export interface AddUserAction {  
