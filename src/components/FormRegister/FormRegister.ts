@@ -6,6 +6,7 @@ import firebase from "../../utils/firebase";
 import styles from "./FormRegister.css"
 
 const credentials = {
+    uid: appState.userData.uid,
     Name: "",
     userName: "",
     email: "",
