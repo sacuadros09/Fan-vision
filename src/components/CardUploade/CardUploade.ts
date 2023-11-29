@@ -75,6 +75,10 @@ class CardUploade extends HTMLElement{
 
                 
                 likeAppart.appendChild(save);
+
+                save.addEventListener("click",async()=>{
+                    dispatch((appState.posts[i]))
+                })
             
 
                 container.appendChild(all)
