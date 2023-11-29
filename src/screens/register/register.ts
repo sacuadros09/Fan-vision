@@ -71,16 +71,16 @@ export default class DashboardRegister extends HTMLElement {
             form.appendChild(SignUp)
 
 
-            const account = this.ownerDocument.createElement ("button")
-            account.className = "haveacc"
-            account.innerText = 'Already have an account?';
-            account.addEventListener("click", ()=>{
-                dispatch(Navigate(Screens.LOGIN))
+          //  const account = this.ownerDocument.createElement ("button")
+           // account.className = "account"
+           // account.innerText = 'Already have an account?';
+          //  account.addEventListener("click", ()=>{
+           //     dispatch(Navigate(Screens.LOGIN))
                 
-             })
+           //  })
             
             form.appendChild(campsForm)
-            botbutton.appendChild(account)
+           // botbutton.appendChild(account)
             container.appendChild(leftimage)
             container.appendChild(formbot)
             container.appendChild(form)

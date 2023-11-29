@@ -5,18 +5,6 @@ import { User } from "firebase/auth";
 import styles from "./CardUploade.css"
 
 
-const dataPost: Post = {
-    id:"",
-       profile:"",
-       named:"",
-       subname:"",
-       description:"",
-       images:"",
-       likes: "",
-       number: 0,
-       createdAt:""
-   };
-
 class CardUploade extends HTMLElement{
     constructor(){
         super();
@@ -46,31 +34,26 @@ class CardUploade extends HTMLElement{
                     const imgProfile = this.ownerDocument.createElement("img")
                     imgProfile.src = appState.posts[i].images;
                     profile.appendChild(imgProfile)
-                    dataPost.images = appState.posts[i].images
+               
 
                     const Name = this.ownerDocument.createElement("h3")
                     Name.textContent = appState.posts[i].named
                     profile.appendChild(Name)
-                    dataPost.named = appState.posts[i].named
-                    dataPost.id = appState.posts[i].id
-                    dataPost.createdAt = appState.posts[i].createdAt
+                   
 
                     const UserName = this.ownerDocument.createElement("h3")
                     UserName.textContent =  appState.posts[i].subname
                     profile.appendChild(UserName)
-                    dataPost.subname = appState.posts[i].subname
-                    dataPost.id = appState.posts[i].id
-                    dataPost.createdAt = appState.posts[i].createdAt
+                  
 
                     const description = this.ownerDocument.createElement("p")
                     description.textContent = appState.posts[i].description
                     all.appendChild(description)
-                    dataPost.description = appState.posts[i].description
-
+                    
                     const img = this.ownerDocument.createElement("img")
                     img.src= appState.posts[i].images
                     all.appendChild(img)
-                    dataPost.images = appState.posts[i].images
+                  
 
                     const likeAppart = this.ownerDocument.createElement("section")
                     likeAppart.className = "likeAppart"

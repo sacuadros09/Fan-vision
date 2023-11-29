@@ -63,7 +63,6 @@ export default class MyFormRegister extends HTMLElement{
         password.type = "password"
         password.addEventListener("change", (e:any)=>{
             credentials.password = e.target.value
-            dispatch(Navigate(Screens.LOGIN))
         })
 
         const confirmpassword= this.ownerDocument.createElement("input")
@@ -79,9 +78,8 @@ export default class MyFormRegister extends HTMLElement{
         sendbtn.addEventListener("click", async ()=>{
           const user = await firebase.registerUser(credentials)
           console.log(user)
-       
           if(user){
-            dispatch(Navigate(Screens.LOGIN))
+            dispatch(Navigate(Screens.DASHBOARD))
             sessionStorage.clear()
           }  
         })
@@ -90,6 +88,7 @@ export default class MyFormRegister extends HTMLElement{
        
         this.shadowRoot?.appendChild(name)
         this.shadowRoot?.appendChild(userName)
+        this.shadowRoot?.appendChild(email)
         this.shadowRoot?.appendChild(password)
         this.shadowRoot?.appendChild(confirmpassword)
         this.shadowRoot?.appendChild(sendbtn)
