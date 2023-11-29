@@ -35,6 +35,7 @@ export default class MyFormRegister extends HTMLElement{
 
         
 
+
         const name = this.ownerDocument.createElement("input")
         name.placeholder = "Name"
         name.type = "text"
@@ -86,6 +87,7 @@ export default class MyFormRegister extends HTMLElement{
         })
 
         
+
         this.shadowRoot?.appendChild(name)
         this.shadowRoot?.appendChild(userName)
         this.shadowRoot?.appendChild(password)

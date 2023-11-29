@@ -21,6 +21,7 @@ import { FirebaseError } from "firebase/app";
         images: "",
         likes: "",
         number: 0,
+        createdAt:"",
     };
 
     export default class DashboardPosts extends HTMLElement{

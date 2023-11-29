@@ -12,6 +12,7 @@ const post: Post = {
     images:appState.userData.img,
     likes: "",
     number: 0,
+    createdAt:"",
 };
 
  class UploadePost extends HTMLElement{
