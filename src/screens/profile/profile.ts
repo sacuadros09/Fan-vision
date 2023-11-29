@@ -105,10 +105,10 @@ export default class DashboardProfile extends HTMLElement{
             editProfile.className = "editProfile";
             container.appendChild(editProfile);
 
-            const NewProfile = this.ownerDocument.createElement('input')
+            const NewProfile = this.ownerDocument.createElement('my-profile')
             NewProfile.setAttribute(AttributeProfile.text, "New Profile")
             NewProfile.setAttribute(AttributeProfile.type, "text")
-            NewProfile.placeholder = appState.userData.userName 
+           // NewProfile.placeholder = appState.userData.userName 
              NewProfile.addEventListener("change",(e:any)=>credentials.userName = e.target.value)
             topbot.appendChild(NewProfile)
 

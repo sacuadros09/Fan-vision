@@ -2,11 +2,11 @@ import "../../components/index"
 import { dataIcons } from "../../dataIcons/dataIcons"
 import { dataFriends } from "../../dataFriends/dataFriends"
 import { dataProfile} from "../../dataProfile/dataProfile"
-import { dataUploadeData} from "../../dataUploade/dataUploade"
+import { dataUploade } from "../../dataUploade/dataUploade"
+import CardMenu, {AttributeUploade} from "../../components/CardMenu/CardMenu"
 import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
 import CardFriends,{AttributeFriends} from "../../components/CardFriends/CardFriends"
 import CardProfile,{AttributeProfile} from "../../components/CardProfile/CardProfile"
-import UploadeData, {AttributeUploadeData} from "../../components/UploadeData/UploadeData"
 import { attributeMenu } from "../../components/Menu/Menu"
 import { dispatch } from "../../store/index";
 import {Navigate } from "../../store/actions";
@@ -20,7 +20,8 @@ export default class DashboardMenu extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];
-    uploadedatas: UploadeData[]=[];
+    cardmenus: CardMenu[]=[];
+   
    
 
     constructor(){
@@ -36,19 +37,18 @@ export default class DashboardMenu extends HTMLElement{
             
         });
 
-        dataUploadeData.forEach((c) => {
-            const UploadeData = this.ownerDocument.createElement("my-carduploadedata") as UploadeData;
-            UploadeData.setAttribute(AttributeUploadeData.profile,c.profile);
-            UploadeData.setAttribute(AttributeUploadeData.named,c.named);
-            UploadeData.setAttribute(AttributeUploadeData.subname,c.subname);
-            UploadeData.setAttribute(AttributeUploadeData.description,c.description);
-            UploadeData.setAttribute(AttributeUploadeData.images,c.images);
-            UploadeData.setAttribute(AttributeUploadeData.likes,c.likes);
-            UploadeData.setAttribute(AttributeUploadeData.number,c.number);
-            this. uploadedatas.push(UploadeData);
+        dataUploade.forEach((c) => {
+            const CardUpload = this.ownerDocument.createElement("my-cardmenu") as CardMenu;
+            CardUpload.setAttribute(AttributeUploade.profile,c.profile);
+            CardUpload.setAttribute(AttributeUploade.named,c.named);
+            CardUpload.setAttribute(AttributeUploade.subname,c.subname);
+            CardUpload.setAttribute(AttributeUploade.description,c.description);
+            CardUpload.setAttribute(AttributeUploade.images,c.images);
+            CardUpload.setAttribute(AttributeUploade.likes,c.likes);
+            CardUpload.setAttribute(AttributeUploade.number,c.number);
+            this.cardmenus.push(CardUpload);
             
         });
-
 
         dataFriends.forEach((p) => {
             const CardFriend = this.ownerDocument.createElement("my-cardfriends") as CardFriends;
@@ -108,8 +108,11 @@ export default class DashboardMenu extends HTMLElement{
 
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Edit profile"
+            buttonuploade.innerText="Futbolisa"
             sectionicon.appendChild(buttonuploade);
+            buttonuploade.addEventListener("click", ()=>{
+               dispatch(Navigate(Screens.POST))
+            })
 
             const sectionuploade=document.createElement("section")
 
@@ -142,14 +145,12 @@ export default class DashboardMenu extends HTMLElement{
             sectionuploade.appendChild(info)
 
 
-           
-
-            
             sectionuploade.className = "midside"
-            this.uploadedatas.forEach((carduploade) => {
+            this.cardmenus.forEach((carduploade) => {
                 sectionuploade.appendChild(carduploade);
             })
             container.appendChild(sectionuploade);
+
 
             
 
@@ -175,6 +176,7 @@ export default class DashboardMenu extends HTMLElement{
             const containeright = document.createElement("section")
             containeright.className = "containerRight"
             containeright.appendChild(sectionprofile)
+           // container.appendChild(miduploade)
             container.appendChild(sectionfriends);
             containeright.appendChild(sectionfriends)
             container.appendChild(containeright)
@@ -184,4 +186,4 @@ export default class DashboardMenu extends HTMLElement{
     }
 }
 
-customElements.define("my-dashboardmenu",DashboardMenu); 
+customElements.define("my-dashboardmenu",DashboardMenu);    

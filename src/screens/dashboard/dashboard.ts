@@ -115,7 +115,7 @@ export default class Dashboard extends HTMLElement{
             const containeright = document.createElement("section")
             containeright.className = "containerRight"
             containeright.appendChild(sectionprofile)
-            container.appendChild(sectionuploade)
+           // container.appendChild(sectionuploade)
             container.appendChild(sectionfriends);
             containeright.appendChild(sectionfriends)
             container.appendChild(containeright)

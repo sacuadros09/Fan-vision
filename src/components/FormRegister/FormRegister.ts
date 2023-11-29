@@ -78,6 +78,8 @@ export default class MyFormRegister extends HTMLElement{
         sendbtn.addEventListener("click", async ()=>{
           const user = await firebase.registerUser(credentials)
           console.log(user)
+          credentials.uid = user.user.uid
+          dispatch(await AddUser(credentials))
           if(user){
             dispatch(Navigate(Screens.DASHBOARD))
             sessionStorage.clear()
