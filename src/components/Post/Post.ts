@@ -40,6 +40,7 @@ const post: Post = {
         imgprofile.src = appState.userData.img
 
         const descriptionPost = this.ownerDocument.createElement('input');
+        descriptionPost.className = "description"
         descriptionPost.placeholder = "Write what you want to post here..."
         descriptionPost.type = "text"
         descriptionPost.addEventListener("change",(e:any)=>{
@@ -48,12 +49,13 @@ const post: Post = {
 
         const imagePost = this.ownerDocument.createElement('input');
        imagePost.placeholder = "Put the image URL here"
-        descriptionPost.type = "text"
-        descriptionPost.addEventListener("change",(e:any)=>{
+        imagePost.type = "text"
+        imagePost.addEventListener("change",(e:any)=>{
             post.images = e.target.value
         })
 
         const sendbtn = this.ownerDocument.createElement("button")
+        sendbtn.textContent ="+"
         sendbtn.addEventListener("click",async()=>{
             dispatch(await AddPost(post))
         })
