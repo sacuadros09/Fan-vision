@@ -2,7 +2,7 @@ import { appState,dispatch } from "../../store";
 import { AddUser,Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 import firebase,{auth}from "../../utils/firebase";
-import styles from "./FormRegister.css"
+import styles from "./Icons.css"
 
 
 export default class MyIcons extends HTMLElement{
