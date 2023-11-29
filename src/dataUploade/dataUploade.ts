@@ -1,4 +1,4 @@
-export const dataUploade = [
+export const dataUploadeData = [
     {
           profile: "/src/img/ProfileMedium.png",
           named: "MeteGoles99",

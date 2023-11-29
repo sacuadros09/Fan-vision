@@ -2,10 +2,11 @@ import "../../components/index"
 import { dataIcons } from "../../dataIcons/dataIcons"
 import { dataFriends } from "../../dataFriends/dataFriends"
 import { dataProfile} from "../../dataProfile/dataProfile"
-import { dataUploade} from "../../dataUploade/dataUploade"
+import { dataUploadeData} from "../../dataUploade/dataUploade"
 import CardIcons, {AttributeIcons} from "../../components/CardIcons/CardIcons"
 import CardFriends,{AttributeFriends} from "../../components/CardFriends/CardFriends"
 import CardProfile,{AttributeProfile} from "../../components/CardProfile/CardProfile"
+import UploadeData, {AttributeUploadeData} from "../../components/UploadeData/UploadeData"
 import { attributeMenu } from "../../components/Menu/Menu"
 import { dispatch } from "../../store/index";
 import {Navigate } from "../../store/actions";
@@ -19,7 +20,7 @@ export default class DashboardMenu extends HTMLElement{
     cardicons: CardIcons[] = [];
     cardfriends: CardFriends[] = [];
     cardprofiles: CardProfile[] =[];
-   
+    uploadedatas: UploadeData[]=[];
    
 
     constructor(){
@@ -34,6 +35,20 @@ export default class DashboardMenu extends HTMLElement{
             this.cardicons.push(CardIcon);
             
         });
+
+        dataUploadeData.forEach((c) => {
+            const UploadeData = this.ownerDocument.createElement("my-carduploadedata") as UploadeData;
+            UploadeData.setAttribute(AttributeUploadeData.profile,c.profile);
+            UploadeData.setAttribute(AttributeUploadeData.named,c.named);
+            UploadeData.setAttribute(AttributeUploadeData.subname,c.subname);
+            UploadeData.setAttribute(AttributeUploadeData.description,c.description);
+            UploadeData.setAttribute(AttributeUploadeData.images,c.images);
+            UploadeData.setAttribute(AttributeUploadeData.likes,c.likes);
+            UploadeData.setAttribute(AttributeUploadeData.number,c.number);
+            this. uploadedatas.push(UploadeData);
+            
+        });
+
 
         dataFriends.forEach((p) => {
             const CardFriend = this.ownerDocument.createElement("my-cardfriends") as CardFriends;
@@ -93,11 +108,8 @@ export default class DashboardMenu extends HTMLElement{
 
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Futbolisa"
+            buttonuploade.innerText="Edit profile"
             sectionicon.appendChild(buttonuploade);
-            buttonuploade.addEventListener("click", ()=>{
-               dispatch(Navigate(Screens.POST))
-            })
 
             const sectionuploade=document.createElement("section")
 
@@ -133,8 +145,11 @@ export default class DashboardMenu extends HTMLElement{
            
 
             
-            const miduploade= this.ownerDocument.createElement("my-carduploade")
-            miduploade.className = "uploades"
+            sectionuploade.className = "midside"
+            this.uploadedatas.forEach((carduploade) => {
+                sectionuploade.appendChild(carduploade);
+            })
+            container.appendChild(sectionuploade);
 
             
 
@@ -160,7 +175,6 @@ export default class DashboardMenu extends HTMLElement{
             const containeright = document.createElement("section")
             containeright.className = "containerRight"
             containeright.appendChild(sectionprofile)
-            container.appendChild(miduploade)
             container.appendChild(sectionfriends);
             containeright.appendChild(sectionfriends)
             container.appendChild(containeright)
@@ -170,4 +184,4 @@ export default class DashboardMenu extends HTMLElement{
     }
 }
 
-customElements.define("my-dashboardmenu",DashboardMenu);    
+customElements.define("my-dashboardmenu",DashboardMenu); 

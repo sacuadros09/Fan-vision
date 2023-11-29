@@ -11,7 +11,8 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const AddUser = (user:User ): AddUserAction =>{
+export const AddUser = async (user:User ): Promise<AddUserAction> =>{
+    await firebase.AddUserDB(user)
 
    
 
