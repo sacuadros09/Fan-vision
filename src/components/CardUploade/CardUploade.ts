@@ -36,7 +36,7 @@ class CardUploade extends HTMLElement{
                 this.shadowRoot.innerHTML = ``
                 const container = this.ownerDocument.createElement("section")
 
-                appState.posts.forEach((p)=>{
+                for(let i=0; i<appState.posts.length; i++){
                     const all = this.ownerDocument.createElement("section")
 
                     const profile = this.ownerDocument.createElement("img")
@@ -44,32 +44,33 @@ class CardUploade extends HTMLElement{
                     all.appendChild(profile)
 
                     const imgProfile = this.ownerDocument.createElement("img")
-                    imgProfile.src = p.images
+                    imgProfile.src = appState.posts[i].images;
                     profile.appendChild(imgProfile)
-                    dataPost.images = p.images
+                    dataPost.images = appState.posts[i].images
 
                     const Name = this.ownerDocument.createElement("h3")
-                    Name.textContent = p.named
+                    Name.textContent = appState.posts[i].named
                     profile.appendChild(Name)
-                    dataPost.named = p.named
-                    dataPost.id = p.id
-                    dataPost.createdAt = p.createdAt
+                    dataPost.named = appState.posts[i].named
+                    dataPost.id = appState.posts[i].id
+                    dataPost.createdAt = appState.posts[i].createdAt
 
                     const UserName = this.ownerDocument.createElement("h3")
-                    UserName.textContent = p.subname
+                    UserName.textContent =  appState.posts[i].subname
                     profile.appendChild(UserName)
-                    dataPost.subname = p.subname
-                    dataPost.id = p.id
-                    dataPost.createdAt = p.createdAt
+                    dataPost.subname = appState.posts[i].subname
+                    dataPost.id = appState.posts[i].id
+                    dataPost.createdAt = appState.posts[i].createdAt
 
                     const description = this.ownerDocument.createElement("p")
-                    description.textContent = p.description
+                    description.textContent = appState.posts[i].description
                     all.appendChild(description)
-                    dataPost.description = p.description
+                    dataPost.description = appState.posts[i].description
 
                     const img = this.ownerDocument.createElement("img")
-                    img.src=p.images
+                    img.src= appState.posts[i].images
                     all.appendChild(img)
+                    dataPost.images = appState.posts[i].images
 
                     const likeAppart = this.ownerDocument.createElement("section")
                     likeAppart.className = "likeAppart"
@@ -93,11 +94,12 @@ class CardUploade extends HTMLElement{
 
                 container.appendChild(all)
 
-            })
+            }
+          
 
-                const css = this.ownerDocument.createElement('style')
+            const css = this.ownerDocument.createElement('style')
             css.innerHTML = styles
-            this.shadowRoot?.appendChild(css)
+            this.shadowRoot?.appendChild(css)   
           
             this.shadowRoot?.appendChild(container)
 
@@ -105,7 +107,7 @@ class CardUploade extends HTMLElement{
 
             }
         }
-    }
+}
     
 customElements.define("my-carduploade",CardUploade);
 export default CardUploade;
