@@ -24,10 +24,20 @@ export const AddUser = (user:User ): AddUserAction =>{
 export const LogOut =  ():LogOutAction =>{
 
     if(appState.userCredentials !==null || ''){
+
         dispatch(SetUserCredentials(''))    
+        appState.posts =[]
+        appState.userData ={
+            uid: "",
+            Name: "",
+            userName: "",
+            email: "",
+            password: "",
+            Confirmpassword: "",
+            img: "",
+        }
         sessionStorage.clear()
         dispatch(Navigate(Screens.LOGIN))
-        location.reload()
     }
     
 
