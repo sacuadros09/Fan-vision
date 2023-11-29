@@ -5,7 +5,7 @@ import firebase,{auth}from "../../utils/firebase";
 import styles from "./Friends.css"
 
 
-export default class MYFriends extends HTMLElement{
+export default class MyFriends extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:"open"});
@@ -43,7 +43,7 @@ export default class MYFriends extends HTMLElement{
             Friends.innerText = "Friends"
         
         const LogoPepito = this.ownerDocument.createElement("img")
-        LogoPepito.src = "../../img/Cuadros.png"
+        LogoPepito.src = "/src/img/Cuadros.png"
         LogoPepito.className = "pepito_logo"
 
         const NamePepito = this.ownerDocument.createElement("h2")
@@ -55,7 +55,7 @@ export default class MYFriends extends HTMLElement{
         SubPepito.innerText = "BichoFanatic"
 
         const LogoSacuma = this.ownerDocument.createElement("img")
-        LogoSacuma.src = "../../img/Cuadrostwo.png"
+        LogoSacuma.src = "/src/img/Cuadrostwo.png"
         LogoSacuma.className = "sacuma_logo"
 
         const NameSacuma = this.ownerDocument.createElement("h2")
@@ -67,7 +67,7 @@ export default class MYFriends extends HTMLElement{
         SubSacuma.innerText = "Metegoles99"
 
         const LogoJayco = this.ownerDocument.createElement("img")
-        LogoJayco.src = "../../img/Jaycortez.png"
+        LogoJayco.src = "/src/img/Jaycortez.png"
         LogoJayco.className = "jayco_logo"
 
         const NameJayco = this.ownerDocument.createElement("h2")
@@ -99,4 +99,4 @@ export default class MYFriends extends HTMLElement{
 
 }
 
-customElements.define('my-friends', MYFriends)
+customElements.define('my-friends', MyFriends)

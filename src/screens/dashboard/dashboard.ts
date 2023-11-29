@@ -9,9 +9,6 @@ import styles from "./dashboard.css"
 
 export default class Dashboard extends HTMLElement{
 
-
-   
-
     constructor(){
         super();    
         this.attachShadow({mode:"open"});
@@ -30,29 +27,19 @@ export default class Dashboard extends HTMLElement{
             <link rel="stylesheet" href="/src/index.css">
             
         `;
-        const container=document.createElement("section")
-        container.className = "all"
+             const main=document.createElement("section")
+            main.className = "main"
 
-   
-        const sectionicon=document.createElement("nav")
-        sectionicon.className = "leftside"
+            const icons = this.ownerDocument.createElement("my-icons")
 
-        const logouploade=document.createElement("img")
-        logouploade.src="/src/img/logo.png"
-        sectionicon.appendChild(logouploade); 
+            const topprofile = this.ownerDocument.createElement("my-topprofile")
 
-       
+            const friends = this.ownerDocument.createElement("my-friends")
 
-        
-
-            const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Menu"
-            buttonuploade.addEventListener("click",()=>{
-                dispatch(Navigate(Screens.MENU))
-            })
-            sectionicon.appendChild(buttonuploade);
+            main.appendChild(icons)
+            main.appendChild(topprofile)
+            main.appendChild(friends)
            
-            const campsForm = this.ownerDocument.createElement("form-register")
 
            // const uploadepublication= this.ownerDocument.createElement("my-cardpublication")
            // uploadepublication.className = "publication"
@@ -68,8 +55,8 @@ export default class Dashboard extends HTMLElement{
             containeright.className = "containerRight"
         
           
-            container.appendChild(containeright)
-            this.shadowRoot?.appendChild(container)
+            
+            this.shadowRoot?.appendChild(main)
         }
     }
 }

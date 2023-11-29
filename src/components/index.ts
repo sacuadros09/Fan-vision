@@ -13,6 +13,7 @@ export {default as FormRegister} from "./FormRegister/FormRegister"
 export {default as CardPublication} from "./CardPublication/CardPublication"
 export {default as MyIcons} from "./Icons/Icons"
 export {default as MyTopProfile} from "./TopProfile/TopProfile"
+export {default as MyFriends} from "./Friends/Friends"
 
  
 

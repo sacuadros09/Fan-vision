@@ -37,7 +37,7 @@ export default class MyTopProfile extends HTMLElement{
 
         
         const LogoSebas = this.ownerDocument.createElement("img")
-        LogoSebas.src = "../../img/gonzalez.png"
+        LogoSebas.src = "/src/img/gonzalez.png"
         LogoSebas.className = "home_logo"
 
         const NameProfile = this.ownerDocument.createElement("h2")
