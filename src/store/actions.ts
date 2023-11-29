@@ -1,3 +1,4 @@
+import { onAuthStateChanged } from "firebase/auth"
 import { appState, dispatch } from "."
 import { Post } from "../types/post"
 import {  Actions, UserActions, PostActions, NavigationActions, AddUserAction, LogOutAction,NavigationAction, Screens,EditAction, GetPostsAction, AddPostAction,SetUserAction,GetUserAction} from "../types/store"
@@ -22,6 +23,16 @@ export const AddUser = async (user:User ): Promise<AddUserAction> =>{
     }
 }
 
+export  const GetUser = async(): Promise<GetUserAction> =>{
+
+    onAuthStateChanged
+    const user = await firebase.GetUserDB()
+
+    return{
+        action: UserActions.GET_USER,
+        payload: user,
+    }
+}
 export const LogOut =  ():LogOutAction =>{
 
     if(appState.userCredentials !==null || ''){

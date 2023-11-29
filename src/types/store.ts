@@ -82,4 +82,4 @@ export interface GetPostsAction {
 }
 
 
-export type Actions = AddUserAction | LogOutAction |EditAction|SetUserAction| NavigationActions| AddPostAction | GetPostsAction;
+export type Actions = AddUserAction |GetUserAction| LogOutAction |EditAction|SetUserAction| NavigationActions| AddPostAction | GetPostsAction;
