@@ -5,7 +5,7 @@ import firebase,{auth}from "../../utils/firebase";
 import styles from "./TopProfile.css"
 
 
-export default class MyIcons extends HTMLElement{
+export default class MyTopProfile extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:"open"});
@@ -94,4 +94,4 @@ export default class MyIcons extends HTMLElement{
 
 }
 
-customElements.define('my-icons', MyIcons)
+customElements.define('my-topprofile', MyTopProfile)
