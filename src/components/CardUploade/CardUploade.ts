@@ -80,7 +80,7 @@ class CardUploade extends HTMLElement{
                     dispatch((appState.posts[i]))
                 })
             
-
+                
                 container.appendChild(all)
 
             }

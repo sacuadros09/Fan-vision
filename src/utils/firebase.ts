@@ -102,6 +102,7 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
   const GetUserDB = async() =>{
     const docRef = doc(db, "users", appState.userData.uid);
     const docSnap = await getDoc(docRef);
+    console.log(docSnap)
   
     return docSnap
   }
