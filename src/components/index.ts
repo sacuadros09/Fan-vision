@@ -11,6 +11,7 @@ export {default as UploadePost} from "./Post/Post"
 export {default as FormLogin} from "./FormLogin/FormLogin"
 export {default as FormRegister} from "./FormRegister/FormRegister"
 export {default as CardPublication} from "./CardPublication/CardPublication"
+export {default as MyIcons} from "./Icons/Icons"
 
  
 
