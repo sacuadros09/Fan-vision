@@ -99,12 +99,25 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
     }
   }
 
-  const GetUserDB = async() =>{
-    const docRef = doc(db, "users", appState.userData.uid);
+  const GetUserDB = async(): Promise<User> =>{
+    let resp: User ={
+      uid: "",
+      Name: "",
+      userName:"",
+      email:"",
+      password: "",
+      Confirmpassword: "",  
+      img:"",
+    }
+    const docRef = doc(db,"users",appState.userCredentials)
     const docSnap = await getDoc(docRef);
-    console.log(docSnap)
   
-    return docSnap
+    if (docSnap.exists()){
+      resp=(docSnap.data()as User)
+    }else{
+      console.log("No such document!")
+    }
+    return resp
   }
 
   const EditUserDB = async (user: any) =>{
