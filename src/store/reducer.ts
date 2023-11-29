@@ -8,6 +8,9 @@ export const reducer = (Action: any, State: AppState): AppState => {
             State.userData = payload
             return State
 
+        case UserActions.GET_USER:
+        State.userData = payload
+        return State
 
         case UserActions.LOGOUT:
             return {
