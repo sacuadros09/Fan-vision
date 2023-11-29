@@ -30,32 +30,65 @@ export default class MyIcons extends HTMLElement{
         logo.src = "../../img/logo.png"
         logo.className = "logo"
 
-        
-        const Home = this.ownerDocument.createElement("img")
-        Home.src = "../../img/home.png"
-        Home.className = "home"
+        const left = this.ownerDocument.createElement("div")
+            left.className = "left"
+
+         const leftext = this.ownerDocument.createElement("div")
+            leftext.className = "left"
 
         
-        const Notification = this.ownerDocument.createElement("img")
-        Notification.src = "../../img/notifications.png"
-        Notification.className = "home"
+        const LogoHome = this.ownerDocument.createElement("img")
+        LogoHome.src = "../../img/home.png"
+        LogoHome.className = "home_logo"
 
-        const Explore = this.ownerDocument.createElement("img")
-        Explore.src = "../../img/search.png"
-        Explore.className = "explore"
-
-
-        
-        const Profile = this.ownerDocument.createElement("img")
-        Profile.src = "../../img//person.png"
-        Profile.className = "profile"
+        const home = this.ownerDocument.createElement("h2")
+        home.className = "home_txt"
+        home.innerText = "home"
 
         
-       
+        const LogoNotification = this.ownerDocument.createElement("img")
+        LogoNotification.src = "../../img/notifications.png"
+        LogoNotification.className = "notification_logo"
 
+        const notification = this.ownerDocument.createElement("h2")
+        notification.className = "notification_txt"
+        notification.innerText = "Notification"
+
+        const LogoExplore = this.ownerDocument.createElement("img")
+        LogoExplore.src = "../../img/search.png"
+        LogoExplore.className = "explore_logo"
+
+        const explore = this.ownerDocument.createElement("h2")
+        explore.className = "explore_txt"
+        explore.innerText = "Explore"
+
+        const LogoProfile = this.ownerDocument.createElement("img")
+        LogoProfile.src = "../../img//person.png"
+        LogoProfile.className = "profile_logo"
+
+        const profile = this.ownerDocument.createElement("h2")
+        profile.className = "profile_txt"
+        profile.innerText = "Profile"
         
-    
+        const buttonuploade=document.createElement("button")
+        buttonuploade.innerText="Menu"
+        buttonuploade.addEventListener("click",()=>{
+            dispatch(Navigate(Screens.MENU))
+        })
 
+
+            container.appendChild(logo)
+            left.appendChild(LogoHome)
+            leftext.appendChild(home)
+            left.appendChild(LogoNotification)
+            leftext.appendChild(notification)
+            left.appendChild(LogoExplore)
+            leftext.appendChild(explore)
+            left.appendChild(LogoProfile)
+            leftext.appendChild(profile)
+            container.appendChild(left)
+            container.appendChild(leftext)
+            this.shadowRoot?.appendChild(container)
         }
     }
 
