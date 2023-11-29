@@ -5,7 +5,7 @@ import firebase,{auth}from "../../utils/firebase";
 import styles from "./Friends.css"
 
 
-export default class MyTopProfile extends HTMLElement{
+export default class MYFriends extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:"open"});
@@ -26,39 +26,77 @@ export default class MyTopProfile extends HTMLElement{
         const container = this.ownerDocument.createElement('section')
         this.shadowRoot?.appendChild(container)
 
-        const right = this.ownerDocument.createElement("div")
-            right.className = "right"
+        const topfriends = this.ownerDocument.createElement("div")
+            topfriends.className = "topfriends"
 
-         const rightname = this.ownerDocument.createElement("div")
-            rightname.className = "righname"
+        const down = this.ownerDocument.createElement("div")
+            down.className = "down"
 
-            const rightsubname = this.ownerDocument.createElement("div")
-            rightsubname.className = "righsubname"
+         const downname = this.ownerDocument.createElement("div")
+            downname.className = "downname"
 
+            const downsubname = this.ownerDocument.createElement("div")
+            downsubname.className = "downsubname"
+
+            const Friends = this.ownerDocument.createElement("h1")
+            Friends.className = "friends"
+            Friends.innerText = "Friends"
         
-        const LogoSebas = this.ownerDocument.createElement("img")
-        LogoSebas.src = "../../img/home.png"
-        LogoSebas.className = "home_logo"
+        const LogoPepito = this.ownerDocument.createElement("img")
+        LogoPepito.src = "../../img/Cuadros.png"
+        LogoPepito.className = "pepito_logo"
 
-        const NameProfile = this.ownerDocument.createElement("h2")
-        NameProfile.className = "nameprofile"
-        NameProfile.innerText = "@SebasG7"
+        const NamePepito = this.ownerDocument.createElement("h2")
+        NamePepito.className = "pepito"
+        NamePepito.innerText = "@Pepito09932"
 
-        const SubProfile = this.ownerDocument.createElement("h2")
-        SubProfile.className = "subnameprofile"
-        SubProfile.innerText = "Ciclistafutbol"
+        const SubPepito = this.ownerDocument.createElement("h3")
+        SubPepito.className = "subnamepepito"
+        SubPepito.innerText = "BichoFanatic"
+
+        const LogoSacuma = this.ownerDocument.createElement("img")
+        LogoSacuma.src = "../../img/Cuadrostwo.png"
+        LogoSacuma.className = "sacuma_logo"
+
+        const NameSacuma = this.ownerDocument.createElement("h2")
+        NameSacuma.className = "sacuma"
+        NameSacuma.innerText = "@Sacuma09"
+
+        const SubSacuma = this.ownerDocument.createElement("h3")
+        SubSacuma.className = "subnamesacuma"
+        SubSacuma.innerText = "Metegoles99"
+
+        const LogoJayco = this.ownerDocument.createElement("img")
+        LogoJayco.src = "../../img/Jaycortez.png"
+        LogoJayco.className = "jayco_logo"
+
+        const NameJayco = this.ownerDocument.createElement("h2")
+        NameJayco.className = "jayco"
+        NameJayco.innerText = "@Jaycortes12"
+
+        const SubJayco = this.ownerDocument.createElement("h3")
+        SubJayco.className = "subnamejayco"
+        SubJayco.innerText = "Jaycortes"
 
 
-            right.appendChild(LogoSebas)
-            rightname.appendChild(NameProfile)
-            rightsubname.appendChild(SubProfile)
-            container.appendChild(right)
-            container.appendChild(rightname)
-            container.appendChild(rightsubname)
+            topfriends.appendChild(Friends)
+            down.appendChild(LogoPepito)
+            downname.appendChild(NamePepito)
+            downsubname.appendChild(SubPepito)
+            down.appendChild(LogoSacuma)
+            downname.appendChild(NameSacuma)
+            downsubname.appendChild(SubSacuma)
+            down.appendChild(LogoJayco)
+            downname.appendChild(NameJayco)
+            downsubname.appendChild(SubJayco)
+            container.appendChild(topfriends)
+            container.appendChild(down)
+            container.appendChild(downname)
+            container.appendChild(downsubname)
             this.shadowRoot?.appendChild(container)
         }
     }
 
 }
 
-customElements.define('my-topprofile', MyTopProfile)
+customElements.define('my-friends', MYFriends)
