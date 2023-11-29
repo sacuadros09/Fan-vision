@@ -34,7 +34,7 @@ export default class MyFormRegister extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         
-
+        
 
         const name = this.ownerDocument.createElement("input")
         name.placeholder = "Name"
@@ -78,8 +78,8 @@ export default class MyFormRegister extends HTMLElement{
         sendbtn.innerText = "Register"
         sendbtn.addEventListener("click", async ()=>{
           const user = await firebase.registerUser(credentials)
-          dispatch(AddUser(credentials))
           console.log(user)
+       
           if(user){
             dispatch(Navigate(Screens.LOGIN))
             sessionStorage.clear()
@@ -87,7 +87,7 @@ export default class MyFormRegister extends HTMLElement{
         })
 
         
-
+       
         this.shadowRoot?.appendChild(name)
         this.shadowRoot?.appendChild(userName)
         this.shadowRoot?.appendChild(password)
