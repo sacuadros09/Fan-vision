@@ -27,7 +27,7 @@ export default class MyIcons extends HTMLElement{
         this.shadowRoot?.appendChild(container)
 
         const logo = this.ownerDocument.createElement("img")
-        logo.src = "../../img/logo.png"
+        logo.src = "/src/img/logo.png"
         logo.className = "logo"
 
         const left = this.ownerDocument.createElement("div")
@@ -40,7 +40,7 @@ export default class MyIcons extends HTMLElement{
             lefbtn.className = "leftbtn"
         
         const LogoHome = this.ownerDocument.createElement("img")
-        LogoHome.src = "/src/img/logo.png"
+        LogoHome.src = "/src/img//home.png"
         LogoHome.className = "home_logo"
 
         const home = this.ownerDocument.createElement("h2")
