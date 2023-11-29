@@ -36,7 +36,7 @@ class CardUploade extends HTMLElement{
                 this.shadowRoot.innerHTML = ``
                 const container = this.ownerDocument.createElement("section")
 
-                appState.posts.forEach((p:any)=>{
+                appState.posts.forEach((p)=>{
                     const all = this.ownerDocument.createElement("section")
 
                     const profile = this.ownerDocument.createElement("img")
@@ -44,19 +44,19 @@ class CardUploade extends HTMLElement{
                     all.appendChild(profile)
 
                     const imgProfile = this.ownerDocument.createElement("img")
-                    imgProfile.src = appState.userData.img
+                    imgProfile.src = p.images
                     profile.appendChild(imgProfile)
                     dataPost.images = p.images
 
                     const Name = this.ownerDocument.createElement("h3")
-                    Name.textContent = appState.userData.Name
+                    Name.textContent = p.named
                     profile.appendChild(Name)
                     dataPost.named = p.named
                     dataPost.id = p.id
                     dataPost.createdAt = p.createdAt
 
                     const UserName = this.ownerDocument.createElement("h3")
-                    UserName.textContent = appState.userData.userName
+                    UserName.textContent = p.subname
                     profile.appendChild(UserName)
                     dataPost.subname = p.subname
                     dataPost.id = p.id
