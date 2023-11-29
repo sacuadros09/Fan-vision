@@ -26,68 +26,35 @@ export default class MyTopProfile extends HTMLElement{
         const container = this.ownerDocument.createElement('section')
         this.shadowRoot?.appendChild(container)
 
-        const logo = this.ownerDocument.createElement("img")
-        logo.src = "../../img/logo.png"
-        logo.className = "logo"
+        const right = this.ownerDocument.createElement("div")
+            right.className = "right"
 
-        const left = this.ownerDocument.createElement("div")
-            left.className = "left"
+         const rightname = this.ownerDocument.createElement("div")
+            rightname.className = "righname"
 
-         const leftext = this.ownerDocument.createElement("div")
-            leftext.className = "left"
-
-        
-        const LogoHome = this.ownerDocument.createElement("img")
-        LogoHome.src = "../../img/home.png"
-        LogoHome.className = "home_logo"
-
-        const home = this.ownerDocument.createElement("h2")
-        home.className = "home_txt"
-        home.innerText = "home"
+            const rightsubname = this.ownerDocument.createElement("div")
+            rightsubname.className = "righsubname"
 
         
-        const LogoNotification = this.ownerDocument.createElement("img")
-        LogoNotification.src = "../../img/notifications.png"
-        LogoNotification.className = "notification_logo"
+        const LogoSebas = this.ownerDocument.createElement("img")
+        LogoSebas.src = "../../img/home.png"
+        LogoSebas.className = "home_logo"
 
-        const notification = this.ownerDocument.createElement("h2")
-        notification.className = "notification_txt"
-        notification.innerText = "Notification"
+        const NameProfile = this.ownerDocument.createElement("h2")
+        NameProfile.className = "nameprofile"
+        NameProfile.innerText = "@SebasG7"
 
-        const LogoExplore = this.ownerDocument.createElement("img")
-        LogoExplore.src = "../../img/search.png"
-        LogoExplore.className = "explore_logo"
-
-        const explore = this.ownerDocument.createElement("h2")
-        explore.className = "explore_txt"
-        explore.innerText = "Explore"
-
-        const LogoProfile = this.ownerDocument.createElement("img")
-        LogoProfile.src = "../../img//person.png"
-        LogoProfile.className = "profile_logo"
-
-        const profile = this.ownerDocument.createElement("h2")
-        profile.className = "profile_txt"
-        profile.innerText = "Profile"
-        
-        const buttonuploade=document.createElement("button")
-        buttonuploade.innerText="Menu"
-        buttonuploade.addEventListener("click",()=>{
-            dispatch(Navigate(Screens.MENU))
-        })
+        const SubProfile = this.ownerDocument.createElement("h2")
+        SubProfile.className = "subnameprofile"
+        SubProfile.innerText = "Ciclistafutbol"
 
 
-            container.appendChild(logo)
-            left.appendChild(LogoHome)
-            leftext.appendChild(home)
-            left.appendChild(LogoNotification)
-            leftext.appendChild(notification)
-            left.appendChild(LogoExplore)
-            leftext.appendChild(explore)
-            left.appendChild(LogoProfile)
-            leftext.appendChild(profile)
-            container.appendChild(left)
-            container.appendChild(leftext)
+            right.appendChild(LogoSebas)
+            rightname.appendChild(NameProfile)
+            rightsubname.appendChild(SubProfile)
+            container.appendChild(right)
+            container.appendChild(rightname)
+            container.appendChild(rightsubname)
             this.shadowRoot?.appendChild(container)
         }
     }
