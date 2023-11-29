@@ -2,13 +2,14 @@ import { addObserver,appState,dispatch} from "../../store";
 import { GetPosts } from "../../store/actions";
 import { Post } from "../../types/post";
 import { User } from "firebase/auth";
-import styles from "./CardUploade.css"
+import styles from "./CardPublication.css"
 
 
-class CardUploade extends HTMLElement{
+class CardPublication extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode: "open"});
+        addObserver(this)
     }   
       async connectedCallback(){
            if(appState.posts.length === 0){
@@ -26,9 +27,10 @@ class CardUploade extends HTMLElement{
 
                 for(let i=0; i<appState.posts.length; i++){
                     const all = this.ownerDocument.createElement("section")
+                    all.className ="all"
 
-                    const profile = this.ownerDocument.createElement("img")
-                    all.className = "profile"
+                    const profile = this.ownerDocument.createElement("section")
+                    profile.className = "profile"
                     all.appendChild(profile)
 
                     const imgProfile = this.ownerDocument.createElement("img")
@@ -80,7 +82,7 @@ class CardUploade extends HTMLElement{
                     dispatch((appState.posts[i]))
                 })
             
-                
+
                 container.appendChild(all)
 
             }
@@ -98,5 +100,5 @@ class CardUploade extends HTMLElement{
         }
 }
     
-customElements.define("my-carduploade",CardUploade);
-export default CardUploade;
+customElements.define("my-cardpublication",CardPublication);
+export default CardPublication;
