@@ -35,10 +35,6 @@ class CardPublication extends HTMLElement{
                     profile.className = "profile"
                     all.appendChild(profile)
 
-                    const imgProfile = this.ownerDocument.createElement("img")
-                    imgProfile.src = appState.posts[i].images;
-                    profile.appendChild(imgProfile)
-               
 
                     const Name = this.ownerDocument.createElement("h3")
                     Name.textContent = appState.posts[i].named

@@ -8,8 +8,3 @@ export interface User {
     img:string
 }   
 
-//export interface Userlogin {
-   // id:string,
-  //  userName: string,
-   // password: string,
-//}   

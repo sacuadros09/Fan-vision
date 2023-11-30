@@ -108,10 +108,10 @@ export default class DashboardMenu extends HTMLElement{
 
 
             const buttonuploade=document.createElement("button")
-            buttonuploade.innerText="Futbolisa"
+            buttonuploade.innerText="Home"
             sectionicon.appendChild(buttonuploade);
             buttonuploade.addEventListener("click", ()=>{
-               dispatch(Navigate(Screens.POST))
+               dispatch(Navigate(Screens.DASHBOARD))
             })
 
             const sectionuploade=document.createElement("section")
