@@ -11,14 +11,16 @@ class CardPublication extends HTMLElement{
         this.attachShadow({mode: "open"});
         addObserver(this)
     }   
-      async connectedCallback(){
-           if(appState.posts.length === 0){
-            dispatch(await GetPosts())
-            this.render()
-           }else{
-            this.render()
-           }
-        }
+
+    async connectedCallback() {
+        if(appState.posts.length ===0){
+        dispatch(await GetPosts())
+        this.render();
+    }else{
+        this.render()
+    }
+    }
+
         
         render(){
             if(this.shadowRoot){

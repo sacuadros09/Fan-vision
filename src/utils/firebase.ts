@@ -54,7 +54,6 @@ const loginUser = async ({
 
 
 
-
 const AddPostDB = async (post: Post) =>{
   try {
   const where = collection(db, "posts")
@@ -67,15 +66,17 @@ const AddPostDB = async (post: Post) =>{
 }
 const GetPostsDB = async(): Promise<Post[]> =>{
   const resp: Post[] = [];
+
   const q=query(collection(db,"posts"), orderBy("createdAt"))
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    resp.push({ 
+    resp.push({
       ...doc.data()
     }as Post)
   });
   return resp
 }
+
 
 const GetPostsListener = (cb: (docs: Post[]) => void) => {
     const q = query(collection(db, "posts"), orderBy("createdAt")); 

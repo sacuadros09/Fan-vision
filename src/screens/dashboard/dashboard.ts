@@ -36,14 +36,17 @@ export default class Dashboard extends HTMLElement{
 
             const friends = this.ownerDocument.createElement("my-friends")
 
+            const post = this.ownerDocument.createElement("my-post")
+
             main.appendChild(icons)
             main.appendChild(topprofile)
             main.appendChild(friends)
+            main.appendChild(post)
            
 
-           // const uploadepublication= this.ownerDocument.createElement("my-cardpublication")
-           // uploadepublication.className = "publication"
-           // container.appendChild(uploadepublication)
+          const uploadepublication= this.ownerDocument.createElement("my-cardpublication")
+            uploadepublication.className = "publication"
+            main.appendChild(uploadepublication)
             
           
 
@@ -51,9 +54,6 @@ export default class Dashboard extends HTMLElement{
 
 
 
-            const containeright = document.createElement("section")
-            containeright.className = "containerRight"
-        
           
             
             this.shadowRoot?.appendChild(main)

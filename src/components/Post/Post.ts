@@ -40,7 +40,7 @@ const post: Post = {
         imgprofile.src = appState.userData.img
 
         const descriptionPost = this.ownerDocument.createElement('input');
-        descriptionPost.className = "description"
+        descriptionPost.className = "descriptionpost"
         descriptionPost.placeholder = "Write what you want to post here..."
         descriptionPost.type = "text"
         descriptionPost.addEventListener("change",(e:any)=>{
@@ -64,6 +64,7 @@ const post: Post = {
         container.appendChild(descriptionPost)
         container.appendChild(imagePost)
         container.appendChild(sendbtn)
+        this.shadowRoot.appendChild(container)
         }
     }
 
