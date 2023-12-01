@@ -59,7 +59,7 @@ class CardMenu extends HTMLElement {
         render(){
             if(this.shadowRoot){
                 this.shadowRoot.innerHTML = `
-                <link rel="stylesheet" href="../src/components/CardUploade/CardUploade.css">
+                <link rel="stylesheet" href="../src/components/CardMenu/CardMenu.css">
                 <section  class = "card" >
                 <img class = "phoper" src=${this.profile}></img>
                 <h1>${this.named}</h1>
