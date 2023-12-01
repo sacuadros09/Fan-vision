@@ -24,6 +24,7 @@ export default class MyTopProfile extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         const container = this.ownerDocument.createElement('section')
+        container.className = "topprofile"
         this.shadowRoot?.appendChild(container)
 
         const right = this.ownerDocument.createElement("div")
