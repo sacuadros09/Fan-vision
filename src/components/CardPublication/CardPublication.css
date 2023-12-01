@@ -8,8 +8,8 @@
 .all{
     background-color: rgb(255, 255, 255);
     width: 83%;
-    margin-top: 16%;
-    margin-right: 20%;
+    margin-top: 3%;
+    margin-right: 17%;
     margin-left: 6%;
     align-items: center;
     justify-content: center;
@@ -47,3 +47,4 @@ p{
     margin-top: 2%;
     
 }
+
