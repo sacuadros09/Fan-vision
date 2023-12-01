@@ -68,7 +68,7 @@ input:focus {
    
    .form{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     gap: 30%;
     height: 6%;
    }

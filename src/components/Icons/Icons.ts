@@ -33,11 +33,6 @@ export default class MyIcons extends HTMLElement{
         const left = this.ownerDocument.createElement("div")
             left.className = "left"
 
-         const leftext = this.ownerDocument.createElement("div")
-            leftext.className = "left"
-
-        const lefbtn = this.ownerDocument.createElement("div")
-            lefbtn.className = "leftbtn"
         
         const LogoHome = this.ownerDocument.createElement("img")
         LogoHome.src = "/src/img//home.png"
@@ -79,20 +74,18 @@ export default class MyIcons extends HTMLElement{
         })
 
 
-        
+            left.appendChild(logo)
             left.appendChild(LogoHome)
-            leftext.appendChild(home)
+            left.appendChild(home)
             left.appendChild(LogoNotification)
-            leftext.appendChild(notification)
+            left.appendChild(notification)
             left.appendChild(LogoExplore)
-            leftext.appendChild(explore)
+            left.appendChild(explore)
             left.appendChild(LogoProfile)
-            leftext.appendChild(profile)
-            lefbtn.appendChild(buttonuploade);
-            container.appendChild(logo)
+            left.appendChild(profile)
+            left.appendChild(buttonuploade);
             container.appendChild(left)
-            container.appendChild(leftext)
-            container.appendChild(buttonuploade)
+
             this.shadowRoot?.appendChild(container)
         }
     }
