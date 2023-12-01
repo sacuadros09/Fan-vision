@@ -35,6 +35,7 @@ const post: Post = {
         this.shadowRoot?.appendChild(css)
 
         const container = this.ownerDocument.createElement("section")
+        container.className = "topmid"
 
         const imgprofile = this.ownerDocument.createElement("img")
         imgprofile.src = appState.userData.img
