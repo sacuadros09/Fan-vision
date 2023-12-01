@@ -24,6 +24,7 @@ export default class MyFriends extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         const container = this.ownerDocument.createElement('section')
+        container.className = "right"
         this.shadowRoot?.appendChild(container)
 
         const topfriends = this.ownerDocument.createElement("div")
