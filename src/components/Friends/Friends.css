@@ -1,0 +1,22 @@
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 26%;
+    position: fixed;
+    margin-left: 74%;
+    margin-top: 10%;
+    border-color: white;
+    border-top-width: 5px;
+    border-top-style: solid;
+
+}
+
+.down{
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 20%;
+    padding: 5%;
+}
