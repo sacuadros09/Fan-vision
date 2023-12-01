@@ -34,6 +34,7 @@ export default class MyFormRegister extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         const container = this.ownerDocument.createElement('section')
+        container.className = "form"
         this.shadowRoot?.appendChild(container)
 
         const name = this.ownerDocument.createElement("input")
