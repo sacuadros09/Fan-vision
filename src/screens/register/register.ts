@@ -73,7 +73,7 @@ export default class DashboardRegister extends HTMLElement {
 
 
            const account = this.ownerDocument.createElement ("button")
-            account.className = "account"
+            account.className = "haveacc"
             account.innerText = 'Already have an account?';
            account.addEventListener("click", ()=>{
               dispatch(Navigate(Screens.LOGIN))
