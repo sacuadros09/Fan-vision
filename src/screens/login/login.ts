@@ -37,6 +37,7 @@ export default class DashboardLogin extends HTMLElement {
             inpuntform.className = "inputsform"
 
             const account = this.ownerDocument.createElement('button');
+            account.className = "account"
             account.innerText = 'Create an account';
             account.addEventListener("click", ()=>{
                 dispatch(Navigate(Screens.REGISTER))
