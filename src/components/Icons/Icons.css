@@ -83,7 +83,7 @@ button {
     overflow: hidden;
     font-size: 15px;
   }
-
+  
   
   
   button:hover {
@@ -129,7 +129,8 @@ button {
     }
   }
 
-  .profile_txt{
+
+.profile_txt{
     margin-top: -8%;
 
 }
@@ -163,5 +164,7 @@ h2{
     }
 
   }
+
+
 
 
