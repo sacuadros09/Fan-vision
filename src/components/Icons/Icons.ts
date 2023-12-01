@@ -33,19 +33,20 @@ export default class MyIcons extends HTMLElement{
         const left = this.ownerDocument.createElement("div")
             left.className = "left"
 
+         
         
         const LogoHome = this.ownerDocument.createElement("img")
         LogoHome.src = "/src/img//home.png"
-        LogoHome.className = "home_logo"
+        LogoHome.className = "home"
 
         const home = this.ownerDocument.createElement("h2")
         home.className = "home_txt"
-        home.innerText = "home"
+        home.innerText = "Home"
 
         
         const LogoNotification = this.ownerDocument.createElement("img")
         LogoNotification.src = "/src/img/notifications.png"
-        LogoNotification.className = "notification_logo"
+        LogoNotification.className = "notifi"
 
         const notification = this.ownerDocument.createElement("h2")
         notification.className = "notification_txt"
@@ -53,7 +54,7 @@ export default class MyIcons extends HTMLElement{
 
         const LogoExplore = this.ownerDocument.createElement("img")
         LogoExplore.src = "/src/img/search.png"
-        LogoExplore.className = "explore_logo"
+        LogoExplore.className = "explore"
 
         const explore = this.ownerDocument.createElement("h2")
         explore.className = "explore_txt"
@@ -61,7 +62,7 @@ export default class MyIcons extends HTMLElement{
 
         const LogoProfile = this.ownerDocument.createElement("img")
         LogoProfile.src = "/src/img/person.png"
-        LogoProfile.className = "profile_logo"
+        LogoProfile.className = "profile"
 
         const profile = this.ownerDocument.createElement("h2")
         profile.className = "profile_txt"
@@ -69,6 +70,7 @@ export default class MyIcons extends HTMLElement{
         
         const buttonuploade=document.createElement("button")
         buttonuploade.innerText="Menu"
+        buttonuploade.className = "btnmenu"
         buttonuploade.addEventListener("click",()=>{
             dispatch(Navigate(Screens.MENU))
         })
@@ -85,7 +87,7 @@ export default class MyIcons extends HTMLElement{
             left.appendChild(profile)
             left.appendChild(buttonuploade);
             container.appendChild(left)
-
+            
             this.shadowRoot?.appendChild(container)
         }
     }
