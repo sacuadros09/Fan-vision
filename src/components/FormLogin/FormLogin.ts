@@ -29,6 +29,7 @@ export default class MyFormLog extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         const container = this.ownerDocument.createElement("section")
+        container.className = "form"   
         
 
         const email = this.ownerDocument.createElement("input")
@@ -57,6 +58,7 @@ export default class MyFormLog extends HTMLElement{
         container.appendChild(sendbtn)
 
         this.shadowRoot?.appendChild(container)
+        this.shadowRoot?.appendChild(sendbtn)
 
         }
     }
