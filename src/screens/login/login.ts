@@ -34,6 +34,7 @@ export default class DashboardLogin extends HTMLElement {
             form.className = "form"
 
             const inpuntform = this.ownerDocument.createElement("form-login")
+            inpuntform.className = "inputsform"
 
             const account = this.ownerDocument.createElement('button');
             account.innerText = 'Create an account';
