@@ -26,6 +26,7 @@ class CardPublication extends HTMLElement{
             if(this.shadowRoot){
                 this.shadowRoot.innerHTML = ``
                 const container = this.ownerDocument.createElement("section")
+                container.className = "mid"
 
                 for(let i=0; i<appState.posts.length; i++){
                     const all = this.ownerDocument.createElement("section")
