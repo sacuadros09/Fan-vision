@@ -106,6 +106,7 @@ export default class DashboardProfile extends HTMLElement{
             container.appendChild(editProfile);
 
             const NewProfile = this.ownerDocument.createElement('my-profile')
+            NewProfile.className = "Firstinput"
             NewProfile.setAttribute(AttributeProfile.text, "New Profile")
             NewProfile.setAttribute(AttributeProfile.type, "text")
            // NewProfile.placeholder = appState.userData.userName 
@@ -113,6 +114,7 @@ export default class DashboardProfile extends HTMLElement{
             topbot.appendChild(NewProfile)
 
             const Description = this.ownerDocument.createElement('my-profile')
+            Description.className = "Secondinput"
             Description.setAttribute(AttributeProfile.text, "Change Description")
             Description.setAttribute(AttributeProfile.type, "text")
             //Description.placeholder = appState.userData.userName
@@ -120,12 +122,14 @@ export default class DashboardProfile extends HTMLElement{
             topbot.appendChild(Description)
 
             const ChangePassword = this.ownerDocument.createElement('my-profile')
+            ChangePassword.className = "Thirdinput"
             ChangePassword.setAttribute(AttributeProfile.text, "Change Password")
             ChangePassword.setAttribute(AttributeProfile.type, "text")
             ChangePassword.addEventListener("change",(e:any)=>credentials.password = e.target.value)
             topbot.appendChild(ChangePassword);
 
             const ChangeEmail = this.ownerDocument.createElement('my-profile');
+            ChangeEmail.className = "Fourinput"
             ChangeEmail.setAttribute(AttributeProfile.text, "Change Email");
             ChangeEmail.setAttribute(AttributeProfile.type, "password");
           //  ChangeEmail.placeholder = appState.userData.email
