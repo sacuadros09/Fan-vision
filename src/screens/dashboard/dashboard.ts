@@ -27,6 +27,10 @@ export default class Dashboard extends HTMLElement{
             <link rel="stylesheet" href="/src/index.css">
             
         `;
+        const css = this.ownerDocument.createElement('style')
+                css.innerHTML = styles
+                this.shadowRoot?.appendChild(css);
+                
              const main=document.createElement("section")
             main.className = "main"
 
