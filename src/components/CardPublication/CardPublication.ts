@@ -38,11 +38,13 @@ class CardPublication extends HTMLElement{
 
 
                     const Name = this.ownerDocument.createElement("h3")
+                    Name.className = "Name"
                     Name.textContent = appState.posts[i].named
                     profile.appendChild(Name)
                    
 
                     const UserName = this.ownerDocument.createElement("h3")
+                    UserName.className = "UserName"
                     UserName.textContent =  appState.posts[i].subname
                     profile.appendChild(UserName)
                   
