@@ -20,3 +20,30 @@ img{
     width: 20%;
     padding: 5%;
 }
+
+.topfriends{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+
+}
+
+.friends{
+    color: white;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+h1{
+    color: white;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+h2{
+    color: white;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+h3{
+    color: #8E8E8E;
+    font-family: "Helvetica", Arial, sans-serif;
+}
