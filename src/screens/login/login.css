@@ -34,8 +34,8 @@ background: linear-gradient(90deg, rgba(4,33,63,1) 0%, rgba(1,45,93,1) 100%);
     margin-left: 127%;
     color: #687B8F;
     width: 60%;
-    margin-top: -30%;
-    font-family: "Helvetica", Arial, sans-serif;
+    margin-top: -24%;   
+     font-family: "Helvetica", Arial, sans-serif;
 
 }
 
@@ -72,26 +72,31 @@ background: linear-gradient(90deg, rgba(4,33,63,1) 0%, rgba(1,45,93,1) 100%);
     margin-left: 39%;
 }
 
+.account:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+   }
+   
+.account:hover {
+    box-shadow: rgba(45, 35, 66, 0.3) 0 4px 8px, rgba(45, 35, 66, 0.2) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+   }
+   
+.account:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+   }
+
 .form{
     height: 20%;
 }
 
-.inputform{
-    margin-left: -11%;
-    margin-top: 19%;
+.inputsform{
+    margin-left: -13%;
+    margin-top: 24%;
+    width: 13%;
     display: flex;
     flex-direction: column;
-    gap: 4%;
+    gap: 9%;
     font-family: "Helvetica", Arial, sans-serif;
 
 }
-
-
-   .buttonform{
-    display: flex;
-    flex-direction: column;
-    margin-left: -5%;
-    gap: 3%;
-    margin-top: 28%;
-    align-items: center;
-   }
