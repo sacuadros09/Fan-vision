@@ -44,16 +44,16 @@ export default class MyFriends extends HTMLElement{
             Friends.innerText = "Friends"
         
         const LogoPepito = this.ownerDocument.createElement("img")
-        LogoPepito.src = "/src/img/Cuadros.png"
+        LogoPepito.src = "/src/img/Rico.png"
         LogoPepito.className = "pepito_logo"
 
         const NamePepito = this.ownerDocument.createElement("h2")
         NamePepito.className = "pepito"
-        NamePepito.innerText = "@Pepito09932"
+        NamePepito.innerText = "@Ricoperico"
 
         const SubPepito = this.ownerDocument.createElement("h3")
         SubPepito.className = "subnamepepito"
-        SubPepito.innerText = "BichoFanatic"
+        SubPepito.innerText = "MessiLover"
 
         const LogoSacuma = this.ownerDocument.createElement("img")
         LogoSacuma.src = "/src/img/Cuadrostwo.png"

@@ -63,12 +63,12 @@ export default class DashboardRegister extends HTMLElement {
 
         const SignIn = this.ownerDocument.createElement("h2")
             SignIn.className = "SignIn"
-            SignIn.innerText = "Sign in"
+            SignIn.innerText = "Sign In"
             form.appendChild(SignIn)
 
             const SignUp = this.ownerDocument.createElement("h2")
             SignUp.className = "SignUp"
-            SignUp.innerText = "Sign up"
+            SignUp.innerText = "Sign Up"
             form.appendChild(SignUp)
 
 

@@ -67,7 +67,7 @@ export default class MyFormRegister extends HTMLElement{
         })
 
         const confirmpassword= this.ownerDocument.createElement("input")
-        confirmpassword.placeholder = "Confirmpassword"
+        confirmpassword.placeholder = "Confirm password"
         confirmpassword.type = "password"
         confirmpassword.addEventListener("change", (e:any)=>{
             credentials.Confirmpassword = e.target.value
