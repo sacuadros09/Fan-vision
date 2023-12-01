@@ -128,3 +128,40 @@ button {
       left: 100%;
     }
   }
+
+  .profile_txt{
+    margin-top: -8%;
+
+}
+
+h2{ 
+    font-family: "Helvetica", Arial, sans-serif;
+    padding: 1%;
+    margin-left: 22%;
+    margin-top: -14.5%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 400px) {
+    .leftside {
+      display: none;
+    }
+
+    .secondimg{
+        display: none;
+    }
+
+    .logo{
+        display: none;
+    }
+
+  }
+
+
